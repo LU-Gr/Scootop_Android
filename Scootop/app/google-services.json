@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "535468352684",
+    "firebase_url": "https://scootop-80c15.firebaseio.com",
+    "project_id": "scootop-80c15",
+    "storage_bucket": "scootop-80c15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535468352684:android:9266920e5ed60c87",
+        "android_client_info": {
+          "package_name": "fr.scootop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535468352684-0knufhndpahmviocsdi23tu56t0r25em.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.scootop",
+            "certificate_hash": "55d15f8d75d0846a3163c5818b927db1c63d13c9"
+          }
+        },
+        {
+          "client_id": "535468352684-2kk8jvl804sbnqghb40gc7v8mt21c5df.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk9fLtSdNwChJlrSqLHPjXjIvTk-j9Nek"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535468352684-2kk8jvl804sbnqghb40gc7v8mt21c5df.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

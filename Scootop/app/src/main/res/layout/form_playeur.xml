@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/inscription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+
+            android:id="@+id/inscription_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="2dp">
+
+
+            <TextView
+                android:id="@+id/inscription_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textSize="25dp"
+                android:layout_centerInParent="true"
+                android:textColor="#cbbba0"
+                android:text="@string/Joueur" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/inscription_form"
+            android:layout_width="300dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inscription_sexe_box"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+                <EditText
+                    android:id="@+id/inscription_sexe_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_inscription_sexe"
+                    android:inputType="text"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inscription_born_box"
+                android:layout_toRightOf="@id/inscription_sexe_box"
+                android:layout_marginLeft="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+                <EditText
+                    android:id="@+id/inscription_born_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_inscription_born"
+                    android:inputType="date"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inscription_nationality_box"
+                android:layout_below="@+id/inscription_sexe_box"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+                <EditText
+                    android:id="@+id/inscription_nationality_edittext"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_inscription_nationality"
+                    android:inputType="text"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inscription_origine_box"
+                android:layout_toRightOf="@id/inscription_nationality_box"
+                android:layout_below="@id/inscription_born_box"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+                <EditText
+                    android:id="@+id/inscription_origine_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_inscription_origine"
+                    android:inputType="text"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inscription_size_box"
+                android:layout_below="@+id/inscription_nationality_box"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+                <EditText
+                    android:id="@+id/inscription_size_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_size"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inscription_weight_box"
+                android:layout_toRightOf="@+id/inscription_size_box"
+                android:layout_below="@+id/inscription_nationality_box"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+                <EditText
+                    android:id="@+id/inscription_weight_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_weight"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inscription_foot_box"
+                android:layout_toRightOf="@+id/inscription_weight_box"
+                android:layout_below="@+id/inscription_nationality_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+
+
+                <EditText
+                    android:id="@+id/inscription_foot_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_foot"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inscription_club_box"
+                android:layout_below="@+id/inscription_size_box"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+                <EditText
+                    android:id="@+id/inscription_club_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_tel_club"
+                    android:inputType="text"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inscription_pays_box"
+                android:layout_toRightOf="@id/inscription_club_box"
+                android:layout_below="@id/inscription_foot_box"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+                <EditText
+                    android:id="@+id/inscription_pays_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_inscription_pays"
+                    android:inputType="text"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inscription_categorie_box"
+                android:layout_below="@+id/inscription_club_box"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+                <EditText
+                    android:id="@+id/inscription_categorie_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_categorie"
+                    android:inputType="text|phone"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inscription_division_box"
+                android:layout_toRightOf="@id/inscription_categorie_box"
+                android:layout_below="@+id/inscription_club_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+                <EditText
+                    android:id="@+id/inscription_division_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_division"
+                    android:inputType="text"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/poste_ins"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/inscription_categorie_box"
+                android:layout_marginTop="2dp">
+
+                <EditText
+                    android:id="@+id/poste_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_login_poste"
+                    android:inputType="text"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/Photo_ins"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/poste_ins"
+                android:layout_below="@+id/inscription_categorie_box"
+                android:layout_marginTop="2dp">
+
+                <EditText
+                    android:id="@+id/login_password_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/form_photo"
+                    android:inputType="text"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:theme="@style/EditTextLightThemeInscription"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="200dp"
+
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/poste_ins">
+
+                <Button
+                    android:id="@+id/login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:background="@color/green"
+                    android:text="@string/action_valider"/>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

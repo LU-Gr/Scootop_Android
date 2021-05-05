@@ -1,0 +1,224 @@
+<resources>
+    <string name="app_name">Scootop</string>
+
+    <string name="empty"></string>
+
+    <!-- push -->
+    <string name="default_notification_channel_id">default</string>
+    <string name="default_notification_title">Scootop</string>
+    <string name="default_notification_body">Découvrez les dernières actualités Scootop</string>
+
+    <string name="notification_shortlist_title">Vous avez été shortlisté !</string>
+    <string name="notification_shortlist_body">Découvrez vite qui vous a mis dans sa shortlist !</string>
+
+    <string name="action_login">Connexion</string>
+    <string name="action_logout">Déconnexion</string>
+    <string name="action_forget_paswword">Mot de passe oublié ?</string>
+    <string name="action_signin">Inscription</string>
+    <string name="action_search">Rechercher</string>
+    <string name="action_about">À propos</string>
+    <string name="action_alert">Alerter</string>
+    <string name="action_follow">Suivre</string>
+    <string name="action_unfollow">Ne plus suivre</string>
+    <string name="action_invite">Inviter</string>
+    <string name="action_inscription">Valider</string>
+    <string name="action_next">Suivant</string>
+    <string name="action_previous">Précédent</string>
+    <string name="action_cancel">Annuler</string>
+    <string name="action_validate">Valider</string>
+    <string name="action_create_post">Poster ma participation</string>
+
+    <string name="dialog_loading_title">Chargement</string>
+    <string name="dialog_loading_message">Veuillez patientez un instant</string>
+
+    <string name="dialog_follow_player_title">Suivre ce joueur ?</string>
+    <string name="dialog_follow_player_description">En suivant ce joueur, vous receverez une alerte à chacune de ses rencontres.</string>
+
+    <string name="dialog_unfollow_player_title">Ne plus suivre ce joueur ?</string>
+    <string name="dialog_unfollow_player_description">En arrêtant de suivre ce joueur, vous ne receverez plus d\'alerte à chacune de ses rencontres.</string>
+
+    <string name="feedback_post_created">Votre participation a été envoyée à tous vos suiveurs !</string>
+    <string name="feedback_video_attached">La vidéo a été attachée à votre profil !</string>
+
+    <string name="suivre_joueur">Vous suivez desormais ce joueur, vous receverez une alerte a chacune de ses rencontre</string>
+    <string name="alerte_joueur">Vous souhaitez alerter ce joueur, son profil sera transmis aux observateurs clubs avec lesquels vous travaillez. </string>
+    <string name="inviter_joueur">Vous souhaitez inviter ce joueur lors de votre prochaine evenements, </string>
+    <string name="Introduce">Du football est plus encore !</string>
+
+    <string name="login">Login</string>
+    <string name="forget_paswword">Mot de passe oublié ?</string>
+    <string name="sign_in">Inscription</string>
+
+    <string name="Logo">Logo</string>
+
+    <string name="form_login_email">Email</string>
+    <string name="form_login_password">Mot de passe</string>
+    <string name="form_login_error_missing_field">Veuillez saisir votre email et mot de passe pour vous connecter</string>
+
+    <string name="form_inscription_name">Nom</string>
+
+    <string name="taille_strg">Taille</string>
+    <string name="taille_rslt">150</string>
+    <string name="poids_rslt">50kg</string>
+    <string name="poids_strg">poids</string>
+    <string name="p100m_strg">Test 100m :</string>
+    <string name="p100m_rslt">11s</string>
+    <string name="detente_strg">Detente :</string>
+    <string name="detente_rslt">1m</string>
+    <string name="born_strg">Née le :</string>
+    <string name="born_rslt">11/04/2017</string>
+    <string name="born_place_strg">a Saint-Denis</string>
+    <string name="nationality">Nationalité : Francaise / Origine : Camerounaise </string>
+    <string name="civil_title">ETAT CIVIL</string>
+    <string name="athletique_title">ATLHETIQUE</string>
+    <string name="perf_title">PERFORMANCE</string>
+    <string name="invitation_title_ctnt">INVITATION</string>
+    <string name="invitation_team">PSG, LILLE, BENEFICA, BOCA JR</string>
+    <string name="introduce_video_text">PRESENTATION</string>
+    <string name="quality_liste_text">QUALITE</string>
+    <string name="quality_skils_text">Rapide, technique, explosif</string>
+
+    <string name="player_details_title">Fiche joueur</string>
+    <string name="player_details_matches_goals">Matchs / Buts</string>
+    <string name="player_details_passes_skills">Passes / Skills</string>
+    <string name="player_details_distinctions">Distinctions</string>
+    <string name="player_details_no_video">Pas de vidéo</string>
+
+    <string name="who">vous etes</string>
+
+    <string name="second_choice">Coach</string>
+    <string name="first_choice">Joueur</string>
+    <string name="third_choice">Recruteur</string>
+    <string name="fourth_choice">Directeur</string>
+    <string name="fifth_choice">Conseiller Sportif</string>
+    <string name="six_choice">Simple visiteur</string>
+
+    <string name="inscription">Inscription</string>
+    <string name="form_inscription_surname">Prenom</string>
+
+    <string name="hint_lastname">Nom</string>
+    <string name="hint_firstname">Prénom</string>
+    <string name="hint_gender">Sexe</string>
+    <string name="hint_birthdate">Date de naissance</string>
+    <string name="hint_origin">Origine</string>
+    <string name="hint_nationality">Nationalité</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">Mot de passe</string>
+
+    <string name="hint_height_cm">Taille en cm</string>
+    <string name="hint_weight_kg">Poids en kg</string>
+    <string name="hint_footed">Pied</string>
+    <string name="hint_position_favorite">Poste préféré</string>
+    <string name="hint_position_secondary">Poste secondaire</string>
+    <string name="hint_country">Pays</string>
+    <string name="hint_team_country">Pays de l\'équipe</string>
+    <string name="hint_category">Catégorie</string>
+    <string name="hint_division">Division</string>
+    <string name="hint_club">Club</string>
+    <string name="hint_post_text">Quelques mots au sujet de votre participation</string>
+    <string name="hint_address">Adresse</string>
+    <string name="hint_date">Date</string>
+    <string name="hint_hour">Heure</string>
+
+    <string name="hint_youtube_search">Rechercher une vidéo Youtube</string>
+
+    <string name="form_tel_email">Telephone</string>
+    <string name="form_code_postale">Code Postale</string>
+    <string name="form_inscription_sexe">Sexe</string>
+    <string name="form_inscription_born">Date de naissance</string>
+    <string name="form_inscription_nationality">Nationalite</string>
+    <string name="form_inscription_origine">Origine</string>
+
+    <string name="form_size">Taille</string>
+    <string name="form_weight">Poids</string>
+    <string name="form_poste">Poste</string>
+    <string name="form_foot">Pieds</string>
+    <string name="form_tel_club">Club</string>
+    <string name="form_inscription_pays">Pays</string>
+    <string name="form_categorie">Categorie</string>
+    <string name="form_division">Divison</string>
+    <string name="form_login_poste">Poste</string>
+    <string name="form_photo">Photo</string>
+    <string name="Joueur">Joueur</string>
+    <string name="action_valider">Valider</string>
+    <string name="find_by">Recherche de joueur par :</string>
+    <string name="search_choice">Nom / Prenom</string>
+    <string name="search_second_choice">Club</string>
+    <string name="search_third_choice_txt">Poste</string>
+    <string name="search_fourth_choice">Generations</string>
+    <string name="search_fifth_choice">Regions/Departement</string>
+    <string name="search_six_choice">Nationalité / Origine</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="footed_type_left">Gaucher</string>
+    <string name="footed_type_right">Droitier</string>
+    <string-array name="footed_types">
+        <item>@string/footed_type_left</item>
+        <item>@string/footed_type_right</item>
+    </string-array>
+
+    <string-array name="foot">
+        <item>Gaucher</item>
+        <item>Droitier</item>
+        <item>Les Deux</item>
+    </string-array>
+
+    <string-array name="categories">
+        <item>U13</item>
+        <item>U14</item>
+        <item>U15</item>
+        <item>U16</item>
+        <item>U17</item>
+        <item>U19</item>
+        <item>U23</item>
+        <item>Senior</item>
+    </string-array>
+
+    <string-array name="who_choices">
+        <item>@string/first_choice</item>
+        <item>@string/second_choice</item>
+        <item>@string/third_choice</item>
+        <item>@string/fourth_choice</item>
+        <item>@string/fifth_choice</item>
+        <item>@string/six_choice</item>
+        <item>@string/first_choice</item>
+    </string-array>
+
+    <string name="gender_male">Homme</string>
+    <string name="gender_female">Femme</string>
+
+    <string name="gender_male_value">M</string>
+    <string name="gender_female_value">F</string>
+
+    <string-array name="gender_names">
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+    </string-array>
+
+    <string name="user_type_player">Joueur</string>
+    <string name="user_type_coach">Coach</string>
+    <string name="user_type_observer">Observateur</string>
+
+    <string-array name="user_types_names">
+        <item>@string/user_type_player</item>
+        <!--
+        <item>@string/user_type_coach</item>
+        -->
+        <item>@string/user_type_observer</item>
+    </string-array>
+
+    <string name="subtitle.best_video_of_week">Meilleur vidéo de la semaine</string>
+    <string name="subtitle.top_players">Top Joueurs</string>
+
+    <string name="shortlist_empty_state">Ajoutez des personnes à votre shortlist et retrouvez-les ici !</string>
+    <string name="title_activity_register">Inscription</string>
+
+    <string name="title_activity_register_type">Qui êtes-vous ?</string>
+
+    <string name="toast_form_incomplete">Formulaire incomplet</string>
+
+    <string name="title_activity_create_post">Géolocalisation</string>
+    <string name="title_activity_ytvideo_picker">Youtube</string>
+    <string name="title_activity_user_details">Profil</string>
+
+</resources>

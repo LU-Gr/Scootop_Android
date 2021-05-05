@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fr.scootop.app.user.myprofile.UserMyProfileFragment">
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/action_logout" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/logoutButton"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:background="@color/transparent"
+        android:src="@mipmap/ic_video_library_black_24dp"
+        android:tint="@color/white"
+        app:fabSize="normal"
+        app:layout_anchorGravity="bottom|right" />
+
+</RelativeLayout>

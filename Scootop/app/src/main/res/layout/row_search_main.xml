@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="@dimen/activity_vertical_margin">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/row_search_avatar"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_default_avatar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_toRightOf="@id/row_search_avatar"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/row_search_name_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/row_search_country_image"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:adjustViewBounds="true" />
+
+    </LinearLayout>
+
+</RelativeLayout>

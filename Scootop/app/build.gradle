@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "fr.scootop"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 6
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        buildConfigField("String", "SC_BASE_API", "\"http://www2.scootop.fr\"")
+        buildConfigField("String", "YT_BASE_API", "\"https://www.googleapis.com\"")
+        buildConfigField("String", "YT_DEV_KEY", "\"AIzaSyA0u3ulUbte4DO0Ax_1cJ-gjFaiJWMSI9w\"")
+        buildConfigField("String", "YT_SEARCH_API_KEY", "\"AIzaSyDRC_jZmeiTDcEKZ8HkEHRcROYpFav3PLY\"")
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+        jumboMode = true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation "com.android.support:appcompat-v7:$android_support_version"
+    implementation "com.android.support:design:$android_support_version"
+    implementation "com.android.support:support-v4:$android_support_version"
+    implementation "com.android.support:cardview-v7:$android_support_version"
+    implementation "com.android.support:recyclerview-v7:$android_support_version"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.7.0'
+    implementation 'io.reactivex:rxjava:1.2.10'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    implementation 'com.mikhaellopez:circularimageview:3.0.2'
+    implementation 'com.github.mukeshsolanki:country-picker-android:1.1.9'
+    implementation 'com.android.support:support-annotations:+'
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    implementation 'com.google.android.gms:play-services-maps:11.8.0'
+    implementation 'com.google.android.gms:play-services:11.8.0'
+    implementation 'com.google.firebase:firebase-core:11.8.0'
+    implementation 'com.google.firebase:firebase-messaging:11.8.0'
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.0@aar') {
+        transitive = true;
+    }
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
+    implementation 'com.github.drawers:SpinnerDatePicker:1.0.6'
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+
+}
+
+apply plugin: 'com.google.gms.google-services'
