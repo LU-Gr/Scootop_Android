@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="71dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <ImageButton
+                android:id="@+id/player_details_star_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@android:drawable/btn_star" />
+
+            <Button
+                android:id="@+id/player_about_button"
+                android:layout_width="wrap_content"
+                android:layout_height="25sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="#00cc99"
+                android:text="a propos"
+                android:textColor="#ffffff"
+                android:textSize="9sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/player_about_button"
+                android:layout_toRightOf="@id/player_details_star_button">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/player_details_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LUHAKA Gregory"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/player_details_poste"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lateral Gauche"
+                        android:textColor="#440000ff" />
+
+                    <TextView
+                        android:id="@+id/player_details_team_club"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paris St Germain"
+                        android:textColor="#440000ff" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#cbbba0" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                android:id="@+id/next_game"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MA PROCHAINE RENCONTRE"
+                android:layout_centerHorizontal="true"
+                android:textSize="12sp"
+                android:textColor="@android:color/background_dark" />
+
+
+            <TextView
+                android:id="@+id/next_game_adversaire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/next_game"
+                android:layout_alignStart="@+id/next_game"
+                android:layout_below="@+id/next_game"
+                android:layout_marginLeft="46dp"
+
+                android:text="REAL MADRID"
+                android:textColor="@android:color/background_dark"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/suivre_le_joueur_"
+            android:layout_width="match_parent"
+            android:layout_height="176dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/alerte_joueur"
+            android:layout_marginStart="20dp"
+            android:textSize="12sp"
+            android:textColor="#cbbba0">
+
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="10dp">
+
+
+            <Button
+                android:id="@+id/player_alerter"
+                android:layout_width="wrap_content"
+                android:layout_height="25sp"
+                android:background="#00ccff"
+                android:layout_marginLeft="110dp"
+                android:text="Alerter"
+                android:textColor="#ffffff"
+                android:textSize="9sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp">
+
+            <TextView
+                android:id="@+id/prochaines_rencontre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROCHAINE RENCONTRE"
+                android:layout_centerHorizontal="true"
+                android:textSize="12sp"
+                android:textColor="@android:color/background_dark" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <ImageButton
+                android:id="@+id/player_Video_thumbII"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/player_Video_thumbsI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/player_Video_thumbII"
+                android:layout_toRightOf="@+id/player_Video_thumbII"
+                app:srcCompat="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/player_Video_thumbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/player_Video_thumbsI"
+                android:layout_toRightOf="@+id/player_Video_thumbsI"
+                app:srcCompat="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/player_Video_thumbsx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/player_Video_thumbs"
+                android:layout_toRightOf="@+id/player_Video_thumbs"
+                app:srcCompat="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/player_Video_thumbsxx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/player_Video_thumbsx"
+                android:layout_toRightOf="@+id/player_Video_thumbsx"
+                app:srcCompat="@android:drawable/btn_star" />
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

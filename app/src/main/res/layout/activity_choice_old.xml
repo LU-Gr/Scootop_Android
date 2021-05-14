@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/choice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:id="@+id/choice_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp">
+
+
+            <TextView
+                android:id="@+id/who_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textSize="25dp"
+                android:layout_centerInParent="true"
+                android:textColor="#cbbba0"
+                android:text="@string/who" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:id="@+id/choice_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:id="@+id/playeur_choice_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:id="@+id/playeur_choice_text"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20dp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffff"
+                    android:textStyle="bold"
+                    android:text="@string/first_choice" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/playeur_choice_text"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/white"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:id="@+id/coach_choice_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/playeur_choice_box"
+                android:background="@color/colorPrimary"
+                >
+
+                <TextView
+                    android:id="@+id/coach_choice_text"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20dp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffff"
+                    android:textStyle="bold"
+                    android:text="@string/second_choice" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/coach_choice_text"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/white"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:id="@+id/scoot_choice_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/coach_choice_box"
+                android:background="@color/colorPrimary"
+                >
+
+                <TextView
+                    android:id="@+id/scoot_choice_text"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20dp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffff"
+                    android:textStyle="bold"
+                    android:text="@string/third_choice" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/scoot_choice_text"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/white"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:id="@+id/chairman_choice_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoot_choice_box"
+                android:background="@color/colorPrimary"
+                >
+
+                <TextView
+                    android:id="@+id/chairman_choice_text"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20dp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffff"
+                    android:textStyle="bold"
+                    android:text="@string/fourth_choice" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/chairman_choice_text"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/white"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:id="@+id/conseiller_choice_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chairman_choice_box"
+                android:background="@color/colorPrimary"
+                >
+
+                <TextView
+                    android:id="@+id/conseiller_choice_text"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20dp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffff"
+                    android:textStyle="bold"
+                    android:text="@string/fifth_choice" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/conseiller_choice_text"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/white"/>
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:id="@+id/simply_user_choice_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/conseiller_choice_box"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:id="@+id/simply_user_choice_text"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20dp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffff"
+                    android:textStyle="bold"
+                    android:text="@string/Seventh_choice" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/simply_user_choice_text"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/white"/>
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:id="@+id/Chairman_user_choice_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/simply_user_choice_box"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:id="@+id/Chairman_choice_text"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20dp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffff"
+                    android:textStyle="bold"
+                    android:text="@string/height_choice" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/Chairman_choice_text"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/white"/>
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:id="@+id/Visitor_box_choice_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Chairman_user_choice_box"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:id="@+id/Visitor_choice_text"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20dp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffff"
+                    android:textStyle="bold"
+                    android:text="@string/nine_choice" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/Visitor_choice_text"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/white"/>
+
+
+            </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/Prestataire_choice_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:id="@+id/Prestataire_choice_text"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20dp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffff"
+                    android:textStyle="bold"
+                    android:text="@string/first_choice" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/Prestataire_choice_text"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/white"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

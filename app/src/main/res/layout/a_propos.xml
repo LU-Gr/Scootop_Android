@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="71dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <ImageButton
+                android:id="@+id/player_details_star_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@android:drawable/btn_star" />
+
+            <Button
+                android:id="@+id/player_about_button"
+                android:layout_width="wrap_content"
+                android:layout_height="25sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="#00cc99"
+                android:text="a propos"
+                android:textColor="#ffffff"
+                android:textSize="9sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/player_about_button"
+                android:layout_toRightOf="@id/player_details_star_button">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/player_details_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LUHAKA Gregory"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/player_details_poste"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lateral Gauche"
+                        android:textColor="#440000ff" />
+
+                    <TextView
+                        android:id="@+id/player_details_team_club"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paris St Germain"
+                        android:textColor="#440000ff" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#cbbba0" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                android:id="@+id/next_game"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PLUS D'INFOS SUR LE JOUEUR"
+                android:layout_centerHorizontal="true"
+                android:textSize="12sp"
+                android:textColor="@android:color/background_dark" />
+
+
+            <TextView
+                android:id="@+id/next_game_adversaire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/next_game"
+                android:layout_alignStart="@+id/next_game"
+                android:layout_below="@+id/next_game"
+                android:layout_marginLeft="46dp"
+
+                android:text="REAL MADRID"
+                android:textColor="@android:color/background_dark"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+
+                android:id="@+id/etat_civil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/civil_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/civil_title"
+                    android:layout_marginStart="20dp"
+                    android:textSize="12dp"
+                    android:textColor="#cbbba0"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="10dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/born_charts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/born_strg"
+                    android:layout_marginStart="20dp"
+                    android:layout_below="@+id/civil_Title"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/born_bdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toRightOf="@+id/born_charts"
+                    android:text="@string/born_rslt"
+                    android:layout_marginStart="2dp"
+                    android:textSize="10sp"
+                    android:layout_below="@+id/civil_Title"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="5dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/born_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/born_place_strg"
+                    android:layout_marginStart="20dp"
+                    android:layout_below="@+id/born_bdd"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp">
+                </TextView>
+
+
+                <TextView
+                    android:id="@+id/nationality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/nationality"
+                    android:layout_marginStart="20dp"
+                    android:layout_below="@+id/born_place"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="10dp">
+                </TextView>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/video_main_playeur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/etat_civil"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:id="@+id/Introduce_video_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/introduce_video_text"
+                    android:layout_marginStart="20dp"
+                    android:textSize="13sp"
+                    android:textColor="#cbbba0"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="10dp">
+                </TextView>
+
+                <ImageButton
+                    android:id="@+id/video_introduce_star_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/Introduce_video_Title"
+                    android:layout_marginLeft="25dp"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@android:drawable/btn_star" />
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/quality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/video_main_playeur"
+                android:layout_toRightOf="@+id/etat_civil"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:id="@+id/quality_liste"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/quality_liste_text"
+                    android:layout_marginStart="20dp"
+                    android:textSize="13sp"
+                    android:textColor="#cbbba0"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="10dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/quality_skils"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_below="@+id/quality_liste"
+                    android:text="@string/quality_skils_text"
+                    android:layout_marginStart="20dp"
+                    android:textSize="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="10dp">
+                </TextView>>
+
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/athletique_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="@string/athletique_title"
+                android:layout_marginStart="20dp"
+                android:textSize="12dp"
+                android:textColor="#cbbba0"
+                android:layout_below="@+id/etat_civil"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp">
+            </TextView>
+
+            <RelativeLayout
+
+                android:id="@+id/morpho_taille"
+                android:layout_width="wrap_content"
+                android:layout_below="@id/athletique_title"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/taille_charts"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/taille_strg"
+                    android:layout_marginStart="20dp"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/taille_bdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toRightOf="@+id/taille_charts"
+                    android:text="@string/taille_rslt"
+                    android:layout_marginStart="2dp"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="5dp">
+                </TextView>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:id="@+id/morpho_poids"
+                android:layout_toRightOf="@id/morpho_taille"
+                android:layout_below="@id/athletique_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/poids_charts"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/poids_strg"
+                    android:layout_marginStart="20dp"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/poids_bdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toRightOf="@+id/poids_charts"
+                    android:text="@string/poids_rslt"
+                    android:layout_marginStart="2dp"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="5dp">
+                </TextView>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/perf_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="@string/perf_title"
+                android:layout_marginStart="20dp"
+                android:textSize="12dp"
+                android:textColor="#cbbba0"
+                android:layout_below="@+id/morpho_poids"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp">
+            </TextView>
+
+            <RelativeLayout
+
+                android:id="@+id/performance_100m"
+                android:layout_below="@id/perf_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/performance100m_charts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/p100m_strg"
+                    android:layout_marginStart="20dp"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/performance_bdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toRightOf="@+id/performance100m_charts"
+                    android:text="@string/p100m_rslt"
+                    android:layout_marginStart="2dp"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="5dp">
+                </TextView>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:id="@+id/performance_detente"
+                android:layout_toRightOf="@id/performance_100m"
+                android:layout_below="@id/perf_title"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/detente_charts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/detente_strg"
+                    android:layout_marginStart="20dp"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/detente_bdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toRightOf="@+id/detente_charts"
+                    android:text="@string/detente_rslt"
+                    android:layout_marginStart="2dp"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="5dp">
+                </TextView>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/invitation_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="@string/invitation_title_ctnt"
+                android:layout_marginStart="20dp"
+                android:textSize="12dp"
+                android:textColor="#cbbba0"
+                android:layout_below="@+id/performance_detente"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp">
+            </TextView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/invitation_title">
+
+                <TextView
+                    android:id="@+id/invitation_liste"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/invitation_team"
+                    android:layout_marginStart="20dp"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp">
+                </TextView>
+
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="10dp">
+
+
+            <Button
+                android:id="@+id/player_alerter"
+                android:layout_width="wrap_content"
+                android:layout_height="25sp"
+                android:background="#00ccff"
+                android:layout_marginLeft="110dp"
+                android:text="Alerter"
+                android:textColor="#ffffff"
+                android:textSize="9sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp">
+
+            <TextView
+                android:id="@+id/prochaines_rencontre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROCHAINE RENCONTRE"
+                android:layout_centerHorizontal="true"
+                android:textSize="12sp"
+                android:textColor="@android:color/background_dark" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp">
+
+            <ImageButton
+                android:id="@+id/player_Video_thumbII"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/player_Video_thumbsI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/player_Video_thumbII"
+                android:layout_toRightOf="@+id/player_Video_thumbII"
+                app:srcCompat="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/player_Video_thumbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/player_Video_thumbsI"
+                android:layout_toRightOf="@+id/player_Video_thumbsI"
+                app:srcCompat="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/player_Video_thumbsx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/player_Video_thumbs"
+                android:layout_toRightOf="@+id/player_Video_thumbs"
+                app:srcCompat="@android:drawable/btn_star" />
+
+            <ImageButton
+                android:id="@+id/player_Video_thumbsxx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/player_Video_thumbsx"
+                android:layout_toRightOf="@+id/player_Video_thumbsx"
+                app:srcCompat="@android:drawable/btn_star" />
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
