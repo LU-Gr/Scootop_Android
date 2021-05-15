@@ -11,13 +11,14 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="gray">#777777</color>
-    <color name="lightGray">#dedede</color>
+    <color name="lightGray">#AFAEAE</color>
     <color name="lighterGray">#efefef</color>
     <color name="transparent">#00000000</color>
 
     <color name="green">#00cc99</color>
 
     <color name="blue">#00ccff</color>
+    <color name="blue_button">#009EE2</color>
 
     <color name="yellow">#fed448</color>
 </resources>

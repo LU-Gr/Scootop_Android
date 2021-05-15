@@ -18,17 +18,23 @@
         android:roundIcon="@mipmap/scootop_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".app.player.details.FichePlayerIActivity">
-
+        <activity android:name=".app.events.EventPlannerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".app.comparator.ComparatorActivity"></activity> <!-- [START fcm_default_icon] -->
+        <activity android:name=".app.player.details.charts.PlayerInGameActivity">
+        </activity>
+        <activity android:name=".app.player.details.charts.Player_Charts_Activity"></activity>
+        <activity android:name=".app.events.EventsSuccessActivity" />
+        <activity android:name=".app.subscription.SuccessSubscriptionActivity" />
+        <activity android:name=".app.interactions.reportActivity" />
+        <activity android:name=".app.interactions.AlertActivity" />
+        <activity android:name=".app.interactions.FollowActivity" />
+        <activity android:name=".app.player.details.FichePlayerIActivity" />
+        <activity android:name=".app.comparator.ComparatorActivity" /> <!-- [START fcm_default_icon] -->
         <!--
              Set custom default icon. This is used when no icon is set for incoming notification messages.
              See README(https://goo.gl/l4GJaQ) for more.
@@ -55,13 +61,19 @@
             android:name=".app.login.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".app.search.SearchActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".app.player.details.PlayerDetailsActivity"
-            android:label="@string/player_details_title" />
+            android:label="@string/player_details_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".app.WhoActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -97,6 +109,9 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="93faec381dd08e7f2987b026e0505d0473774ede" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity
             android:name=".app.register.user.RegisterActivity"

@@ -259,7 +259,7 @@
     <string name="fouls_against_label">Fautes Contres</string>
     <string name="strengh_label">Forces</string>
     <string name="speed_label">Vitesses</string>
-    <string name="speed_with_ball_label">Vitesse ball au pieds</string>
+    <string name="speed_with_ball_label">Ball au pieds</string>
     <string name="skillsness_label">Dribbles</string>
     <string name="shoots_power_label">Puissance de Tir</string>
     <string name="precision_label">Précisions</string>
@@ -344,6 +344,20 @@
     <string name="Tel_Box_Register">Tel</string>
     <string name="tab_text_3">TAB 3</string>
     <string name="tab_text_4">TAB 4</string>
+    <string name="Report_Content_Text">"Le joueurs est désormais ajouter à shortlist.vous recevrez une notifications pour chaque nouvelles informations concernant ce joueur, nous vous préviendrons également pour chaque rencontre à venir. "</string>
+    <string name="Follow_Content_Text">"Le joueurs est désormais ajouter à shortlist.  vous recevrez une notifications pour chaque nouvelles informations concernant ce joueur,  nous vous préviendrons également pour chaque rencontre à venir. "</string>
+    <string name="Invited_Content_Text">"Le joueurs est désormais ajouter à shortlist.  vous recevrez une notifications pour chaque nouvelles informations concernant ce joueur,  nous vous préviendrons également pour chaque rencontre à venir. "</string>
+    <string name="Success_Subscription_Content_Text">FELICITATIONS !! Vous êtes désormais un membre premium, votre compte vous permet d\'optimiser l\'utilisation de votre applications.  Vous pouvez accédez a votre liste de fonctionnalité en cliquant  ici</string>
+    <string name="Events_Success_Content_Text">"Le joueurs est désormais ajouter à shortlist.  vous recevrez une notifications pour chaque nouvelles informations concernant ce joueur,  nous vous préviendrons également pour chaque rencontre à venir. "</string>
+    <string name="Event_Place_field">Lieu</string>
+    <string name="Participant_Number_field">Participants</string>
+    <string name="Prestations_field">Prestations</string>
+    <string name="Ville_field">Ville</string>
+    <string name="Departement_field">Departement</string>
+    <string name="Events_Home_Away_field">Aller/Retour</string>
+    <string name="Football_type_field">Foot a 11</string>
+    <string name="Substitute_Rules_field">Remplacants</string>
+    <string name="Events_Price_field">Price</string>
 
 
 </resources>

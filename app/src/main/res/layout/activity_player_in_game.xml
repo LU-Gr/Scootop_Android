@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.player.details.charts.PlayerInGameActivity">
+
+
+    <TextView
+        android:id="@+id/Comparator_Saison"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/Saison"
+        android:textAlignment="center"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/Comparator_PlayerII_Name"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="@+id/Comparator_PlayerII_Name"
+        app:layout_constraintTop_toBottomOf="@+id/Comparator_PlayerII_Surname" />
+
+    <TextView
+        android:id="@+id/Comparator_Competition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/Competition"
+        android:textAlignment="center"
+        android:textSize="7dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/Comparator_PlayerII_Name"
+        app:layout_constraintStart_toStartOf="@+id/Comparator_PlayerII_Name"
+        app:layout_constraintTop_toBottomOf="@+id/Comparator_Saison" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/PlayerCharts_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Comparator_Competition"
+        app:layout_constraintStart_toStartOf="@+id/Comparator_Competition"
+        app:layout_constraintTop_toBottomOf="@+id/Comparator_Competition"
+        app:layout_constraintVertical_bias="0.453" />
+
+    <ImageView
+        android:id="@+id/Charts_PlayerII"
+        android:layout_width="175dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/sissoko"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Comparator_PlayerII_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Comparator_PlayerII_Name_Label"
+        android:textAlignment="center"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/Comparator_PlayerII_Surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Comparator_PlayerII_Surname_Label"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/Comparator_PlayerII_Name" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/logo_tottenham"
+        app:layout_constraintEnd_toStartOf="@+id/Charts_PlayerII"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
