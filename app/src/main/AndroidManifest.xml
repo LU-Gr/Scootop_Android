@@ -18,22 +18,24 @@
         android:roundIcon="@mipmap/scootop_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".app.events.EventPlannerActivity">
+        <activity android:name=".app.comparator.RadarComparatorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".app.player.details.charts.PlayerInGameActivity">
-        </activity>
+        <activity android:name=".RadarActivity"></activity>
+        <activity android:name=".app.events.EventPlannerActivity" />
+        <activity android:name=".app.player.details.charts.PlayerInGameActivity" />
         <activity android:name=".app.player.details.charts.Player_Charts_Activity"></activity>
         <activity android:name=".app.events.EventsSuccessActivity" />
         <activity android:name=".app.subscription.SuccessSubscriptionActivity" />
         <activity android:name=".app.interactions.reportActivity" />
         <activity android:name=".app.interactions.AlertActivity" />
         <activity android:name=".app.interactions.FollowActivity" />
-        <activity android:name=".app.player.details.FichePlayerIActivity" />
+        <activity android:name=".app.player.details.FichePlayerIActivity">
+        </activity>
         <activity android:name=".app.comparator.ComparatorActivity" /> <!-- [START fcm_default_icon] -->
         <!--
              Set custom default icon. This is used when no icon is set for incoming notification messages.
@@ -67,13 +69,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".app.player.details.PlayerDetailsActivity"
-            android:label="@string/player_details_title">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/player_details_title" />
         <activity android:name=".app.WhoActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -120,13 +116,7 @@
         <activity
             android:name=".app.register.type.RegisterTypeActivity"
             android:label="@string/title_activity_register_type"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".app.post.create.CreatePostActivity"
             android:label="@string/title_activity_create_post"

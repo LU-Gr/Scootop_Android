@@ -1,28 +1,23 @@
-package fr.scootop.app.player.details.fragment;
+package fr.scootop.app.comparator;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
-import android.content.Context;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.Chart;
 import com.github.mikephil.charting.charts.RadarChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.MarkerView;
 import com.github.mikephil.charting.components.XAxis;
@@ -39,36 +34,43 @@ import java.util.ArrayList;
 
 import fr.scootop.R;
 import fr.scootop.RadarActivity;
+import fr.scootop.app.player.details.fragment.Caracteristique;
 import fr.scootop.app.radarcharts.custom.RadarMarkerView;
 
-public class Caracteristique extends Fragment {
+public class RadarComparatorActivity extends AppCompatActivity {
 
-
+    RecyclerView recyclerView;
+    int DataPlayerI[] = {70,40,80,45,79,84,36};
+    int DataPlayerII[] = {89,40,80,45,79,84,36};
+    String Labels[];
     private RadarChart chart;
     private static final int PERMISSION_STORAGE = 0;
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-        View view = inflater.inflate(R.layout.row_fiche_player_carateristique, container,false);
+        setContentView(R.layout.activity_radar_comparator);
 
-        chart = view.findViewById(R.id.chart1);
-        chart.setBackgroundColor(Color.rgb(60, 65, 82));
+        recyclerView = findViewById(R.id.PlayerCharts_label);
+        Labels = getResources().getStringArray(R.array.radar_comparator_label);
+
+        RecyclerView.Adapter ComparatorAdatper = new ComparatorAdapter(this,Labels,DataPlayerI,DataPlayerII);
+        recyclerView.setAdapter(ComparatorAdatper);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        chart = findViewById(R.id.chartII);
+        chart.setBackgroundColor(Color.rgb(255, 255, 255));
 
         chart.getDescription().setEnabled(false);
 
         chart.setWebLineWidth(1f);
-        chart.setWebColor(Color.LTGRAY);
+        chart.setWebColor(Color.BLACK);
         chart.setWebLineWidthInner(1f);
-        chart.setWebColorInner(R.color.colorPrimary);
+        chart.setWebColorInner(R.color.gray);
         chart.setWebAlpha(100);
 
-        // create a custom MarkerView (extend MarkerView) and specify the layout
-        // to use for it
-        MarkerView mv = new RadarMarkerView(getActivity().getApplicationContext(), R.layout.radar_markerview);
+        MarkerView mv = new RadarMarkerView(this.getApplicationContext(), R.layout.radar_markerview);
         mv.setChartView(chart); // For bounds control
         chart.setMarker(mv); // Set the marker to the chart
 
@@ -91,7 +93,7 @@ public class Caracteristique extends Fragment {
             }
         });
 
-        xAxis.setTextColor(Color.WHITE);
+        xAxis.setTextColor(R.color.colorPrimary);
 
         YAxis yAxis = chart.getYAxis();
         yAxis.setLabelCount(5, false);
@@ -108,21 +110,22 @@ public class Caracteristique extends Fragment {
         l.setXEntrySpace(7f);
         l.setYEntrySpace(5f);
 
-        return view;
     }
 
     @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull  MenuInflater inflater) {
+    public boolean onCreateOptionsMenu(Menu menu) {
 
-        inflater.inflate(R.menu.radar2,menu);
-        super.onCreateOptionsMenu(menu, inflater);
+        getMenuInflater().inflate(R.menu.radar2,menu);
+
+        return super.onCreateOptionsMenu(menu);
     }
+
 
 
     public static Caracteristique getInstance(){
 
-    Caracteristique caracteristiqueFragment = new Caracteristique();
-    return caracteristiqueFragment;
+        Caracteristique caracteristiqueFragment = new Caracteristique();
+        return caracteristiqueFragment;
     }
 
     @Override
@@ -172,8 +175,6 @@ public class Caracteristique extends Fragment {
     }
 
 
-
-
     private void setData() {
 
         float mul = 80;
@@ -183,8 +184,6 @@ public class Caracteristique extends Fragment {
         ArrayList<RadarEntry> entries1 = new ArrayList<>();
         ArrayList<RadarEntry> entries2 = new ArrayList<>();
 
-        // NOTE: The order of the entries when being added to the entries array determines their position around the center of
-        // the chart.
         for (int i = 0; i < cnt; i++) {
             float val1 = (float) (Math.random() * mul) + min;
             entries1.add(new RadarEntry(val1));
@@ -194,8 +193,8 @@ public class Caracteristique extends Fragment {
         }
 
         RadarDataSet set1 = new RadarDataSet(entries1, "Moussa SISSOKO");
-        set1.setColor(Color.rgb(103, 110, 129));
-        set1.setFillColor(Color.rgb(103, 110, 129));
+        set1.setColor(Color.rgb(203, 187, 160));
+        set1.setFillColor(Color.rgb(201, 185, 157));
         set1.setDrawFilled(true);
         set1.setFillAlpha(180);
         set1.setLineWidth(2f);
@@ -203,8 +202,8 @@ public class Caracteristique extends Fragment {
         set1.setDrawHighlightIndicators(false);
 
         RadarDataSet set2 = new RadarDataSet(entries2, "Renato SANCHEZ");
-        set2.setColor(Color.rgb(121, 162, 175));
-        set2.setFillColor(Color.rgb(121, 162, 175));
+        set2.setColor(Color.rgb(191, 121, 195));
+        set2.setFillColor(Color.rgb(180, 115, 190));
         set2.setDrawFilled(true);
         set2.setFillAlpha(180);
         set2.setLineWidth(2f);
@@ -218,7 +217,7 @@ public class Caracteristique extends Fragment {
         RadarData data = new RadarData(sets);
         data.setValueTextSize(8f);
         data.setDrawValues(false);
-        data.setValueTextColor(Color.WHITE);
+        data.setValueTextColor(R.color.colorPrimary);
 
         chart.setData(data);
         chart.invalidate();
@@ -227,34 +226,32 @@ public class Caracteristique extends Fragment {
 
 
     protected void requestStoragePermission(View view) {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(RadarComparatorActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             Snackbar.make(view, "Write permission is required to save image to gallery", Snackbar.LENGTH_INDEFINITE)
                     .setAction(android.R.string.ok, new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_STORAGE);
+                            ActivityCompat.requestPermissions(RadarComparatorActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_STORAGE);
                         }
                     }).show();
         } else {
-            Toast.makeText(getActivity().getApplicationContext(), "Permission Required!", Toast.LENGTH_SHORT)
+            Toast.makeText(this.getApplicationContext(), "Permission Required!", Toast.LENGTH_SHORT)
                     .show();
-            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_STORAGE);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_STORAGE);
         }
     }
 
     protected void saveToGallery(Chart chart, String name) {
         if (chart.saveToGallery(name + "_" + System.currentTimeMillis(), 70))
-            Toast.makeText(getActivity().getApplicationContext(), "Saving SUCCESSFUL!",
+            Toast.makeText(this.getApplicationContext(), "Saving SUCCESSFUL!",
                     Toast.LENGTH_SHORT).show();
         else
-            Toast.makeText(getActivity().getApplicationContext(), "Saving FAILED!", Toast.LENGTH_SHORT)
+            Toast.makeText(this.getApplicationContext(), "Saving FAILED!", Toast.LENGTH_SHORT)
                     .show();
     }
 
     protected void saveToGallery() {
         saveToGallery(chart, "RadarChartActivity");
     }
-
-
-
+    
 }

@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:textSize="18dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/aldrich"
         android:text="EVENTS PLANNER"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,7 +52,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:focusable="false"
-                    android:hint="@string/Form_Name_field" />
+                    android:hint="@string/Form_Name_field"
+                    android:textSize="12dp" />
 
             </LinearLayout>
 
@@ -65,10 +66,9 @@
         android:id="@+id/Events_Informations_Box"
         android:layout_width="265dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_weight="1"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
@@ -230,8 +230,6 @@
             tools:layout_editor_absoluteY="220dp" />
 
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -242,11 +240,11 @@
             <Spinner
                 android:id="@+id/Prestataire_Liste_Box_Label"
                 style="@style/RegisterInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@drawable/boarder"
                 android:focusable="false"
-                android:hint="@string/Football_type_field"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:hint="@string/Football_type_field" />
 
         </LinearLayout>
 
@@ -305,11 +303,11 @@
                 <Spinner
                     android:id="@+id/Football_type_Box_Label"
                     style="@style/RegisterInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/boarder"
                     android:focusable="false"
-                    android:hint="@string/Football_type_field"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:hint="@string/Football_type_field" />
 
             </LinearLayout>
 
@@ -352,8 +350,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:focusable="false"
-                    android:inputType="numberDecimal"
-                    android:hint="@string/Events_Price_field" />
+                    android:hint="@string/Events_Price_field"
+                    android:inputType="numberDecimal" />
             </LinearLayout>
 
 
@@ -361,6 +359,22 @@
 
 
     </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/Shortlist_Button"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:background="#009EE2"
+        android:text="Creer l'evenement"
+        android:textColor="@color/white"
+        android:textSize="9dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/Events_Prestataire_Box"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="@+id/Events_Prestataire_Box"
+        app:layout_constraintTop_toBottomOf="@+id/Events_Prestataire_Box" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

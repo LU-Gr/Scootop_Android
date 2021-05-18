@@ -309,6 +309,20 @@
 
     </string-array>
 
+
+    <string-array name="radar_comparator_label">
+        <!-- Collectifs Charts !-->
+        <!-- To Do get this data From Api !-->
+
+        <item>@string/Average_label</item>
+        <item>@string/match_joué_label</item>
+        <item>@string/match_gagné_label</item>
+        <item>@string/Frappes_label</item>
+        <item>@string/Frappe_cadre_label</item>
+        <item>@string/Passe_label</item>
+        <item>@string/Passe_success_label</item>
+    </string-array>
+
     <string-array name="Individuals_label">
         <!-- Indiviual Playeur Charts !-->
         <!-- To Do get this data From Api !-->
@@ -358,6 +372,22 @@
     <string name="Football_type_field">Foot a 11</string>
     <string name="Substitute_Rules_field">Remplacants</string>
     <string name="Events_Price_field">Price</string>
+    <string name="actionToggleValues">ToggleValues</string>
+    <string name="actionToggleIcons">ToggleIcons</string>
+    <string name="actionToggleFilled">ToggleFiled</string>
+    <string name="actionToggleHighlight">ToggleHighlight</string>
+    <string name="actionToggleHighlightCircle">ToggleHighlightCircle</string>
+    <string name="actionToggleRotation">ToggleRotation</string>
+    <string name="actionToggleYValues">ActionToggleValues</string>
+    <string name="actionToggleXValues">ActionToggleXValues</string>
+    <string name="actionToggleSpin">actionToggleSpin</string>
+    <string name="animateX">AnimateX</string>
+    <string name="animateY">AnimateY</string>
+    <string name="animateXY">AnimateXY</string>
+    <string name="actionSave">ActionSave</string>
+    <string name="action_compare_with">Comparer</string>
+    <string name="Poste">Millieu central</string>
+    <string name="Age">32 ans</string>
 
 
 </resources>

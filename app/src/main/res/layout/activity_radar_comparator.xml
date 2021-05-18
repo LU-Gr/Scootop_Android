@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.comparator.RadarComparatorActivity">
+
+    <ImageView
+        android:id="@+id/Charts_PlayerII"
+        android:layout_width="115dp"
+        android:layout_height="314dp"
+        android:background="@drawable/sissokobuste"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/PlayerCharts_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/chartII"
+        app:layout_constraintEnd_toStartOf="@+id/Charts_PlayerII"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toEndOf="@+id/Charts_PlayerI"
+        app:layout_constraintTop_toTopOf="@+id/Charts_PlayerII"
+        app:layout_constraintVertical_bias="0.981" />
+
+    <ImageView
+        android:id="@+id/Charts_PlayerI"
+        android:layout_width="115dp"
+        android:layout_height="312dp"
+        android:background="@drawable/sissokobuste"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Charts_PlayerII" />
+
+    <com.github.mikephil.charting.charts.RadarChart
+        android:id="@+id/chartII"
+        android:layout_width="411dp"
+        android:layout_height="368dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Charts_PlayerII"
+        app:layout_constraintVertical_bias="0.0">
+
+    </com.github.mikephil.charting.charts.RadarChart>
+
+    <TextView
+        android:id="@+id/Player_I_Name"
+        android:layout_width="65dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="4dp"
+        android:text="SISSOKO"
+        app:layout_constraintEnd_toStartOf="@+id/Charts_PlayerII"
+        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintStart_toEndOf="@+id/Charts_PlayerI"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Player_I_Surname"
+        android:layout_width="42dp"
+        android:layout_height="11dp"
+        android:text="Moussa"
+        android:textColor="@color/gray"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/Charts_PlayerII"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Player_I_Name"
+        app:layout_constraintTop_toBottomOf="@+id/Player_I_Name" />
+
+    <TextView
+        android:id="@+id/Vs_Label"
+        android:layout_width="27dp"
+        android:layout_height="21dp"
+        android:text="VS"
+        android:textColor="@color/blue"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/Charts_PlayerII"
+        app:layout_constraintStart_toEndOf="@+id/Charts_PlayerI"
+        app:layout_constraintTop_toBottomOf="@+id/Player_I_Surname" />
+
+    <TextView
+        android:id="@+id/Player_II_Name"
+        android:layout_width="72dp"
+        android:layout_height="15dp"
+        android:text="SANCHEZ"
+        app:layout_constraintEnd_toStartOf="@+id/Charts_PlayerII"
+        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintStart_toEndOf="@+id/Charts_PlayerI"
+        app:layout_constraintTop_toBottomOf="@+id/Vs_Label" />
+
+    <TextView
+        android:id="@+id/Player_II_Surname"
+        android:layout_width="41dp"
+        android:layout_height="12dp"
+        android:text="Renato"
+        android:textColor="@color/gray"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/Charts_PlayerII"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Player_II_Name"
+        app:layout_constraintTop_toBottomOf="@+id/Player_II_Name" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

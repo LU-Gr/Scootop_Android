@@ -59,6 +59,7 @@
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:theme">@style/EditTextLightThemeInscription</item>
         <item name="android:fontFamily">@font/aldrich</item>
+        <item name="android:textSize">12dp</item>
     </style>
 
     <style name="TabTheme">

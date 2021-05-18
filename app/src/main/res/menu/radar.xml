@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="Zig Values" android:id="@+id/refreshValues" />
+    <item android:title="Zag Values" android:id="@+id/toggleValues" />
+
+</menu>

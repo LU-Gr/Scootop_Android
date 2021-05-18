@@ -1,23 +1,21 @@
-package fr.scootop.app.player.details.fragment;
-
-import android.Manifest;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
+package fr.scootop;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
+
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.Chart;
@@ -30,6 +28,7 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.RadarData;
 import com.github.mikephil.charting.data.RadarDataSet;
 import com.github.mikephil.charting.data.RadarEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IDataSet;
 import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet;
@@ -37,25 +36,23 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
-import fr.scootop.R;
-import fr.scootop.RadarActivity;
 import fr.scootop.app.radarcharts.custom.RadarMarkerView;
 
-public class Caracteristique extends Fragment {
-
+public class RadarActivity extends AppCompatActivity {
 
     private RadarChart chart;
     private static final int PERMISSION_STORAGE = 0;
+    public Button comparate;
 
-    @Nullable
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-        View view = inflater.inflate(R.layout.row_fiche_player_carateristique, container,false);
+        setContentView(R.layout.activity_radari);
 
-        chart = view.findViewById(R.id.chart1);
+        setTitle("RadarChartActivity");
+
+        chart = findViewById(R.id.chart1);
         chart.setBackgroundColor(Color.rgb(60, 65, 82));
 
         chart.getDescription().setEnabled(false);
@@ -63,12 +60,12 @@ public class Caracteristique extends Fragment {
         chart.setWebLineWidth(1f);
         chart.setWebColor(Color.LTGRAY);
         chart.setWebLineWidthInner(1f);
-        chart.setWebColorInner(R.color.colorPrimary);
+        chart.setWebColorInner(Color.LTGRAY);
         chart.setWebAlpha(100);
 
         // create a custom MarkerView (extend MarkerView) and specify the layout
         // to use for it
-        MarkerView mv = new RadarMarkerView(getActivity().getApplicationContext(), R.layout.radar_markerview);
+        MarkerView mv = new RadarMarkerView(this, R.layout.radar_markerview);
         mv.setChartView(chart); // For bounds control
         chart.setMarker(mv); // Set the marker to the chart
 
@@ -82,7 +79,7 @@ public class Caracteristique extends Fragment {
         xAxis.setXOffset(0f);
         xAxis.setValueFormatter(new IndexAxisValueFormatter() {
 
-            private final String[] mActivities = new String[]{"Technique", "Athletique", "Physique", "Mental", "Speed"};
+            private final String[] mActivities = new String[]{"Burger", "Steak", "Salad", "Pasta", "Pizza"};
 
 
             @Override
@@ -108,22 +105,16 @@ public class Caracteristique extends Fragment {
         l.setXEntrySpace(7f);
         l.setYEntrySpace(5f);
 
-        return view;
     }
 
     @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull  MenuInflater inflater) {
+    public boolean onCreateOptionsMenu(Menu menu) {
 
-        inflater.inflate(R.menu.radar2,menu);
-        super.onCreateOptionsMenu(menu, inflater);
+        getMenuInflater().inflate(R.menu.radar2,menu);
+
+        return super.onCreateOptionsMenu(menu);
     }
 
-
-    public static Caracteristique getInstance(){
-
-    Caracteristique caracteristiqueFragment = new Caracteristique();
-    return caracteristiqueFragment;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -167,11 +158,17 @@ public class Caracteristique extends Fragment {
                 break;
             }
 
+            case R.id.actionSave: {
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                    saveToGallery();
+                } else {
+                    requestStoragePermission(chart);
+                }
+                break;
+            }
         }
         return true;
     }
-
-
 
 
     private void setData() {
@@ -223,38 +220,37 @@ public class Caracteristique extends Fragment {
         chart.setData(data);
         chart.invalidate();
 
-    }
+        }
 
 
     protected void requestStoragePermission(View view) {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             Snackbar.make(view, "Write permission is required to save image to gallery", Snackbar.LENGTH_INDEFINITE)
                     .setAction(android.R.string.ok, new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_STORAGE);
+                            ActivityCompat.requestPermissions(RadarActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_STORAGE);
                         }
                     }).show();
         } else {
-            Toast.makeText(getActivity().getApplicationContext(), "Permission Required!", Toast.LENGTH_SHORT)
+            Toast.makeText(getApplicationContext(), "Permission Required!", Toast.LENGTH_SHORT)
                     .show();
-            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_STORAGE);
+            ActivityCompat.requestPermissions(RadarActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_STORAGE);
         }
     }
 
     protected void saveToGallery(Chart chart, String name) {
         if (chart.saveToGallery(name + "_" + System.currentTimeMillis(), 70))
-            Toast.makeText(getActivity().getApplicationContext(), "Saving SUCCESSFUL!",
+            Toast.makeText(getApplicationContext(), "Saving SUCCESSFUL!",
                     Toast.LENGTH_SHORT).show();
         else
-            Toast.makeText(getActivity().getApplicationContext(), "Saving FAILED!", Toast.LENGTH_SHORT)
+            Toast.makeText(getApplicationContext(), "Saving FAILED!", Toast.LENGTH_SHORT)
                     .show();
     }
 
     protected void saveToGallery() {
         saveToGallery(chart, "RadarChartActivity");
     }
-
 
 
 }
