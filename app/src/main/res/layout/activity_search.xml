@@ -7,7 +7,8 @@
     tools:context=".app.search.SearchActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
+        android:id="@+id/toolbar2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -21,7 +22,7 @@
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <RelativeLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
                 <ImageButton
@@ -47,6 +48,8 @@
     </androidx.appcompat.widget.Toolbar>
 
     <!-- si pas résultat -->
+
+    <!-- liste de resultat -->
     <RelativeLayout
         android:id="@+id/searchPlaceholderLayout"
         android:layout_width="match_parent"
@@ -64,7 +67,6 @@
 
     </RelativeLayout>
 
-    <!-- liste de resultat -->
     <ListView
         android:id="@+id/searchListView"
         android:layout_width="match_parent"

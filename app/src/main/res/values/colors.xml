@@ -16,6 +16,7 @@
     <color name="transparent">#00000000</color>
 
     <color name="green">#00cc99</color>
+    <color name="orange">#FF9800</color>
 
     <color name="blue">#00ccff</color>
     <color name="blue_button">#009EE2</color>

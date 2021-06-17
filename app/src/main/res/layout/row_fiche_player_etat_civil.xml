@@ -6,18 +6,154 @@
     android:layout_height="match_parent">
 
 
+    <ImageView
+        android:id="@+id/First_Flag"
+        android:layout_width="22dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/Contry_EC"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="@+id/Contry_EC"
+        app:layout_constraintTop_toTopOf="@+id/Contry_EC"
+        app:srcCompat="@drawable/france_flag" />
+
+    <ImageView
+        android:id="@+id/Second_Flag"
+        android:layout_width="22dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="7dp"
+        app:layout_constraintStart_toEndOf="@+id/First_Flag"
+        app:layout_constraintTop_toTopOf="@+id/First_Flag"
+        app:srcCompat="@drawable/flagmali" />
+
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/Name_EC"
+        android:layout_width="125dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:minHeight="?actionBarSize"
+        android:padding="1dp"
+        android:text="SISSOKO"
+        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+    <TextView
+        android:id="@+id/First_Name_EC"
+        android:layout_width="73dp"
+        android:layout_height="16dp"
+        android:minHeight="?actionBarSize"
+        android:text="Moussa"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.329"
+        app:layout_constraintStart_toStartOf="@+id/Name_EC"
+        app:layout_constraintTop_toBottomOf="@+id/Name_EC" />
+
+    <TextView
+        android:id="@+id/Player_caracteristique_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:text="@string/Age"
+        android:textAlignment="center"
+        android:textSize="9dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/First_Name_EC"
+        app:layout_constraintStart_toStartOf="@+id/First_Name_EC"
+        app:layout_constraintTop_toBottomOf="@+id/First_Name_EC" />
+
+    <TextView
+        android:id="@+id/Contry_EC"
+        android:layout_width="65dp"
+        android:layout_height="44dp"
         android:gravity="center"
         android:minHeight="?actionBarSize"
         android:padding="@dimen/appbar_padding"
-        android:text="Etat Civil"
+        android:text="/"
         android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/Born_Place_EC"
+        app:layout_constraintStart_toStartOf="@+id/Born_Place_EC"
+        app:layout_constraintTop_toBottomOf="@+id/Born_Place_EC" />
+
+    <TextView
+        android:id="@+id/Born_Place_EC"
+        android:layout_width="114dp"
+        android:layout_height="45dp"
+        android:gravity="top"
+        android:minHeight="?actionBarSize"
+        android:padding="@dimen/appbar_padding"
+        android:text="Le Blanc Mesnil"
+        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/Born_EC"
+        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintStart_toStartOf="@+id/Born_EC"
+        app:layout_constraintTop_toBottomOf="@+id/Born_EC" />
+
+    <TextView
+        android:id="@+id/Born_EC"
+        android:layout_width="101dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:gravity="top"
+        android:minHeight="?actionBarSize"
+        android:padding="@dimen/appbar_padding"
+        android:text="26/08/1989"
+        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/Name_EC"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toStartOf="@+id/Name_EC"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="206dp"
+        android:layout_height="541dp"
+        android:layout_marginTop="72dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/moussa_sissoko_full" />
+
+    <TextView
+        android:id="@+id/Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:text="Presentation"
+        app:layout_constraintStart_toStartOf="@+id/Name_EC"
+        app:layout_constraintTop_toBottomOf="@+id/Contry_EC" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="155dp"
+        android:layout_height="189dp"
+        android:layout_marginTop="20dp"
+        android:textSize="10dp"
+
+        android:justificationMode="inter_word"
+        android:text="@string/Player_Presentation"
+        app:layout_constraintStart_toStartOf="@+id/Description"
+        app:layout_constraintTop_toBottomOf="@+id/Description" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="62dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/Name_EC"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="@+id/Name_EC"
+        app:layout_constraintTop_toBottomOf="@+id/Player_caracteristique_age"
+        app:srcCompat="@drawable/logo_tottenham" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

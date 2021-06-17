@@ -18,14 +18,9 @@
         android:roundIcon="@mipmap/scootop_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".app.comparator.RadarComparatorActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".RadarActivity"></activity>
+        <activity android:name=".app.interactions.InviteActivity"></activity>
+        <activity android:name=".app.comparator.RadarComparatorActivity"></activity>
+        <activity android:name=".RadarActivity" />
         <activity android:name=".app.events.EventPlannerActivity" />
         <activity android:name=".app.player.details.charts.PlayerInGameActivity" />
         <activity android:name=".app.player.details.charts.Player_Charts_Activity"></activity>
@@ -35,6 +30,13 @@
         <activity android:name=".app.interactions.AlertActivity" />
         <activity android:name=".app.interactions.FollowActivity" />
         <activity android:name=".app.player.details.FichePlayerIActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
         <activity android:name=".app.comparator.ComparatorActivity" /> <!-- [START fcm_default_icon] -->
         <!--
@@ -63,13 +65,15 @@
             android:name=".app.login.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".app.search.SearchActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".app.player.details.PlayerDetailsActivity"
-            android:label="@string/player_details_title" />
+            android:label="@string/player_details_title"></activity>
         <activity android:name=".app.WhoActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

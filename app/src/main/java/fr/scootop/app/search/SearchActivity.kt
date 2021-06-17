@@ -35,6 +35,7 @@ class SearchActivity : AppCompatActivity(), SearchView, AdapterView.OnItemClickL
         searchListView.onItemClickListener = this
 
         searchSearchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+
             override fun onQueryTextSubmit(query: String): Boolean {
                 mInteractor.search(query)
                 return true

@@ -1,22 +1,412 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/avatarImageView"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sissoko_view"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/First_Name_EC"
+        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintStart_toStartOf="@+id/First_Name_EC"
+        app:layout_constraintTop_toBottomOf="@+id/First_Name_EC"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="296dp"
+        android:id="@+id/Name_EC"
+        android:layout_width="125dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="80dp"
         android:gravity="center"
         android:minHeight="?actionBarSize"
-        android:padding="@dimen/appbar_padding"
-        android:text="Main Board"
+        android:padding="1dp"
+        android:text="SISSOKO"
         android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/Football_field"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="54dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/Football_field"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatarImageView"
+        app:layout_constraintVertical_bias="0.417"
+        app:srcCompat="@drawable/logo_tottenham" />
+
+    <ImageView
+        android:id="@+id/Nation_img"
+        android:layout_width="49dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/Name_EC"
+        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/fff_starz" />
+
+    <TextView
+        android:id="@+id/First_Name_EC"
+        android:layout_width="73dp"
+        android:layout_height="16dp"
+        android:minHeight="?actionBarSize"
+        android:text="Moussa"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/Name_EC"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/Name_EC"
+        app:layout_constraintTop_toBottomOf="@+id/Name_EC"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/Football_field"
+        android:layout_width="136dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/soccer_field" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="149dp"
+        android:layout_height="154dp"
+
+        android:justificationMode="inter_word"
+        android:text="@string/Player_Presentation"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Football_field"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Suivi par"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/Football_field"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/Football_field" />
+
+    <TextView
+        android:id="@+id/Position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Position"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Football_field"
+        app:layout_constraintEnd_toEndOf="@+id/Football_field"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Football_field" />
+
+    <TextView
+        android:id="@+id/Description_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.692" />
+
+    <TextView
+        android:id="@+id/Next_game_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Game"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/Interaction_Box_title"
+        app:layout_constraintEnd_toEndOf="@+id/FollowedByRecyclerView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/Interaction_Box_title"
+        app:layout_constraintTop_toTopOf="@+id/Interaction_Box_title"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/FollowedByRecyclerView"
+        android:layout_width="160dp"
+        android:layout_height="118dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Description"
+        app:layout_constraintTop_toBottomOf="@+id/Description"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/Interaction_Box_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interactions"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompat"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/Interaction_Button"
+        app:layout_constraintStart_toStartOf="@+id/Interaction_Box_title"
+        app:layout_constraintTop_toBottomOf="@+id/FollowedByRecyclerView"
+        app:layout_constraintVertical_bias="0.614">
+
+        <LinearLayout
+            android:id="@+id/InteractionBox_Alerte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/main_count_alerte_Value"
+                android:layout_width="85dp"
+                android:layout_height="61dp"
+                android:layout_gravity="center"
+                android:text="50"
+                android:textAlignment="center"
+                android:textColor="@color/blue"
+                android:textSize="50dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/main_count_alerte_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alerte"
+                android:textColor="@color/gray"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/InteractionBox_Suivre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/main_count_follow_Value"
+                android:layout_width="wrap_content"
+                android:layout_height="61dp"
+                android:layout_gravity="center"
+                android:text="15"
+                android:textColor="@color/colorPrimary"
+                android:textSize="50dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/main_count_follow_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suivre"
+                android:textColor="@color/gray"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/InteractionBox_invite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/main_count_invite_Value"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:text="10"
+                android:textColor="@color/green"
+                android:textSize="50dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/main_count_invite_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Inviter"
+                android:textColor="@color/gray"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:id="@+id/Interaction_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.844">
+
+        <Button
+            android:id="@+id/alertButton"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@color/blue"
+            android:text="@string/action_alert"
+            android:textColor="@color/white"
+            android:textSize="9sp" />
+
+        <Button
+            android:id="@+id/followButton"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/sel_btn_follow"
+            android:text="@string/action_follow"
+            android:textColor="@color/white"
+            android:textSize="9sp" />
+
+        <Button
+            android:id="@+id/inviteButtonI"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@color/green"
+            android:text="@string/action_invite"
+            android:textColor="@color/white"
+            android:textSize="9sp" />
+
+    </LinearLayout>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="81dp"
+        android:layout_height="21dp"
+        android:rating="3.4"
+        app:layout_constraintBottom_toTopOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/Nation_img"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/avatarImageView" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/poste"
+        android:layout_width="23dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/sissoko_view"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/green"
+        style="@style/Player_position_Defensive_Midfield_theme"
+        app:layout_constraintBottom_toBottomOf="@+id/Football_field"
+        app:layout_constraintEnd_toEndOf="@+id/Football_field"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="@+id/Football_field"
+        app:layout_constraintTop_toTopOf="@+id/Football_field"
+        app:layout_constraintVertical_bias="0.624" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/poste_secondaire"
+        android:layout_width="23dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/sissoko_view"
+        style="@style/Player_position_right_wings_theme"
+        app:civ_border_color="@color/orange"
+        app:civ_border_width="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Football_field"
+        app:layout_constraintEnd_toEndOf="@+id/Football_field"
+        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintStart_toStartOf="@+id/Football_field"
+        app:layout_constraintTop_toTopOf="@+id/Football_field"
+        app:layout_constraintVertical_bias="0.417" />
+
+    <ImageView
+        android:id="@+id/calendar_box"
+        android:layout_width="79dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayoutCompat"
+        app:layout_constraintEnd_toEndOf="@+id/Next_game_title"
+        app:layout_constraintStart_toStartOf="@+id/Next_game_title"
+        app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat"
+        app:srcCompat="@drawable/calendar" />
+
+    <TextView
+        android:id="@+id/Day_month"
+        android:layout_width="65dp"
+        android:layout_height="36dp"
+        android:text="22"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/calendar_box"
+        app:layout_constraintEnd_toEndOf="@+id/calendar_box"
+        app:layout_constraintStart_toStartOf="@+id/calendar_box"
+        app:layout_constraintTop_toTopOf="@+id/calendar_box"
+        app:layout_constraintVertical_bias="0.87" />
+
+    <TextView
+        android:id="@+id/Month_next_game"
+        android:layout_width="65dp"
+        android:layout_height="10dp"
+        android:text="Fevrier"
+        android:textAlignment="center"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/calendar_box"
+        app:layout_constraintEnd_toEndOf="@+id/calendar_box"
+        app:layout_constraintStart_toStartOf="@+id/calendar_box"
+        app:layout_constraintTop_toTopOf="@+id/calendar_box"
+        app:layout_constraintVertical_bias="0.299" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

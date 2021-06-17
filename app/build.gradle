@@ -20,7 +20,8 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
-        buildConfigField("String", "SC_BASE_API", "\"http://www2.scootop.fr\"")
+        //buildConfigField("String", "SC_BASE_API", "\"http://www.scootop.fr\"")
+        buildConfigField("String", "SC_BASE_API", "\"http://127.0.0.1\"")
         buildConfigField("String", "YT_BASE_API", "\"https://www.googleapis.com\"")
         buildConfigField("String", "YT_DEV_KEY", "\"AIzaSyA0u3ulUbte4DO0Ax_1cJ-gjFaiJWMSI9w\"")
         buildConfigField("String", "YT_SEARCH_API_KEY", "\"AIzaSyDRC_jZmeiTDcEKZ8HkEHRcROYpFav3PLY\"")
@@ -38,8 +39,6 @@ android {
         viewBinding true
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -58,7 +57,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.3.0'
     implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
     implementation 'com.google.android.material:material:1.4.0-alpha02'
-    implementation "com.google.android.material:material:1.4.0-alpha02"
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
     //implementation 'com.google.firebase:firebase-crashlytics-ktx'
     //implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
@@ -74,6 +73,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'androidx.viewpager:viewpager:1.0.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'androidx.fragment:fragment:1.3.3'
     //testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

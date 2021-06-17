@@ -2,6 +2,7 @@ package fr.scootop.app.player.details.fragment;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -39,6 +41,7 @@ import java.util.ArrayList;
 
 import fr.scootop.R;
 import fr.scootop.RadarActivity;
+import fr.scootop.app.comparator.ComparatorActivity;
 import fr.scootop.app.radarcharts.custom.RadarMarkerView;
 
 public class Caracteristique extends Fragment {
@@ -46,6 +49,7 @@ public class Caracteristique extends Fragment {
 
     private RadarChart chart;
     private static final int PERMISSION_STORAGE = 0;
+    public Button CompareBtn;
 
     @Nullable
     @Override
@@ -107,6 +111,15 @@ public class Caracteristique extends Fragment {
         l.setDrawInside(false);
         l.setXEntrySpace(7f);
         l.setYEntrySpace(5f);
+        CompareBtn = view.findViewById(R.id.CompareButton);
+
+        CompareBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ComparateIntent = new Intent(getActivity().getApplicationContext(), ComparatorActivity.class);
+                startActivity(ComparateIntent);
+            }
+        });
 
         return view;
     }

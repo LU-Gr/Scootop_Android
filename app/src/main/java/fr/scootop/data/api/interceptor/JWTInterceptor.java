@@ -9,9 +9,6 @@ import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 
-/**
- * Created by ludovicriviere on 13/02/2018.
- */
 public class JWTInterceptor implements Interceptor
 {
     private final Context mContext;

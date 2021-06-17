@@ -70,4 +70,26 @@
 
     </style>
 
+    <style name="Player_position_Defensive_Midfield_theme">
+
+        <item name="layout_constraintBottom_toBottomOf">@+id/Football_field</item>
+        <item name="layout_constraintEnd_toEndOf">@+id/Football_field</item>
+        <item name="layout_constraintStart_toStartOf">@+id/Football_field</item>
+        <item name="layout_constraintTop_toTopOf">@+id/Football_field</item>
+        <item name="layout_constraintHorizontal_bias">0.522</item>
+        <item name="layout_constraintVertical_bias">0.522</item>
+
+    </style>
+
+    <style name="Player_position_right_wings_theme">
+
+        <item name="layout_constraintBottom_toBottomOf">@+id/Football_field</item>
+        <item name="layout_constraintEnd_toEndOf">@+id/Football_field</item>
+        <item name="layout_constraintStart_toStartOf">@+id/Football_field</item>
+        <item name="layout_constraintTop_toTopOf">@+id/Football_field</item>
+        <item name="layout_constraintHorizontal_bias">0.84</item>
+        <item name="layout_constraintVertical_bias">0.417</item>
+
+    </style>
+
 </resources>

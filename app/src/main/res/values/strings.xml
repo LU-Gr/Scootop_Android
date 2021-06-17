@@ -348,6 +348,15 @@
 
         <!-- To Do get this data From Api !-->
     </string-array>
+
+    <string-array name="Follow_Team_List">
+
+        <item>@string/TeamTemplateI</item>
+        <item>@string/TeamTemplateII</item>
+
+
+    </string-array>
+
     <string name="title_activity_fiche_player">FichePlayerActivity</string>
     <string name="born_date">Date de Naissance</string>
     <string name="Form_Name_field">Nom</string>
@@ -388,6 +397,9 @@
     <string name="action_compare_with">Comparer</string>
     <string name="Poste">Millieu central</string>
     <string name="Age">32 ans</string>
+    <string name="Player_Presentation">Moussa à passer la majorité de son enfance à Aulnay Sous Bois. Passé par le Red Star et Esperance Aulnaysienne, il integre le TFC à 14 ans. Un joueur puissant, au service de l\'equipe, des qualités qui lui apporteront rapidement une place en equipe 1er. Moussa debute en pro à 17 ans. Il sera ensuite transferé à newcastle ou il deviendra un joueur cadre. Il evolue aujourd\'hui sous les couleurs de Totthenam Fc.</string>
+    <string name="TeamTemplateI">Totthenam FC</string>
+    <string name="TeamTemplateII">Liverpool FC</string>
 
 
 </resources>
