@@ -14,9 +14,10 @@ import fr.scootop.BuildConfig
 import fr.scootop.R
 import fr.scootop.app.common.ExtraKey
 import fr.scootop.app.common.ImageHelper
-import fr.scootop.data.model.Player
+
 import fr.scootop.data.model.PlayerSearchItem
 import fr.scootop.data.model.Video
+import fr.scootop.data.model.user.domain.Player
 import kotlinx.android.synthetic.main.activity_player_details.*
 
 
@@ -64,16 +65,16 @@ class PlayerDetailsActivity : YouTubeBaseActivity(), PlayerDetailsView, YouTubeT
                     .setTitle(if (isFollowing) R.string.dialog_unfollow_player_title else R.string.dialog_follow_player_title)
                     .setMessage(if (isFollowing) R.string.dialog_unfollow_player_description else R.string.dialog_follow_player_description)
                     .setIcon(android.R.drawable.ic_dialog_alert)
-                    .setNegativeButton(R.string.action_cancel, { dialog, _ -> dialog.dismiss() })
-                    .setPositiveButton(if (isFollowing) R.string.action_unfollow else R.string.action_follow,
-                        { dialog, _ ->
-                            dialog.dismiss()
-                            if (isFollowing) {
-                                mInteractor.removeToShortlist()
-                            } else {
-                                mInteractor.addToShortlist()
-                            }
-                        })
+                    .setNegativeButton(R.string.action_cancel) { dialog, _ -> dialog.dismiss() }
+                    .setPositiveButton(if (isFollowing) R.string.action_unfollow else R.string.action_follow
+                    ) { dialog, _ ->
+                        dialog.dismiss()
+                        if (isFollowing) {
+                            mInteractor.removeToShortlist()
+                        } else {
+                            mInteractor.addToShortlist()
+                        }
+                    }
                     .show()
             }
         }
@@ -124,7 +125,7 @@ class PlayerDetailsActivity : YouTubeBaseActivity(), PlayerDetailsView, YouTubeT
                 .into(avatarImageView)
         }
 
-        nameLabel.text = "%s %s".format(player.user.firstName, player.user.lastName)
+        nameLabel.text = "%s %s".format(player.user?.firstName, player.user?.lastName)
         positionLabel.text = player.favoritePosition?.name ?: ""
         teamNameLabel.text = player.team?.name ?: ""
 
@@ -132,7 +133,7 @@ class PlayerDetailsActivity : YouTubeBaseActivity(), PlayerDetailsView, YouTubeT
         passesSkillsLabel.text = "%d / %d".format(player.passesCount, player.skillsCount)
         distinctionsLabel.text = "%d".format(player.distinctionsCount)
 
-        if (player.videos.isEmpty()) {
+        if (player.videos!!.isEmpty()) {
             ytThumbnailView.visibility = View.GONE
             ytPlayButton.visibility = View.GONE
             noVideoLabel.visibility = View.VISIBLE

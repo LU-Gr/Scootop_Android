@@ -1,26 +1,19 @@
 package fr.scootop.data.model
-
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-
 class Video: HydraResource() {
-
     @Expose
     @SerializedName("id")
     var id: Int = 0
-
     @Expose
     @SerializedName("youtube_id")
     var youtubeId: String? = null
-
     @Expose
     @SerializedName("views_count")
     var viewsCount = 0
-
     @Expose
     @SerializedName("comment")
     var comment: String? = null
-
     /*
     {
         "@context": "/api/contexts/Video",

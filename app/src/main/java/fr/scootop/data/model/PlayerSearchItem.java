@@ -1,29 +1,24 @@
 package fr.scootop.data.model;
-
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import androidx.annotation.Nullable;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
 
 public class PlayerSearchItem implements Parcelable
 {
 	@Expose
 	public String name;
-
 	@Expose
 	@Nullable
 	public String image;
-
 	/**
 	 * Nationality country name
 	 */
 	@Expose
 	@Nullable
 	public String nationality;
-
 	/**
 	 * Nationality country iso code (like FR for France)
 	 */
@@ -31,14 +26,12 @@ public class PlayerSearchItem implements Parcelable
 	@Nullable
 	@SerializedName("nationality_iso_code")
 	public String nationalityIsoCode;
-
 	/**
 	 * Origin country name
 	 */
 	@Expose
 	@Nullable
 	public String origin;
-
 	/**
 	 * Origin country iso code (like FR for France)
 	 */
@@ -46,58 +39,46 @@ public class PlayerSearchItem implements Parcelable
 	@Nullable
 	@SerializedName("origin_iso_code")
 	public String originIsoCode;
-
 	@Expose
 	@SerializedName("player_id")
 	public Integer playerId;
-
 	@Expose
 	public String footed;
-
 	@Expose
 	@SerializedName("team_id")
 	@Nullable
 	public Integer teamId;
-
 	@Expose
 	@SerializedName("team_name")
 	@Nullable
 	public String teamName;
-
 	@Expose
 	@SerializedName("club_id")
 	@Nullable
 	public Integer clubId;
-
 	@Expose
 	@SerializedName("club_name")
 	@Nullable
 	public String clubName;
-
 	@Expose
 	@SerializedName("club_image")
 	@Nullable
 	public String clubImage;
-
 	@Expose
 	@SerializedName("position_id")
 	@Nullable
 	public Integer positionId;
-
 	@Expose
 	@SerializedName("position_name")
 	@Nullable
 	public String positionName;
-
 	@Expose
 	@Nullable
 	public String department;
 
-
 	public PlayerSearchItem()
 	{
 	}
-
 	public PlayerSearchItem(Parcel in)
 	{
 		name = in.readString();
@@ -117,13 +98,11 @@ public class PlayerSearchItem implements Parcelable
 		positionName = in.readString();
 		department = in.readString();
 	}
-
 	@Override
 	public int describeContents()
 	{
 		return 0;
 	}
-
 	@Override
 	public void writeToParcel(Parcel dest, int flags)
 	{
@@ -144,7 +123,6 @@ public class PlayerSearchItem implements Parcelable
 		dest.writeString(positionName);
 		dest.writeString(department);
 	}
-
 	public static final Creator<PlayerSearchItem> CREATOR = new Creator<PlayerSearchItem>()
 	{
 		@Override
@@ -152,7 +130,6 @@ public class PlayerSearchItem implements Parcelable
 		{
 			return new PlayerSearchItem(in);
 		}
-
 		@Override
 		public PlayerSearchItem[] newArray(int size)
 		{
