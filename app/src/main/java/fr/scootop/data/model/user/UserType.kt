@@ -1,11 +1,7 @@
-package fr.scootop.data.model.user;
-import java.util.List;
+package fr.scootop.data.model.user
 
-public class UserType {
-	
-    private Long id;
-	
-    private String type;
-	
-    private List<User> users;
+class UserType {
+    val id: Long? = null
+    val type: String? = null
+    val users: List<User>? = null
 }

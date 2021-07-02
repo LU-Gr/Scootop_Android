@@ -1,5 +1,6 @@
 package fr.scootop.app.services
 
+import fr.scootop.data.model.response.ApiResult
 import fr.scootop.data.model.services.interaction.Alert
 import fr.scootop.data.model.services.interaction.Follow
 import fr.scootop.data.model.services.interaction.Invite
@@ -65,7 +66,7 @@ interface ApiServiceInteractionService {
 
     @Headers("Content-Type: application/json")
     @POST("/services/interaction/invite")
-    fun addInvite(@Body invite: Invite): Call<Invite>
+    fun addInvite(@Body invite: Invite): Observable<ApiResult>
 
     @Headers("Content-Type: application/json")
     @PUT("/services/interaction/invite/{id}")

@@ -13,4 +13,14 @@ class User {
     var password: String? = null
     var contact: Contact? = null
     var userTypes: List<UserType>? = null
+
+
+    fun userTypesToStringList(): List<String> {
+        var types = mutableListOf<String>()
+        for(type in userTypes!!){
+            types.add(type.type!!)
+        }
+        return types
+    }
 }
+

@@ -6,6 +6,7 @@ import fr.scootop.BuildConfig
 import fr.scootop.app.services.*
 import fr.scootop.data.api.service.DeviceTokenService
 import fr.scootop.data.api.service.LoginService
+import fr.scootop.data.api.service.PostService
 import fr.scootop.data.api.service.YoutubeService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -36,9 +37,10 @@ class ApiManager private constructor() {
     val categoryService: CategoryService
     val divisionService: DivisionService
     val positionService: PositionService
-    val postService: PostService
+
     val videoService: VideoService*/
     val youtubeServce: YoutubeService
+    val postService: PostService
 
     init {
         val loggingInterceptor = HttpLoggingInterceptor()
@@ -84,7 +86,7 @@ class ApiManager private constructor() {
         divisionService = retrofit.create(DivisionService::class.java)
         positionService = retrofit.create(PositionService::class.java)
         videoService = retrofit.create(VideoService::class.java)
-        postService = retrofit.create(PostService::class.java)*/
+        */
 
         deviceTokenService = retrofit.create(DeviceTokenService::class.java)
         userService = retrofit.create(ApiUserService::class.java)
@@ -96,6 +98,9 @@ class ApiManager private constructor() {
         userDomainService =  retrofit.create(ApiUserDomainService::class.java)
         userProviderService =  retrofit.create(ApiUserProviderService::class.java)
         statisticsService = retrofit.create(ApiStatisticsService::class.java)
+
+        //??
+        postService = retrofit.create(PostService::class.java)
 
 
 
