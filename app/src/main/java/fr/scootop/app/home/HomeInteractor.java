@@ -6,7 +6,7 @@ import androidx.annotation.Nullable;
 
 import fr.scootop.data.api.ApiManager;
 import fr.scootop.data.model.DeviceToken;
-import fr.scootop.data.model.User;
+import fr.scootop.data.model.user.User;
 import fr.scootop.data.storage.TokenStorage;
 import fr.scootop.data.storage.UserStorage;
 import rx.android.schedulers.AndroidSchedulers;
@@ -48,7 +48,7 @@ public class HomeInteractor
     }
 
     @Nullable
-    public Integer getUser(final Context context)
+    public Long getUser(final Context context)
     {
         User user = UserStorage.get(context).getUser();
         if (user != null) {

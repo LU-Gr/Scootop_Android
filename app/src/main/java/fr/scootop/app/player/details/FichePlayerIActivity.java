@@ -32,6 +32,7 @@ import fr.scootop.app.player.details.fragment.Caracteristique;
 import fr.scootop.app.player.details.fragment.EtatCivil;
 import fr.scootop.app.player.details.fragment.FicheMain;
 import fr.scootop.app.player.details.fragment.Video;
+import fr.scootop.data.model.user.domain.Player;
 
 public class FichePlayerIActivity extends AppCompatActivity {
 
@@ -55,7 +56,14 @@ public class FichePlayerIActivity extends AppCompatActivity {
             @Override
             public void run() {
 
+
+                Player p = new Player();
+
+
                 ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+                //Bundle bundle = new Bundle();
+                //bundle.putParcelable("player",p);
 
                 viewPagerAdapter.addFragment(FicheMain.getInstance(),"Main");
                 viewPagerAdapter.addFragment(EtatCivil.getInstance(),"ECV");

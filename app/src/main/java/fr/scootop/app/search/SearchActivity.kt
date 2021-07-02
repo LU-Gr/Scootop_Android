@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import butterknife.ButterKnife
 import fr.scootop.R
 import fr.scootop.app.common.ExtraKey
-import fr.scootop.app.player.details.PlayerDetailsActivity
+import fr.scootop.app.player.details.old.PlayerDetailsActivity
 import fr.scootop.data.model.PlayerSearchItem
 import kotlinx.android.synthetic.main.activity_search.*
 

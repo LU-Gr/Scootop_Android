@@ -4,7 +4,6 @@ import fr.scootop.data.model.statistics.Action
 import fr.scootop.data.model.statistics.Goal
 import fr.scootop.data.model.statistics.Pass
 import fr.scootop.data.model.statistics.Shoot
-import retrofit2.http.Headers
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -18,7 +17,7 @@ interface ApiStatisticsService {
 
     @Headers("Content-Type: application/json")
     @GET("/stats/goal/{id}")
-    fun getGoalById(@Path("id") id: Integer): Response<Goal>
+    fun getGoalById(@Path("id") id: Long): Response<Goal>
 
     @Headers("Content-Type: application/json")
     @POST("/stats/goal")
@@ -26,11 +25,11 @@ interface ApiStatisticsService {
 
     @Headers("Content-Type: application/json")
     @PUT("/stats/goal/{id}")
-    fun updateGoal(@Path("id") id: Integer, @Body goal: Goal): Response<Goal>
+    fun updateGoal(@Path("id") id: Long, @Body goal: Goal): Response<Goal>
 
     @Headers("Content-Type: application/json")
     @DELETE("/stats/goal/{id}")
-    fun deleteGoal(@Path("id") id: Integer): Response<String>
+    fun deleteGoal(@Path("id") id: Long): Response<String>
 
     // ACTION
 
@@ -40,7 +39,7 @@ interface ApiStatisticsService {
 
     @Headers("Content-Type: application/json")
     @GET("/stats/action/{id}")
-    fun getActionById(@Path("id") id: Integer): Response<Action>
+    fun getActionById(@Path("id") id: Long): Response<Action>
 
     @Headers("Content-Type: application/json")
     @POST("/stats/action")
@@ -48,11 +47,11 @@ interface ApiStatisticsService {
 
     @Headers("Content-Type: application/json")
     @PUT("/stats/action/{id}")
-    fun updateAction(@Path("id") id: Integer, @Body action: Action): Response<Action>
+    fun updateAction(@Path("id") id: Long, @Body action: Action): Response<Action>
 
     @Headers("Content-Type: application/json")
     @DELETE("/stats")
-    fun deleteAction(@Path("id") id: Integer): Response<String>
+    fun deleteAction(@Path("id") id: Long): Response<String>
 
     // ASSIST
 
@@ -62,7 +61,7 @@ interface ApiStatisticsService {
 
     @Headers("Content-Type: application/json")
     @GET("/stats/assist/{id}")
-    fun getPassById(@Path("id") id: Integer): Response<Pass>
+    fun getPassById(@Path("id") id: Long): Response<Pass>
 
     @Headers("Content-Type: application/json")
     @POST("/stats/assist")
@@ -70,11 +69,11 @@ interface ApiStatisticsService {
 
     @Headers("Content-Type: application/json")
     @PUT("/stats/assist/{id}")
-    fun updatePass(@Path("id") id: Integer, @Body pass: Pass): Response<Pass>
+    fun updatePass(@Path("id") id: Long, @Body pass: Pass): Response<Pass>
 
     @Headers("Content-Type: application/json")
     @DELETE("/stats/assist/{id}")
-    fun deletePass(@Path("id") id: Integer): Response<String>
+    fun deletePass(@Path("id") id: Long): Response<String>
 
     // SHOOT
 
@@ -84,7 +83,7 @@ interface ApiStatisticsService {
 
     @Headers("Content-Type: application/json")
     @GET("/stats/shoot/{id}")
-    fun getShootById(@Path("id") id: Integer): Response<Shoot>
+    fun getShootById(@Path("id") id: Long): Response<Shoot>
 
     @Headers("Content-Type: application/json")
     @POST("/stats/shoot")
@@ -92,10 +91,10 @@ interface ApiStatisticsService {
 
     @Headers("Content-Type: application/json")
     @PUT("/stats/shoot/{id}")
-    fun updateShoot(@Path("id") id: Integer, @Body shoot: Shoot): Response<Shoot>
+    fun updateShoot(@Path("id") id: Long, @Body shoot: Shoot): Response<Shoot>
 
     @Headers("Content-Type: application/json")
     @DELETE("/stats/shoot/{id}")
-    fun deleteShoot(@Path("id") id: Integer): Response<String>
+    fun deleteShoot(@Path("id") id: Long): Response<String>
 
 }

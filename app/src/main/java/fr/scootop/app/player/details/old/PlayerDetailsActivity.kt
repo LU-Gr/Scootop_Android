@@ -1,12 +1,12 @@
-package fr.scootop.app.player.details
+package fr.scootop.app.player.details.old
 
 import android.app.ProgressDialog
 import android.content.Context
 import android.os.Bundle
 import android.os.Parcelable
-import androidx.appcompat.app.AlertDialog
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import butterknife.ButterKnife
 import com.bumptech.glide.Glide
 import com.google.android.youtube.player.*
@@ -14,17 +14,19 @@ import fr.scootop.BuildConfig
 import fr.scootop.R
 import fr.scootop.app.common.ExtraKey
 import fr.scootop.app.common.ImageHelper
-
+import fr.scootop.app.player.details.PlayerDetailsInteractor
+import fr.scootop.app.player.details.PlayerDetailsPresenter
+import fr.scootop.app.player.details.PlayerDetailsView
 import fr.scootop.data.model.PlayerSearchItem
 import fr.scootop.data.model.Video
 import fr.scootop.data.model.user.domain.Player
-import kotlinx.android.synthetic.main.activity_player_details.*
+import kotlinx.android.synthetic.main.old_activity_player_details.*
 
 
 class PlayerDetailsActivity : YouTubeBaseActivity(), PlayerDetailsView, YouTubeThumbnailView.OnInitializedListener {
 
     private val mInteractor by lazy {
-        PlayerDetailsInteractor(PlayerDetailsPresenter(this))
+        PlayerDetailsInteractor(PlayerDetailsPresenter(this), this)
     }
 
     private var mYTVideoId: String? = null
@@ -32,7 +34,7 @@ class PlayerDetailsActivity : YouTubeBaseActivity(), PlayerDetailsView, YouTubeT
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_player_details)
+        setContentView(R.layout.old_activity_player_details)
         ButterKnife.bind(this)
 
         playerDetailsToolbar.setNavigationIcon(R.mipmap.ic_arrow_back_white_24dp)
@@ -94,7 +96,7 @@ class PlayerDetailsActivity : YouTubeBaseActivity(), PlayerDetailsView, YouTubeT
             /** récupération des données détaillées du joueur  */
             mInteractor.loadPlayer(playerItem.playerId)
         } else if (intent?.getIntExtra(ExtraKey.PLAYER_ID, 0) != 0) {
-            val playerId = intent.getIntExtra(ExtraKey.PLAYER_ID, 0)
+            val playerId = intent.getLongExtra(ExtraKey.PLAYER_ID, 0)
             mInteractor.loadPlayer(playerId)
         }
 
@@ -116,7 +118,7 @@ class PlayerDetailsActivity : YouTubeBaseActivity(), PlayerDetailsView, YouTubeT
             followButton.isEnabled = false
         }
 
-        val pictureName = player.user.pictureName
+        val pictureName = player.photoUrl
         if (pictureName != null) {
             Glide.with(this)
                 .load(ImageHelper.getUserAvatarUrl(pictureName))
@@ -126,19 +128,19 @@ class PlayerDetailsActivity : YouTubeBaseActivity(), PlayerDetailsView, YouTubeT
         }
 
         nameLabel.text = "%s %s".format(player.user?.firstName, player.user?.lastName)
-        positionLabel.text = player.favoritePosition?.name ?: ""
-        teamNameLabel.text = player.team?.name ?: ""
+        positionLabel.text = player.postes!![0].name ?: ""
+        teamNameLabel.text = player.teams!![0].name ?: ""
 
-        matchsGoalsLabel.text = "%d / %d".format(player.matchesCount, player.goalsCount)
-        passesSkillsLabel.text = "%d / %d".format(player.passesCount, player.skillsCount)
-        distinctionsLabel.text = "%d".format(player.distinctionsCount)
+        //matchsGoalsLabel.text = "%d / %d".format(player.matchesCount, player.goalsCount)
+       // passesSkillsLabel.text = "%d / %d".format(player.passesCount, player.skillsCount)
+        //distinctionsLabel.text = "%d".format(player.distinctionsCount)
 
         if (player.videos!!.isEmpty()) {
             ytThumbnailView.visibility = View.GONE
             ytPlayButton.visibility = View.GONE
             noVideoLabel.visibility = View.VISIBLE
         } else {
-            val firstVideo: Video = player.videos.removeAt(0)
+            val firstVideo: Video = player.videos!![0]
 
             mYTVideoId = firstVideo.youtubeId
             videoTitleLabel.text = firstVideo.comment

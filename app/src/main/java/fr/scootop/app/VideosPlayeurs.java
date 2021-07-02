@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -24,7 +22,7 @@ public class VideosPlayeurs extends YouTubeBaseActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_player_details);
+        setContentView(R.layout.OLD_activity_player_details);
 
 
         //YouTubePlayeurView = (YouTubePlayerView) findViewById(R.id.youtube_View);

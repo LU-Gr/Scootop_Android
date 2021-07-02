@@ -8,24 +8,24 @@ import fr.scootop.data.model.tools.Team
 import fr.scootop.data.model.user.User
 
 data class Player(
-    val id: Long? = null,
-    val rating: Int = 0,
-    val taille: Int = 0,
-    val poids: Int = 0,
-    val vma: Int = 0,
-    val nationalite: String? = null,
-    val origin: String? = null,
-    val isSelected: Boolean = false,
-    val isSubstitute: Boolean = false,
-    val interaction: Int = 0,
-    val strongFoot: String? = null,
-    val weekFoot: String? = null,
-    val photoUrl: String? = null,
-    val user: User? = null,
-    val category: Category? = null,
-    val statisticalSheets: List<StatisticalSheet>? = null,
-    val videos: List<Video>? = null,
-    val teams: List<Team>? = null,
-    val postes: List<Poste>? = null
+    var id: Long? = null,
+    var rating: Int = 0,
+    var taille: Int = 0,
+    var poids: Int = 0,
+    var vma: Int = 0,
+    var nationalite: String? = null,
+    var origin: String? = null,
+    var isSelected: Boolean = false,
+    var isSubstitute: Boolean = false,
+    var interaction: Int = 0,
+    var strongFoot: String? = null,
+    var weekFoot: String? = null,
+    var photoUrl: String? = null,
+    var user: User? = null,
+    var category: Category? = null,
+    var statisticalSheets: List<StatisticalSheet>? = null,
+    var videos: List<Video>? = null,
+    var teams: List<Team>? = null,
+    var postes: List<Poste>? = null
 )
 

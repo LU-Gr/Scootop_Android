@@ -7,10 +7,8 @@ import fr.scootop.R
 import fr.scootop.app.dashboard.DashboardFragment
 import fr.scootop.app.shortlist.ShortlistFragment
 import fr.scootop.app.user.details.UserDetailsFragment
-import fr.scootop.app.user.myprofile.UserMyProfileFragment
-import fr.scootop.data.model.User
 
-class HomeAdapter(fm: FragmentManager, private val userId: Int?) : FragmentPagerAdapter(fm) {
+class HomeAdapter(fm: FragmentManager, private val userId: Long?) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         return when {

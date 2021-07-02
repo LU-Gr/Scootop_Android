@@ -1,7 +1,7 @@
 package fr.scootop.app.player.details
 
 import fr.scootop.data.definition.UserType
-import fr.scootop.data.model.Player
+import fr.scootop.data.model.user.domain.Player
 import fr.scootop.data.storage.UserStorage
 import java.lang.ref.WeakReference
 
@@ -14,7 +14,7 @@ class PlayerDetailsPresenter(view: PlayerDetailsView) {
             mView.get()?.displayPlayer(it)
 
             mView.get()?.getContext()?.let {
-                if (UserStorage.get(it)?.user?.type == UserType.Player.value) {
+                if (UserStorage.get(it)?.user?.userTypes.contains(UserType.Player.value)) {
                     mView.get()?.hideInviteAction()
                 }
             }

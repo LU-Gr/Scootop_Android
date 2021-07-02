@@ -72,7 +72,7 @@
 
         </activity>
         <activity
-            android:name=".app.player.details.PlayerDetailsActivity"
+            android:name=".app.player.details.old.PlayerDetailsActivity"
             android:label="@string/player_details_title"></activity>
         <activity android:name=".app.WhoActivity" />
         <!--

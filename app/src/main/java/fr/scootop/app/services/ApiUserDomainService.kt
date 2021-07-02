@@ -1,12 +1,11 @@
 package fr.scootop.app.services
 
 import fr.scootop.app.search.SearchPlayerAdapter
-import fr.scootop.data.model.configuration.ActionType
 import fr.scootop.data.model.services.ComparatorParams
 import fr.scootop.data.model.user.domain.*
-import retrofit2.http.Headers
 import retrofit2.Response
 import retrofit2.http.*
+import rx.Observable
 
 interface ApiUserDomainService {
 
@@ -18,7 +17,7 @@ interface ApiUserDomainService {
 
     @Headers("Content-Type: application/json")
     @GET("/user/domain/chairman/{id}")
-    fun getChairmanById(@Path("id") id: Integer): Response<Chairman>
+    fun getChairmanById(@Path("id") id: Long): Response<Chairman>
 
     @Headers("Content-Type: application/json")
     @POST("/user/domain/chairman")
@@ -26,11 +25,11 @@ interface ApiUserDomainService {
 
     @Headers("Content-Type: application/json")
     @PUT("/user/domain/chairman/{id}")
-    fun updateChairman(@Path("id") id: Integer, @Body chairman: Chairman): Response<Chairman>
+    fun updateChairman(@Path("id") id: Long, @Body chairman: Chairman): Response<Chairman>
 
     @Headers("Content-Type: application/json")
     @DELETE("/user/domain/chairman/{id}")
-    fun deleteChairman(@Path("id") id: Integer): Response<String>
+    fun deleteChairman(@Path("id") id: Long): Response<String>
 
     // SCOOT
 
@@ -40,7 +39,7 @@ interface ApiUserDomainService {
 
     @Headers("Content-Type: application/json")
     @GET("/user/domain/scoot/{id}")
-    fun getScootById(@Path("id") id: Integer): Response<Scoot>
+    fun getScootById(@Path("id") id: Long): Response<Scoot>
 
     @Headers("Content-Type: application/json")
     @POST("/user/domain/scoot")
@@ -48,11 +47,11 @@ interface ApiUserDomainService {
 
     @Headers("Content-Type: application/json")
     @PUT("/user/domain/scoot/{id}")
-    fun updateScoot(@Path("id") id: Integer, @Body scoot: Scoot): Response<Scoot>
+    fun updateScoot(@Path("id") id: Long, @Body scoot: Scoot): Response<Scoot>
 
     @Headers("Content-Type: application/json")
     @DELETE("/user/domain/scoot/{id}")
-    fun deleteScoot(@Path("id") id: Integer): Response<String>
+    fun deleteScoot(@Path("id") id: Long): Response<String>
 
     // PLAYER
 
@@ -62,7 +61,7 @@ interface ApiUserDomainService {
 
     @Headers("Content-Type: application/json")
     @GET("/user/domain/player/{id}")
-    fun getPlayerById(@Path("id") id: Integer): Response<Player>
+    fun getPlayerById(@Path("id") id: Long): Observable<Player>
 
     @Headers("Content-Type: application/json")
     @POST("/user/domain/player")
@@ -70,11 +69,11 @@ interface ApiUserDomainService {
 
     @Headers("Content-Type: application/json")
     @PUT("/user/domain/player/{id}")
-    fun updatePlayer(@Path("id") id: Integer, @Body player: Player): Response<Player>
+    fun updatePlayer(@Path("id") id: Long, @Body player: Player): Response<Player>
 
     @Headers("Content-Type: application/json")
     @DELETE("/user/domain/player/{id}")
-    fun deletePlayer(@Path("id") id: Integer): Response<String>
+    fun deletePlayer(@Path("id") id: Long): Response<String>
 
     // COACH
 
@@ -84,7 +83,7 @@ interface ApiUserDomainService {
 
     @Headers("Content-Type: application/json")
     @GET("/user/domain/coach/{id}")
-    fun getCoachById(@Path("id") id: Integer): Response<Coach>
+    fun getCoachById(@Path("id") id: Long): Response<Coach>
 
     @Headers("Content-Type: application/json")
     @POST("/user/domain/coach")
@@ -92,11 +91,11 @@ interface ApiUserDomainService {
 
     @Headers("Content-Type: application/json")
     @PUT("/user/domain/coach/{id}")
-    fun updateCoach(@Path("id") id: Integer, @Body coach: Coach): Response<Coach>
+    fun updateCoach(@Path("id") id: Long, @Body coach: Coach): Response<Coach>
 
     @Headers("Content-Type: application/json")
     @DELETE("/user/domain/coach/{id}")
-    fun deleteCoach(@Path("id") id: Integer): Response<String>
+    fun deleteCoach(@Path("id") id: Long): Response<String>
 
     // FICHE PLAYER
 
@@ -119,7 +118,7 @@ interface ApiUserDomainService {
 
     @Headers("Content-Type: application/json")
     @GET("/user/domain/matchsheet/{id}/scoots")
-    fun getScootByMatch(@Path("id") id: Integer): Response<List<Scoot>>
+    fun getScootByMatch(@Path("id") id: Long): Response<List<Scoot>>
 
 
 }

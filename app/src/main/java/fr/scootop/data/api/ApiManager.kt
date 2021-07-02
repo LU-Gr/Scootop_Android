@@ -3,10 +3,10 @@ package fr.scootop.data.api
 import android.util.Log
 import com.google.gson.GsonBuilder
 import fr.scootop.BuildConfig
-import fr.scootop.app.ScootopApplication
-import fr.scootop.data.api.authenticator.JWTAuthenticator
-import fr.scootop.data.api.interceptor.JWTInterceptor
-import fr.scootop.data.api.service.*
+import fr.scootop.app.services.*
+import fr.scootop.data.api.service.DeviceTokenService
+import fr.scootop.data.api.service.LoginService
+import fr.scootop.data.api.service.YoutubeService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -16,19 +16,28 @@ import java.util.concurrent.TimeUnit
 
 class ApiManager private constructor() {
 
+    val userService: ApiUserService
+    val configurationService: ApiConfigurationService
+    val externalService: ApiExternalService
+    val serviceInteractionService: ApiServiceInteractionService
+    val serviceToolsService: ApiServiceToolsService
+    val toolsService: ApiToolsService
+    val userDomainService: ApiUserDomainService
+    val userProviderService: ApiUserProviderService
+    val statisticsService: ApiStatisticsService
+
     val loginService: LoginService
-    val registerService: RegisterService
-    val searchService: SearchService
-    val userService: UserService
-    val shortlistItemService: ShortlistItemService
     val deviceTokenService: DeviceTokenService
+    /*val registerService: RegisterService
+    val searchService: SearchService
+    val shortlistItemService: ShortlistItemService
     val boardService: BoardService
     val clubService: ClubService
     val categoryService: CategoryService
     val divisionService: DivisionService
     val positionService: PositionService
     val postService: PostService
-    val videoService: VideoService
+    val videoService: VideoService*/
     val youtubeServce: YoutubeService
 
     init {
@@ -65,18 +74,30 @@ class ApiManager private constructor() {
             .build()
 
         loginService = retrofit.create(LoginService::class.java)
-        registerService = retrofit.create(RegisterService::class.java)
+        /*registerService = retrofit.create(RegisterService::class.java)
         searchService = retrofit.create(SearchService::class.java)
-        userService = retrofit.create(UserService::class.java)
         shortlistItemService = retrofit.create(ShortlistItemService::class.java)
-        deviceTokenService = retrofit.create(DeviceTokenService::class.java)
+
         boardService = retrofit.create(BoardService::class.java)
         clubService = retrofit.create(ClubService::class.java)
         categoryService = retrofit.create(CategoryService::class.java)
         divisionService = retrofit.create(DivisionService::class.java)
         positionService = retrofit.create(PositionService::class.java)
         videoService = retrofit.create(VideoService::class.java)
-        postService = retrofit.create(PostService::class.java)
+        postService = retrofit.create(PostService::class.java)*/
+
+        deviceTokenService = retrofit.create(DeviceTokenService::class.java)
+        userService = retrofit.create(ApiUserService::class.java)
+        configurationService =  retrofit.create(ApiConfigurationService::class.java)
+        externalService =  retrofit.create(ApiExternalService::class.java)
+        serviceInteractionService =  retrofit.create(ApiServiceInteractionService::class.java)
+        serviceToolsService =  retrofit.create(ApiServiceToolsService::class.java)
+        toolsService =  retrofit.create(ApiToolsService::class.java)
+        userDomainService =  retrofit.create(ApiUserDomainService::class.java)
+        userProviderService =  retrofit.create(ApiUserProviderService::class.java)
+        statisticsService = retrofit.create(ApiStatisticsService::class.java)
+
+
 
         val ytHttpClient = OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)

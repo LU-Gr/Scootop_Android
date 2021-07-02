@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 
 import java.lang.ref.WeakReference;
 
-import fr.scootop.data.model.User;
+import fr.scootop.data.model.user.User;
 
 public final class UserStorage
 {

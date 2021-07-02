@@ -2,7 +2,6 @@ package fr.scootop.app.services
 
 import fr.scootop.data.model.services.tools.AgenceType
 import fr.scootop.data.model.services.tools.PrestationType
-import retrofit2.http.Headers
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -16,7 +15,7 @@ interface ApiServiceToolsService {
 
     @Headers("Content-Type: application/json")
     @GET("/services/tools/agence/type/{id}")
-    fun getAgenceTypeById(@Path("id") id: Integer): Response<AgenceType>
+    fun getAgenceTypeById(@Path("id") id: Long): Response<AgenceType>
 
     @Headers("Content-Type: application/json")
     @POST("/services/tools/agence/type")
@@ -24,11 +23,11 @@ interface ApiServiceToolsService {
 
     @Headers("Content-Type: application/json")
     @PUT("/services/tools/agence/type/{id}")
-    fun updateAgenceType(@Path("id") id: Integer, @Body agenceType: AgenceType): Response<AgenceType>
+    fun updateAgenceType(@Path("id") id: Long, @Body agenceType: AgenceType): Response<AgenceType>
 
     @Headers("Content-Type: application/json")
     @DELETE("/services/tools/agence/type/{id}")
-    fun deleteAgenceType(@Path("id") id: Integer): Response<String>
+    fun deleteAgenceType(@Path("id") id: Long): Response<String>
 
     //PRESTATION TYPE
 
@@ -38,7 +37,7 @@ interface ApiServiceToolsService {
 
     @Headers("Content-Type: application/json")
     @GET("/services/tools/prestation/{id}")
-    fun getPrestationTypeById(@Path("id") id: Integer): Response<PrestationType>
+    fun getPrestationTypeById(@Path("id") id: Long): Response<PrestationType>
 
     @Headers("Content-Type: application/json")
     @POST("/services/tools/prestation")
@@ -46,9 +45,9 @@ interface ApiServiceToolsService {
 
     @Headers("Content-Type: application/json")
     @PUT("/services/tools/prestation/{id}")
-    fun updatePrestationType(@Path("id") id: Integer, @Body prestationType: PrestationType): Response<PrestationType>
+    fun updatePrestationType(@Path("id") id: Long, @Body prestationType: PrestationType): Response<PrestationType>
 
     @Headers("Content-Type: application/json")
     @DELETE("/services/tools/prestation/{id}")
-    fun deletePrestationType(@Path("id") id: Integer): Response<String>
+    fun deletePrestationType(@Path("id") id: Long): Response<String>
 }

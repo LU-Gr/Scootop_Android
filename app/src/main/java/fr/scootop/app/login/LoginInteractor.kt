@@ -1,13 +1,8 @@
 package fr.scootop.app.login
 
-import android.content.Context
-import android.text.TextUtils
 //import com.crashlytics.android.Crashlytics
-import com.google.firebase.analytics.FirebaseAnalytics
-import fr.scootop.BuildConfig
+import android.content.Context
 import fr.scootop.data.api.ApiManager
-import fr.scootop.data.storage.TokenStorage
-import fr.scootop.data.storage.UserStorage
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 import java.lang.ref.WeakReference
@@ -19,18 +14,17 @@ class LoginInteractor(private val mPresenter: LoginPresenter, context: Context) 
     fun login(email: String, password: String) {
         // temp code
         mPresenter.presentHome()
-        return
         // temp code
 
         mPresenter.presentLoading()
 
-        ApiManager.get().loginService.login(email, password)
+        ApiManager.get().userService.login(email, password)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ loginResult ->
                 mPresenter.dismissLoading()
 
-                if (loginResult.code == null && !TextUtils.isEmpty(loginResult.jwt)) {
+                /*if (loginResult.code == null && !TextUtils.isEmpty(loginResult.jwt)) {
 
                     val context = mContext.get()
                     if (null != context) {
@@ -59,7 +53,7 @@ class LoginInteractor(private val mPresenter: LoginPresenter, context: Context) 
                     }
 
                     mPresenter.presentError(errorMessage)
-                }
+                }*/
             }) { throwable ->
                 mPresenter.dismissLoading()
 

@@ -10,7 +10,6 @@ import fr.scootop.app.common.ImageHelper
 import fr.scootop.data.definition.UserType
 
 import fr.scootop.data.model.ShortlistCollectionItem
-import kotlinx.android.synthetic.main.activity_player_details.*
 
 import kotterknife.bindView
 

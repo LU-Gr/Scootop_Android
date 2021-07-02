@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.scootop.R;
 import fr.scootop.app.common.ExtraKey;
-import fr.scootop.app.player.details.PlayerDetailsActivity;
+import fr.scootop.app.player.details.old.PlayerDetailsActivity;
 import fr.scootop.data.model.ShortlistCollectionItem;
 
 /**
@@ -41,10 +41,10 @@ public class ShortlistFragment extends Fragment implements ShortlistView, OnShor
     private ShortlistInteractor mInteractor;
     private ShortlistAdapter mAdapter;
 
-    public static ShortlistFragment newInstance(int userId)
+    public static ShortlistFragment newInstance(Long userId)
     {
         Bundle args = new Bundle();
-        args.putInt(ExtraKey.INSTANCE.getUSER_ID(), userId);
+        args.putLong(ExtraKey.INSTANCE.getUSER_ID(), userId);
 
         ShortlistFragment fragment = new ShortlistFragment();
         fragment.setArguments(args);

@@ -3,12 +3,14 @@ package fr.scootop.data.model.user
 import java.time.LocalDate
 
 class User {
-    val id: Long? = null
-    val firstName: String? = null
-    val lastName: String? = null
-    val email: String? = null
-    val birthday: LocalDate? = null
-    val password: String? = null
-    val contact: Contact? = null
-    val userTypes: List<UserType>? = null
+    var shortlistItemId: Int = 0//TEMP
+    var isFollowing: Boolean = false//TEMP
+    var id: Long? = null
+    var firstName: String? = null
+    var lastName: String? = null
+    var email: String? = null
+    var birthday: LocalDate? = null
+    var password: String? = null
+    var contact: Contact? = null
+    var userTypes: List<UserType>? = null
 }

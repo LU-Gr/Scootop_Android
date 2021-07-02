@@ -15,7 +15,7 @@ interface ApiUserProviderService {
 
     @Headers("Content-Type: application/json")
     @GET("/user/provider/cameraman/{id}")
-    fun getCameramanById(@Path("id") id: Integer): Response<Cameraman>
+    fun getCameramanById(@Path("id") id: Long): Response<Cameraman>
 
     @Headers("Content-Type: application/json")
     @POST("/user/provider/cameraman")
@@ -23,11 +23,11 @@ interface ApiUserProviderService {
 
     @Headers("Content-Type: application/json")
     @PUT("/user/provider/cameraman/{id}")
-    fun updateCameraman(@Path("id") id: Integer, @Body cameraman: Cameraman): Response<Cameraman>
+    fun updateCameraman(@Path("id") id: Long, @Body cameraman: Cameraman): Response<Cameraman>
 
     @Headers("Content-Type: application/json")
     @DELETE("/user/provider/cameraman/{id}")
-    fun deleteCameraman(@Path("id") id: Integer): Response<String>
+    fun deleteCameraman(@Path("id") id: Long): Response<String>
 
     // AGENCE
 
@@ -37,7 +37,7 @@ interface ApiUserProviderService {
 
     @Headers("Content-Type: application/json")
     @GET("/user/provider/agence/{id}")
-    fun getAgenceById(@Path("id") id: Integer): Response<Agence>
+    fun getAgenceById(@Path("id") id: Long): Response<Agence>
 
     @Headers("Content-Type: application/json")
     @POST("/user/provider/agence")
@@ -45,11 +45,11 @@ interface ApiUserProviderService {
 
     @Headers("Content-Type: application/json")
     @PUT("/user/provider/agence/{id}")
-    fun updateAgence(@Path("id") id: Integer, @Body agence: Agence): Response<Agence>
+    fun updateAgence(@Path("id") id: Long, @Body agence: Agence): Response<Agence>
 
     @Headers("Content-Type: application/json")
     @DELETE("/user/provider/agence/{id}")
-    fun deleteAgence(@Path("id") id: Integer): Response<String>
+    fun deleteAgence(@Path("id") id: Long): Response<String>
 
     // ANALYST
 
@@ -59,7 +59,7 @@ interface ApiUserProviderService {
 
     @Headers("Content-Type: application/json")
     @GET("/user/provider/analyst/{id}")
-    fun getAnalystById(@Path("id") id: Integer): Response<Analyste>
+    fun getAnalystById(@Path("id") id: Long): Response<Analyste>
 
     @Headers("Content-Type: application/json")
     @POST("/user/provider/analyst")
@@ -67,11 +67,11 @@ interface ApiUserProviderService {
 
     @Headers("Content-Type: application/json")
     @PUT("/user/provider/analyst/{id}")
-    fun updateAnalyst(@Path("id") id: Integer, @Body analyste: Analyste): Response<Analyste>
+    fun updateAnalyst(@Path("id") id: Long, @Body analyste: Analyste): Response<Analyste>
 
     @Headers("Content-Type: application/json")
     @DELETE("/user/provider/analyst/{id}")
-    fun deleteAnalyst(@Path("id") id: Integer): Response<String>
+    fun deleteAnalyst(@Path("id") id: Long): Response<String>
 
     // MANAGER
 
@@ -89,11 +89,11 @@ interface ApiUserProviderService {
 
     @Headers("Content-Type: application/json")
     @PUT("/user/provider/manager/{id}")
-    fun updateManager(@Path("id") id: Integer, @Body manager: Manager): Response<Manager>
+    fun updateManager(@Path("id") id: Long, @Body manager: Manager): Response<Manager>
 
     @Headers("Content-Type: application/json")
     @DELETE("/user/provider/manager/{id}")
-    fun deleteManager(@Path("id") id: Integer): Response<String>
+    fun deleteManager(@Path("id") id: Long): Response<String>
 
     // MARKETING ADVISOR
 
@@ -103,7 +103,7 @@ interface ApiUserProviderService {
 
     @Headers("Content-Type: application/json")
     @GET("/user/provider/marketing/advisor/{id}")
-    fun getMarketingAdvisorById(@Path("id") id: Integer): Response<MarketingAdvisor>
+    fun getMarketingAdvisorById(@Path("id") id: Long): Response<MarketingAdvisor>
 
     @Headers("Content-Type: application/json")
     @POST("/user/provider/marketing/advisor")
@@ -111,9 +111,9 @@ interface ApiUserProviderService {
 
     @Headers("Content-Type: application/json")
     @PUT("/user/provider/marketing/advisor/{id}")
-    fun updateMarketingAdvisor(@Path("id") id: Integer, @Body marketingAdvisor: MarketingAdvisor): Response<MarketingAdvisor>
+    fun updateMarketingAdvisor(@Path("id") id: Long, @Body marketingAdvisor: MarketingAdvisor): Response<MarketingAdvisor>
 
     @Headers("Content-Type: application/json")
     @DELETE("/user/provider/marketing/advisor/{id}")
-    fun deleteMarketingAdvisor(@Path("id") id: Integer): Response<String>
+    fun deleteMarketingAdvisor(@Path("id") id: Long): Response<String>
 }

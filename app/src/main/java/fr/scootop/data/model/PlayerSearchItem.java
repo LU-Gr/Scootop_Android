@@ -41,7 +41,7 @@ public class PlayerSearchItem implements Parcelable
 	public String originIsoCode;
 	@Expose
 	@SerializedName("player_id")
-	public Integer playerId;
+	public Long playerId;
 	@Expose
 	public String footed;
 	@Expose
@@ -87,7 +87,7 @@ public class PlayerSearchItem implements Parcelable
 		nationalityIsoCode = in.readString();
 		origin = in.readString();
 		originIsoCode = in.readString();
-		playerId = in.readInt();
+		playerId = in.readLong();
 		footed = in.readString();
 		teamId = in.readInt();
 		teamName = in.readString();
@@ -112,7 +112,7 @@ public class PlayerSearchItem implements Parcelable
 		dest.writeString(nationalityIsoCode);
 		dest.writeString(origin);
 		dest.writeString(originIsoCode);
-		dest.writeInt(playerId);
+		dest.writeLong(playerId);
 		dest.writeString(footed);
 		dest.writeInt(teamId != null ? teamId : -1);
 		dest.writeString(teamName);

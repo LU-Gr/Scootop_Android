@@ -1,7 +1,7 @@
 package fr.scootop.app.player.details
 
 import android.content.Context
-import fr.scootop.data.model.Player
+import fr.scootop.data.model.user.domain.Player
 
 interface PlayerDetailsView {
 

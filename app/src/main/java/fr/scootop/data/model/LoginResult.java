@@ -1,7 +1,8 @@
 package fr.scootop.data.model;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
+import fr.scootop.data.model.user.User;
 
 
 public class LoginResult
@@ -20,17 +21,7 @@ public class LoginResult
 	@SerializedName("refresh_token")
 	public String refreshToken;
 	@Expose
-	public LoginResult.Data data;
-
-	
-
-public class Data
-	{
-		@Expose
-		public List<String> roles;
-		@Expose
-		public User user;
-	}
+	public User user;
 
 	public LoginResult()
 	{

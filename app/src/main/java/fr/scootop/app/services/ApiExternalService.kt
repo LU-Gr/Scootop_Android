@@ -1,7 +1,6 @@
 package fr.scootop.app.services
 
 import fr.scootop.data.model.services.*
-import retrofit2.http.Headers
 import retrofit2.Response
 import retrofit2.http.*
 interface ApiExternalService {
@@ -14,7 +13,7 @@ interface ApiExternalService {
 
     @Headers("Content-Type: application/json")
     @GET("/services/event/{id}")
-    fun getEventById(@Path("id") id: Integer): Response<Event>
+    fun getEventById(@Path("id") id: Long): Response<Event>
 
     @Headers("Content-Type: application/json")
     @POST("/services/event")
@@ -22,11 +21,11 @@ interface ApiExternalService {
 
     @Headers("Content-Type: application/json")
     @PUT("/services/event/{id}")
-    fun updateEvent(@Path("id") id: Integer, @Body event: Event): Response<Event>
+    fun updateEvent(@Path("id") id: Long, @Body event: Event): Response<Event>
 
     @Headers("Content-Type: application/json")
     @DELETE("/services/event/{id}")
-    fun deleteEvent(@Path("id") id: Integer): Response<String>
+    fun deleteEvent(@Path("id") id: Long): Response<String>
 
     // SHORTLIST
 
@@ -36,7 +35,7 @@ interface ApiExternalService {
 
     @Headers("Content-Type: application/json")
     @GET("/services/shortlist/{id}")
-    fun getShortlistById(@Path("id") id: Integer): Response<Shortlist>
+    fun getShortlistById(@Path("id") id: Long): Response<Shortlist>
 
     @Headers("Content-Type: application/json")
     @POST("/services/shortlist")
@@ -44,11 +43,11 @@ interface ApiExternalService {
 
     @Headers("Content-Type: application/json")
     @PUT("/services/shortlist/{id}")
-    fun updateShortlist(@Path("id") id: Integer, @Body shortlist: Shortlist): Response<Shortlist>
+    fun updateShortlist(@Path("id") id: Long, @Body shortlist: Shortlist): Response<Shortlist>
 
     @Headers("Content-Type: application/json")
     @DELETE("/services/shortlist/{id}")
-    fun deleteShortlist(@Path("id") id: Integer): Response<String>
+    fun deleteShortlist(@Path("id") id: Long): Response<String>
 
     // LOCATION WEARABLE
 
@@ -58,7 +57,7 @@ interface ApiExternalService {
 
     @Headers("Content-Type: application/json")
     @GET("/services/match/wearable/{id}")
-    fun getMatchWearableById(@Path("id") id: Integer): Response<LocationWearable>
+    fun getMatchWearableById(@Path("id") id: Long): Response<LocationWearable>
 
     @Headers("Content-Type: application/json")
     @POST("/services/match/wearable")
@@ -66,19 +65,19 @@ interface ApiExternalService {
 
     @Headers("Content-Type: application/json")
     @PUT("/services/match/wearable/{id}")
-    fun updateMatchWearable(@Path("id") id: Integer, @Body locationWearable: LocationWearable): Response<LocationWearable>
+    fun updateMatchWearable(@Path("id") id: Long, @Body locationWearable: LocationWearable): Response<LocationWearable>
 
     @Headers("Content-Type: application/json")
     @DELETE("/services/match/wearable/{id}")
-    fun deleteMatchWearable(@Path("id") id: Integer): Response<String>
+    fun deleteMatchWearable(@Path("id") id: Long): Response<String>
 
     @Headers("Content-Type: application/json")
     @GET("/services/match/{matchId}/team/{teamId}/wearables")
-    fun getWearablesByMatchAndTeam(@Path("matchId") matchId: Integer, @Path("teamId") teamId: Integer): Response<List<LocationWearable>>
+    fun getWearablesByMatchAndTeam(@Path("matchId") matchId: Long, @Path("teamId") teamId: Long): Response<List<LocationWearable>>
 
     @Headers("Content-Type: application/json")
     @GET("/services/match/{matchId}/team/{teamId}/wearables/{playerId}")
-    fun getPlayerWearableByMatchAndTeam(@Path("matchId") matchId: Integer, @Path("teamId") teamId: Integer, @Path("playerId") playerId: Integer): Response<LocationWearable>
+    fun getPlayerWearableByMatchAndTeam(@Path("matchId") matchId: Long, @Path("teamId") teamId: Long, @Path("playerId") playerId: Long): Response<LocationWearable>
 
     // WEARABLE COMPANY
 
@@ -88,7 +87,7 @@ interface ApiExternalService {
 
     @Headers("Content-Type: application/json")
     @GET("/services/wearable/company/{id}")
-    fun getWearableCompanyById(@Path("id") id: Integer): Response<WearableCompany>
+    fun getWearableCompanyById(@Path("id") id: Long): Response<WearableCompany>
 
     @Headers("Content-Type: application/json")
     @POST("/services/wearable/company")
@@ -96,11 +95,11 @@ interface ApiExternalService {
 
     @Headers("Content-Type: application/json")
     @PUT("/services/wearable/company/{id}")
-    fun updateWearableCompany(@Path("id") id: Integer, @Body wearableCompany: WearableCompany): Response<WearableCompany>
+    fun updateWearableCompany(@Path("id") id: Long, @Body wearableCompany: WearableCompany): Response<WearableCompany>
 
     @Headers("Content-Type: application/json")
     @DELETE("/services/wearable/company/{id}")
-    fun deleteWearableCompany(@Path("id") id: Integer): Response<String>
+    fun deleteWearableCompany(@Path("id") id: Long): Response<String>
 
     // WEARABLE
 
@@ -110,7 +109,7 @@ interface ApiExternalService {
 
     @Headers("Content-Type: application/json")
     @GET("/services/wearable/{id}")
-    fun getWearableById(@Path("id") id: Integer): Response<Wearable>
+    fun getWearableById(@Path("id") id: Long): Response<Wearable>
 
     @Headers("Content-Type: application/json")
     @POST("/services/wearable")
@@ -118,11 +117,11 @@ interface ApiExternalService {
 
     @Headers("Content-Type: application/json")
     @PUT("/services/wearable/{id}")
-    fun updateWearable(@Path("id") id: Integer, @Body wearable: Wearable): Response<Wearable>
+    fun updateWearable(@Path("id") id: Long, @Body wearable: Wearable): Response<Wearable>
 
     @Headers("Content-Type: application/json")
     @DELETE("/services/wearable/{id}")
-    fun deleteWearable(@Path("id") id: Integer): Response<String>
+    fun deleteWearable(@Path("id") id: Long): Response<String>
 
 
 }
