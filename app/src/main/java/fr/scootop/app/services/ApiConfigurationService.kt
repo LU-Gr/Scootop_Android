@@ -1,7 +1,7 @@
 package fr.scootop.app.services
 
 import fr.scootop.data.model.configuration.*
-import retrofit2.Response
+import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiConfigurationService {
@@ -10,199 +10,199 @@ interface ApiConfigurationService {
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/action/types")
-    fun getActionTypes(): Response<List<ActionType>>
+    fun getActionTypes(): Call<List<ActionType>>
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/action/type/{id}")
-    fun getActionTypeById(@Path("id") id: Long): Response<ActionType>
+    fun getActionTypeById(@Path("id") id: Long): Call<ActionType>
 
     @Headers("Content-Type: application/json")
     @POST("/configuration/action/type")
-    fun addActionType(@Body actionType: ActionType): Response<ActionType>
+    fun addActionType(@Body actionType: ActionType): Call<ActionType>
 
     @Headers("Content-Type: application/json")
     @PUT("/configuration/action/type/{id}")
-    fun updateActionTypeById(@Path("id") id: Long, @Body actionType: ActionType): Response<ActionType>
+    fun updateActionTypeById(@Path("id") id: Long, @Body actionType: ActionType): Call<ActionType>
 
     @Headers("Content-Type: application/json")
     @DELETE("/configuration/action/type/{id}")
-    fun deleteActionType(@Path("id") id: Long): Response<String>
+    fun deleteActionType(@Path("id") id: Long): Call<String>
 
     // CATEGORY
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/categories")
-    fun getCategories(): Response<List<Category>>
+    fun getCategories(): Call<List<Category>>
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/category/{id}")
-    fun getCategoryById(@Path("id") id: Long): Response<Category>
+    fun getCategoryById(@Path("id") id: Long): Call<Category>
 
     @Headers("Content-Type: application/json")
     @POST("/configuration/category")
-    fun addCategory(@Body category: Category): Response<Category>
+    fun addCategory(@Body category: Category): Call<Category>
 
     @Headers("Content-Type: application/json")
     @PUT("/configuration/category/{id}")
-    fun updateCategory(@Path("id") id: Long, @Body category: Category): Response<Category>
+    fun updateCategory(@Path("id") id: Long, @Body category: Category): Call<Category>
 
     @Headers("Content-Type: application/json")
     @DELETE("/configuration/category/{id}")
-    fun deleteCategory(@Path("id") id: Long): Response<String>
+    fun deleteCategory(@Path("id") id: Long): Call<String>
 
     //CATEGORY TYPE
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/category/type/{id}")
-    fun getCategoryTypeById(@Path("id") id: Long): Response<CategoryType>
+    fun getCategoryTypeById(@Path("id") id: Long): Call<CategoryType>
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/category/types")
-    fun getCategoriesTypes(): Response<List<CategoryType>>
+    fun getCategoriesTypes(): Call<List<CategoryType>>
 
     @Headers("Content-Type: application/json")
     @POST("/configuration/category/type")
-    fun addCategoryType(@Body categoryType: CategoryType): Response<CategoryType>
+    fun addCategoryType(@Body categoryType: CategoryType): Call<CategoryType>
 
     @Headers("Content-Type: application/json")
     @PUT("/configuration/category/type/{id}")
-    fun updateCategoryType(@Path("id") id: Long, @Body categoryType: CategoryType): Response<CategoryType>
+    fun updateCategoryType(@Path("id") id: Long, @Body categoryType: CategoryType): Call<CategoryType>
 
     @Headers("Content-Type: application/json")
     @DELETE("/configuration/category/type/{id}")
-    fun deleteCategoryType(@Path("id") id: Long): Response<String>
+    fun deleteCategoryType(@Path("id") id: Long): Call<String>
 
 
     //COMPETITION TYPE
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/competition/type/{id}")
-    fun getCompetitionTypeById(@Path("id") id: Long): Response<CompetitionType>
+    fun getCompetitionTypeById(@Path("id") id: Long): Call<CompetitionType>
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/competition/types")
-    fun getCompetitionTypes(): Response<List<CompetitionType>>
+    fun getCompetitionTypes(): Call<List<CompetitionType>>
 
     @Headers("Content-Type: application/json")
     @POST("/configuration/competition/type")
-    fun addCompetitionType(@Body competitionType: CompetitionType): Response<CompetitionType>
+    fun addCompetitionType(@Body competitionType: CompetitionType): Call<CompetitionType>
 
     @Headers("Content-Type: application/json")
     @PUT("/configuration/competition/type/{id}")
-    fun updateCompetitionType(@Path("id") id: Long, @Body competitionType: CompetitionType): Response<CompetitionType>
+    fun updateCompetitionType(@Path("id") id: Long, @Body competitionType: CompetitionType): Call<CompetitionType>
 
     @Headers("Content-Type: application/json")
     @DELETE("/configuration/competition/type/{id}")
-    fun deleteCompetitionType(@Path("id") id: Long): Response<String>
+    fun deleteCompetitionType(@Path("id") id: Long): Call<String>
 
     // DIVISION
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/division/{id}")
-    fun getDivisionById(@Path("id") id: Long): Response<Division>
+    fun getDivisionById(@Path("id") id: Long): Call<Division>
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/divisions")
-    fun getDivisions(): Response<List<Division>>
+    fun getDivisions(): Call<List<Division>>
 
     @Headers("Content-Type: application/json")
     @POST("/configuration/division")
-    fun addDivision(@Body division: Division): Response<Division>
+    fun addDivision(@Body division: Division): Call<Division>
 
     @Headers("Content-Type: application/json")
     @PUT("/configuration/division/{id}")
-    fun updateDivision(@Path("id") id: Long, @Body division: Division): Response<Division>
+    fun updateDivision(@Path("id") id: Long, @Body division: Division): Call<Division>
 
     @Headers("Content-Type: application/json")
     @DELETE("/configuration/division/{id}")
-    fun deleteDivision(@Path("id") id: Long): Response<String>
+    fun deleteDivision(@Path("id") id: Long): Call<String>
 
     // LEAGUE
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/league/{id}")
-    fun getLeagueById(@Path("id") id: Long): Response<League>
+    fun getLeagueById(@Path("id") id: Long): Call<League>
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/leagues")
-    fun getLeagues(): Response<List<League>>
+    fun getLeagues(): Call<List<League>>
 
     @Headers("Content-Type: application/json")
     @POST("/configuration/league")
-    fun addLeague(@Body league: League): Response<League>
+    fun addLeague(@Body league: League): Call<League>
 
     @Headers("Content-Type: application/json")
     @PUT("/configuration/league/{id}")
-    fun updateLeague(@Path("id") id: Long, @Body league: League): Response<League>
+    fun updateLeague(@Path("id") id: Long, @Body league: League): Call<League>
 
     @Headers("Content-Type: application/json")
     @DELETE("/configuration/league/{id}")
-    fun deleteLeague(@Path("id") id: Long): Response<String>
+    fun deleteLeague(@Path("id") id: Long): Call<String>
 
     // POSTE
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/poste/{id}")
-    fun getPosteById(@Path("id") id: Long): Response<Poste>
+    fun getPosteById(@Path("id") id: Long): Call<Poste>
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/postes")
-    fun getPostes(): Response<List<Poste>>
+    fun getPostes(): Call<List<Poste>>
 
     @Headers("Content-Type: application/json")
     @POST("/configuration/poste")
-    fun addPoste(@Body poste: Poste): Response<Poste>
+    fun addPoste(@Body poste: Poste): Call<Poste>
 
     @Headers("Content-Type: application/json")
     @PUT("/configuration/poste/{id}")
-    fun updatePoste(@Path("id") id: Long, @Body poste: Poste): Response<Poste>
+    fun updatePoste(@Path("id") id: Long, @Body poste: Poste): Call<Poste>
 
     @Headers("Content-Type: application/json")
     @DELETE("/configuration/poste/{id}")
-    fun deletePoste(@Path("id") id: Long): Response<String>
+    fun deletePoste(@Path("id") id: Long): Call<String>
 
     // STADE
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/stade/{id}")
-    fun getStadeById(@Path("id") id: Long): Response<Stade>
+    fun getStadeById(@Path("id") id: Long): Call<Stade>
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/stades")
-    fun getStades(): Response<List<Stade>>
+    fun getStades(): Call<List<Stade>>
 
     @Headers("Content-Type: application/json")
     @POST("/configuration/stade")
-    fun addStade(@Body stade: Stade): Response<Stade>
+    fun addStade(@Body stade: Stade): Call<Stade>
 
     @Headers("Content-Type: application/json")
     @PUT("/configuration/stade/{id}")
-    fun updateStade(@Path("id") id: Long, @Body stade: Stade): Response<Stade>
+    fun updateStade(@Path("id") id: Long, @Body stade: Stade): Call<Stade>
 
     @Headers("Content-Type: application/json")
     @DELETE("/configuration/stade/{id}")
-    fun deleteStade(@Path("id") id: Long): Response<String>
+    fun deleteStade(@Path("id") id: Long): Call<String>
 
     //TOUCH TYPE
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/touch/type/{id}")
-    fun getTouchTypeById(@Path("id") id: Long): Response<TouchType>
+    fun getTouchTypeById(@Path("id") id: Long): Call<TouchType>
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/touch/types")
-    fun getTouchTypes(): Response<List<TouchType>>
+    fun getTouchTypes(): Call<List<TouchType>>
 
     @Headers("Content-Type: application/json")
     @POST("/configuration/touch/type")
-    fun addTouchType(@Body touchType: TouchType): Response<TouchType>
+    fun addTouchType(@Body touchType: TouchType): Call<TouchType>
 
     @Headers("Content-Type: application/json")
     @PUT("/configuration/touch/type/{id}")
-    fun updateTouchType(@Path("id") id: Long, @Body touchType: TouchType): Response<TouchType>
+    fun updateTouchType(@Path("id") id: Long, @Body touchType: TouchType): Call<TouchType>
 
     @Headers("Content-Type: application/json")
     @DELETE("/configuration/touch/type/{id}")
-    fun deleteTouchType(@Path("id") id: Long): Response<String>
+    fun deleteTouchType(@Path("id") id: Long): Call<String>
 
 }

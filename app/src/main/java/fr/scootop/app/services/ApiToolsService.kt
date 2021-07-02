@@ -1,7 +1,7 @@
 package fr.scootop.app.services
 
 import fr.scootop.data.model.tools.*
-import retrofit2.Response
+import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiToolsService {
@@ -10,117 +10,117 @@ interface ApiToolsService {
 
     @Headers("Content-Type: application/json")
     @GET("/tools/clubs")
-    fun getClubs(): Response<List<Club>>
+    fun getClubs(): Call<List<Club>>
 
     @Headers("Content-Type: application/json")
     @GET("/tools/club/{id}")
-    fun getClubById(@Path("id") id: Long): Response<Club>
+    fun getClubById(@Path("id") id: Long): Call<Club>
 
     @Headers("Content-Type: application/json")
     @POST("/tools/club")
-    fun addClub(@Body club: Club): Response<Club>
+    fun addClub(@Body club: Club): Call<Club>
 
     @Headers("Content-Type: application/json")
     @PUT("/tools/club/{id}")
-    fun updateClub(@Path("id") id: Long, @Body club: Club): Response<Club>
+    fun updateClub(@Path("id") id: Long, @Body club: Club): Call<Club>
 
     @Headers("Content-Type: application/json")
     @DELETE("/tools/club/{id}")
-    fun deleteClub(@Path("id") id: Long): Response<String>
+    fun deleteClub(@Path("id") id: Long): Call<String>
 
     // COMPETITION
 
     @Headers("Content-Type: application/json")
     @GET("/tools/competitions")
-    fun getCompetitions(): Response<List<Competition>>
+    fun getCompetitions(): Call<List<Competition>>
 
     @Headers("Content-Type: application/json")
     @GET("/tools/competition/{id}")
-    fun getCompetitionById(@Path("id") id: Long): Response<Competition>
+    fun getCompetitionById(@Path("id") id: Long): Call<Competition>
 
     @Headers("Content-Type: application/json")
     @POST("/tools/competition")
-    fun addCompetition(@Body competition: Competition): Response<Competition>
+    fun addCompetition(@Body competition: Competition): Call<Competition>
 
     @Headers("Content-Type: application/json")
     @PUT("/tools/competition/{id}")
-    fun updateCompetition(@Path("id") id: Long, @Body competition: Competition): Response<Competition>
+    fun updateCompetition(@Path("id") id: Long, @Body competition: Competition): Call<Competition>
 
     @Headers("Content-Type: application/json")
     @DELETE("/tools/competition/{id}")
-    fun deleteCompetition(@Path("id") id: Long): Response<String>
+    fun deleteCompetition(@Path("id") id: Long): Call<String>
 
     // MATCH
 
     @Headers("Content-Type: application/json")
     @GET("/tools/matchs")
-    fun getMatches(): Response<List<Match>>
+    fun getMatches(): Call<List<Match>>
 
     @Headers("Content-Type: application/json")
     @GET("/tools/match/{id}")
-    fun getMatchById(@Path("id") id: Long): Response<Match>
+    fun getMatchById(@Path("id") id: Long): Call<Match>
 
     @Headers("Content-Type: application/json")
     @POST("/tools/match")
-    fun addMatch(@Body match: Match): Response<Match>
+    fun addMatch(@Body match: Match): Call<Match>
 
     @Headers("Content-Type: application/json")
     @PUT("/tools/match/{id}")
-    fun updateMatch(@Path("id") id: Long, @Body match: Match): Response<Match>
+    fun updateMatch(@Path("id") id: Long, @Body match: Match): Call<Match>
 
     @Headers("Content-Type: application/json")
     @DELETE("/tools/match/{id}")
-    fun deleteMatch(@Path("id") id: Long): Response<String>
+    fun deleteMatch(@Path("id") id: Long): Call<String>
 
 
     // SAISON
 
     @Headers("Content-Type: application/json")
     @GET("/tools/saisons")
-    fun getSaisons(): Response<List<Saison>>
+    fun getSaisons(): Call<List<Saison>>
 
     @Headers("Content-Type: application/json")
     @GET("/tools/saison/{id}")
-    fun getSaisonById(@Path("id") id: Long): Response<Saison>
+    fun getSaisonById(@Path("id") id: Long): Call<Saison>
 
     @Headers("Content-Type: application/json")
     @POST("/tools/saison")
-    fun addSaison(@Body saison: Saison): Response<Saison>
+    fun addSaison(@Body saison: Saison): Call<Saison>
 
     @Headers("Content-Type: application/json")
     @PUT("/tools/saison/{id}")
-    fun updateSaison(@Path("id") id: Long, @Body saison: Saison): Response<Saison>
+    fun updateSaison(@Path("id") id: Long, @Body saison: Saison): Call<Saison>
 
     @Headers("Content-Type: application/json")
     @DELETE("/tools/saison/{id}")
-    fun deleteSaison(@Path("id") id: Long): Response<String>
+    fun deleteSaison(@Path("id") id: Long): Call<String>
 
 
     // STAT
 
     @Headers("Content-Type: application/json")
     @GET("/tools/stats")
-    fun getStatisticalSheets(): Response<List<StatisticalSheet>>
+    fun getStatisticalSheets(): Call<List<StatisticalSheet>>
 
     @Headers("Content-Type: application/json")
     @GET("/tools/statisticalsheet/{id}")
-    fun getStatisticalSheetById(@Path("id") id: Long): Response<StatisticalSheet>
+    fun getStatisticalSheetById(@Path("id") id: Long): Call<StatisticalSheet>
 
     @Headers("Content-Type: application/json")
     @POST("/tools/statisticalsheet")
-    fun addStatisticalSheet(@Body statisticalSheet: StatisticalSheet): Response<StatisticalSheet>
+    fun addStatisticalSheet(@Body statisticalSheet: StatisticalSheet): Call<StatisticalSheet>
 
     @Headers("Content-Type: application/json")
     @PUT("/tools/statisticalsheet/{id}")
-    fun updateStatisticalSheett(@Path("id") id: Long, @Body statisticalSheet: StatisticalSheet): Response<StatisticalSheet>
+    fun updateStatisticalSheett(@Path("id") id: Long, @Body statisticalSheet: StatisticalSheet): Call<StatisticalSheet>
 
     @Headers("Content-Type: application/json")
     @DELETE("/tools/statisticalsheet/{id}")
-    fun deleteStatisticalSheet(@Path("id") id: Long): Response<String>
+    fun deleteStatisticalSheet(@Path("id") id: Long): Call<String>
 
     @Headers("Content-Type: application/json")
     @GET("/tools/stats/{playerId}/{eventId}")
-    fun getStatByPLayerAndEvent(@Path("playerId") playerId: Long, @Path("eventId") eventId: Long): Response<StatisticalSheet>
+    fun getStatByPLayerAndEvent(@Path("playerId") playerId: Long, @Path("eventId") eventId: Long): Call<StatisticalSheet>
 
 
 
@@ -128,22 +128,22 @@ interface ApiToolsService {
 
     @Headers("Content-Type: application/json")
     @GET("/tools/teams")
-    fun getTeams(): Response<List<Team>>
+    fun getTeams(): Call<List<Team>>
 
     @Headers("Content-Type: application/json")
     @GET("/tools/team/{id}")
-    fun getTeamById(@Path("id") id: Long): Response<Team>
+    fun getTeamById(@Path("id") id: Long): Call<Team>
 
     @Headers("Content-Type: application/json")
     @POST("/tools/team")
-    fun addTeam(@Body team: Team): Response<Team>
+    fun addTeam(@Body team: Team): Call<Team>
 
     @Headers("Content-Type: application/json")
     @PUT("/tools/team/{id}")
-    fun updateTeams(@Path("id") id: Long, @Body team: Team): Response<Team>
+    fun updateTeams(@Path("id") id: Long, @Body team: Team): Call<Team>
 
     @Headers("Content-Type: application/json")
     @DELETE("/tools/tam/{id}")
-    fun deleteTeam(@Path("id") id: Long): Response<String>
+    fun deleteTeam(@Path("id") id: Long): Call<String>
 
 }
