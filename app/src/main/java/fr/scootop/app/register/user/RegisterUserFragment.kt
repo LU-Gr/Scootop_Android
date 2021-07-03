@@ -72,7 +72,7 @@ class RegisterUserFragment : Fragment() {
                 picker.dismiss()
                 registerUser.originCountry = countryCode.toLowerCase()
             }
-            picker.show(activity!!.supportFragmentManager, "originPicker")
+            picker.show(requireActivity().supportFragmentManager, "originPicker")
         }
 
         nationalityInput.setOnClickListener {
@@ -83,7 +83,7 @@ class RegisterUserFragment : Fragment() {
                 picker.dismiss()
                 registerUser.nationalityCountry = countryCode.toLowerCase()
             }
-            picker.show(activity!!.supportFragmentManager, "nationalityPicker")
+            picker.show(requireActivity().supportFragmentManager, "nationalityPicker")
         }
     }
 

@@ -1,5 +1,7 @@
 package fr.scootop.app.services
 
+import fr.scootop.data.model.LoginResult
+import fr.scootop.data.model.request.RegisterUser
 import fr.scootop.data.model.user.Contact
 import fr.scootop.data.model.user.User
 import fr.scootop.data.model.user.UserType
@@ -15,7 +17,7 @@ interface ApiUserService {
     @FormUrlEncoded
     @Headers("Content-Type: application/json")
     @POST("/user/register")
-    fun registerUser(@Body user: User): Call<String>
+    fun register(@Body user: RegisterUser): Observable<LoginResult>
 
     @FormUrlEncoded
     @Headers("Content-Type: application/json")
@@ -23,7 +25,7 @@ interface ApiUserService {
     fun login(
             @Field("username") username:String,
             @Field("password") password:String
-    ): Observable<User>
+    ): Observable<LoginResult>
 
     // CONTACTS
 
@@ -60,10 +62,6 @@ interface ApiUserService {
     @Headers("Content-Type: application/json")
     @PUT("/user/user/{id}")
     fun updateUserById(@Path("id") id: Long, @Body user: User): Call<User>
-
-    @Headers("Content-Type: application/json")
-    @POST("/user/user")
-    fun addUser(@Body user: User): Call<User>
 
     @Headers("Content-Type: application/json")
     @DELETE("/user/user/{id}")

@@ -52,7 +52,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView, View.OnClickListener
     }
 
     override fun onClick(v: View?) {
-        userType?.let {
+        userType?.let { it ->
             when (it) {
                 UserType.Observer -> {
                     adapter?.userFragment?.registerUser?.let {

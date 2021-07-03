@@ -17,9 +17,7 @@ public class LoginResult
 	@Expose
 	@SerializedName("token")
 	public String jwt;
-	@Expose
-	@SerializedName("refresh_token")
-	public String refreshToken;
+
 	@Expose
 	public User user;
 

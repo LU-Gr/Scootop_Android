@@ -4,10 +4,7 @@ import android.util.Log
 import com.google.gson.GsonBuilder
 import fr.scootop.BuildConfig
 import fr.scootop.app.services.*
-import fr.scootop.data.api.service.DeviceTokenService
-import fr.scootop.data.api.service.LoginService
-import fr.scootop.data.api.service.PostService
-import fr.scootop.data.api.service.YoutubeService
+import fr.scootop.data.api.service.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -29,7 +26,7 @@ class ApiManager private constructor() {
 
     val loginService: LoginService
     val deviceTokenService: DeviceTokenService
-    /*val registerService: RegisterService
+    val registerService: RegisterService
     val searchService: SearchService
     val shortlistItemService: ShortlistItemService
     val boardService: BoardService
@@ -38,7 +35,7 @@ class ApiManager private constructor() {
     val divisionService: DivisionService
     val positionService: PositionService
 
-    val videoService: VideoService*/
+    val videoService: VideoService
     val youtubeServce: YoutubeService
     val postService: PostService
 
@@ -76,7 +73,7 @@ class ApiManager private constructor() {
             .build()
 
         loginService = retrofit.create(LoginService::class.java)
-        /*registerService = retrofit.create(RegisterService::class.java)
+        registerService = retrofit.create(RegisterService::class.java)
         searchService = retrofit.create(SearchService::class.java)
         shortlistItemService = retrofit.create(ShortlistItemService::class.java)
 
@@ -86,7 +83,7 @@ class ApiManager private constructor() {
         divisionService = retrofit.create(DivisionService::class.java)
         positionService = retrofit.create(PositionService::class.java)
         videoService = retrofit.create(VideoService::class.java)
-        */
+
 
         deviceTokenService = retrofit.create(DeviceTokenService::class.java)
         userService = retrofit.create(ApiUserService::class.java)
