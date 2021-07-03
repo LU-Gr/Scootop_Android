@@ -17,8 +17,7 @@ public class Club {
 	private String name;
 	
 	private Contact contact;
-	
-	@JsonIgnoreProperties({"club"})
+
 	private List<Team> teams;
 	
 	private List<Scoot> scoots;

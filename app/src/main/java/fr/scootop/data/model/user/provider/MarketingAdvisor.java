@@ -7,7 +7,6 @@ public class MarketingAdvisor {
 	private Long id;
 	
 	private User user;
-	
-	@JsonIgnoreProperties("marketingAdvisors")
+
 	private Agence agence;
 }

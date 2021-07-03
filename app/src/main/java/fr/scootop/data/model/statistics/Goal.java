@@ -10,11 +10,9 @@ public class Goal {
 	private LocalDate date;
 	
 	private Integer rating;
-	
-	@JsonIgnoreProperties({"match"})
+
 	private Shoot shoot;
-	
-	@JsonIgnoreProperties({"statisticalSheetsTeamA","statisticalSheetsTeamB"})
+
     private Match match;
 	
     private Player player;

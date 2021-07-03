@@ -9,8 +9,7 @@ public class VideoView {
     
     
     private LocalDate date;
-    
-    @JsonIgnoreProperties("views")
+
     private Video video;
     
     
