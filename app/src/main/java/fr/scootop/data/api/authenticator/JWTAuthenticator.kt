@@ -26,7 +26,7 @@ class JWTAuthenticator : Authenticator {
 
         if (loginResult.code == null && !TextUtils.isEmpty(loginResult.jwt)) {
             TokenStorage.get(context).jwt = loginResult.jwt
-            TokenStorage.get(context).refreshToken = loginResult.refreshToken
+            //TokenStorage.get(context).refreshToken = loginResult.refreshToken
             UserStorage.get(context).user = loginResult.user
 
             return response.request().newBuilder()

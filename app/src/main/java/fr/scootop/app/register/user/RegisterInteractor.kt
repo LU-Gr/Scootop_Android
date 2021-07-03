@@ -10,7 +10,7 @@ open class RegisterInteractor(private val context: Context) {
 
     fun handle(loginResult: LoginResult, userEmail: String?) {
         TokenStorage.get(context).jwt = loginResult.jwt
-        TokenStorage.get(context).refreshToken = loginResult.refreshToken
+        //TokenStorage.get(context).refreshToken = loginResult.refreshToken
         UserStorage.get(context).user = loginResult.user
 
         if (!BuildConfig.DEBUG) {
