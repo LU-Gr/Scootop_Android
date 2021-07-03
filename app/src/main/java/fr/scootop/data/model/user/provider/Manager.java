@@ -7,7 +7,6 @@ public class Manager {
 	private Long id;
 	
 	private User user;
-	
-	@JsonIgnoreProperties("managers")
+
 	private Agence agence;
 }

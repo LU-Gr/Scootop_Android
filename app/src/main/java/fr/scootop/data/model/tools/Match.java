@@ -1,9 +1,9 @@
 package fr.scootop.data.model.tools;
 import java.util.List;
 
-import com.projet.scootop.model.configuration.Stade;
-import com.projet.scootop.model.services.Event;
-import com.projet.scootop.model.services.LocationWearable;
+import fr.scootop.data.model.configuration.Stade;
+import fr.scootop.data.model.services.Event;
+import fr.scootop.data.model.services.LocationWearable;
 import fr.scootop.data.model.user.domain.Scoot;
 
 public class Match {
@@ -22,15 +22,12 @@ public class Match {
 	private Stade stade;
 	
 	private Saison saison;
-	
-	@JsonIgnoreProperties("match")
+
 	private List<StatisticalSheet> statisticalSheetsTeamB;
-    
-    @JsonIgnoreProperties("match")
+
     private List<StatisticalSheet> statisticalSheetsTeamA;
     
-    
-    @JsonIgnoreProperties("match")
+
 	private List<LocationWearable> wearables;
 	
 	private List <Scoot> scoots;

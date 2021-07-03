@@ -22,7 +22,7 @@ public class VideosPlayeurs extends YouTubeBaseActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.OLD_activity_player_details);
+        setContentView(R.layout.old_activity_player_details);
 
 
         //YouTubePlayeurView = (YouTubePlayerView) findViewById(R.id.youtube_View);

@@ -7,8 +7,7 @@ public class Division {
 	
     private String name;
 	   
-    
-    @JsonIgnoreProperties("divisions")
+
     private League league;
      
     

@@ -22,8 +22,7 @@ public class Event {
     
     private boolean prestaZoom;
     
-    
-    @JsonIgnoreProperties("event")
+
     private List<Video> videos;
 	
 	private Competition competition;

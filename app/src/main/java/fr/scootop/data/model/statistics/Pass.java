@@ -1,6 +1,6 @@
 package fr.scootop.data.model.statistics;
 
-import com.projet.scootop.model.configuration.TouchType;
+import fr.scootop.data.model.configuration.TouchType;
 import fr.scootop.data.model.tools.Match;
 import fr.scootop.data.model.user.domain.Player;
 
@@ -19,8 +19,7 @@ public class Pass {
     
     
     private Player player;
-	
-	@JsonIgnoreProperties({"statisticalSheetsTeamA","statisticalSheetsTeamB"})
+
     private Match match;
     
     

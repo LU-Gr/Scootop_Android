@@ -6,10 +6,8 @@ public class Agence {
     private Long id;
 	
 	private String region;
-	
-	@JsonIgnoreProperties("agence")
+
 	private List<MarketingAdvisor> marketingAdvisors;
-	
-	@JsonIgnoreProperties("agence")
+
 	private List<Manager> manager;
 }

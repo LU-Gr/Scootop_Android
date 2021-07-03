@@ -7,7 +7,6 @@ public class SearchKeyWord {
 	private Long id;
 	
     private String name;
-	
-	@JsonIgnoreProperties("keywords")
+
     private List<Video> videos;
 }

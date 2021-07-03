@@ -13,8 +13,7 @@ public class LocationWearable {
     
     private Team team;
     
-    
-    @JsonIgnoreProperties("wearables")
+
     private Match match;
     
     

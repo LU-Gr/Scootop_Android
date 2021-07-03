@@ -8,6 +8,6 @@ public class Coach {
     private Long id;
 	
     private User user;
-	@JsonIgnoreProperties("coaches")
+
     private List<Team> teams;
 }

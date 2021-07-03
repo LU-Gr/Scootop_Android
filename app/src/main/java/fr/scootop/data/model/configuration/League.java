@@ -9,8 +9,7 @@ public class League {
     private Long id;
 	
 	private String name;
-	
-	@JsonIgnoreProperties("league")
+
 	private List<Division> divisions;
 	
     private CompetitionType competitionType;

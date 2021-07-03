@@ -9,7 +9,6 @@ public class Saison {
     private LocalDate dateDebut;
 	
     private LocalDate dateFin;
-	
-	@JsonIgnoreProperties("saison")
+
     private List<Match> matchs;
 }
