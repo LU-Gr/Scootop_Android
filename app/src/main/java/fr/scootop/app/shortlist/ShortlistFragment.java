@@ -58,7 +58,7 @@ public class ShortlistFragment extends Fragment implements ShortlistView, OnShor
 
         mInteractor = new ShortlistInteractor(new ShortlistPresenter(this));
         if (getArguments() != null) {
-            mInteractor.setUserId(getArguments().getInt(ExtraKey.INSTANCE.getUSER_ID(), -1));
+            mInteractor.setUserId(getArguments().getLong(ExtraKey.INSTANCE.getUSER_ID(), -1));
         }
     }
 

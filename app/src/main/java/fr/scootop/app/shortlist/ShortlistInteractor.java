@@ -12,14 +12,14 @@ public class ShortlistInteractor
 {
     private final ShortlistPresenter mPresenter;
 
-    private Integer mUserId;
+    private Long mUserId;
 
     public ShortlistInteractor(ShortlistPresenter presenter)
     {
         mPresenter = presenter;
     }
 
-    public void setUserId(Integer userId)
+    public void setUserId(Long userId)
     {
         mUserId = userId;
     }

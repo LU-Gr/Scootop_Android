@@ -3,8 +3,10 @@ package fr.scootop.app.login
 //import com.crashlytics.android.Crashlytics
 import android.content.Context
 import android.text.TextUtils
+import android.util.Log
 import fr.scootop.BuildConfig
 import fr.scootop.data.api.ApiManager
+import fr.scootop.data.model.request.AuthRequest
 import fr.scootop.data.storage.TokenStorage
 import fr.scootop.data.storage.UserStorage
 import rx.android.schedulers.AndroidSchedulers
@@ -17,19 +19,20 @@ class LoginInteractor(private val mPresenter: LoginPresenter, context: Context) 
 
     fun login(email: String, password: String) {
         // temp code
-        mPresenter.presentHome()
+        //mPresenter.presentHome()
         // temp code
 
         mPresenter.presentLoading()
-
-        ApiManager.get().userService.login(email, password)
+        var authRequest = AuthRequest()
+        authRequest.email = email
+        authRequest.password = password
+        Log.i("login",authRequest.toString())
+        ApiManager.get().userService.login(authRequest)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ loginResult ->
                 mPresenter.dismissLoading()
-
                 if (loginResult.code == null && !TextUtils.isEmpty(loginResult.jwt)) {
-
                     val context = mContext.get()
                     if (null != context) {
                         /* Store JWT and refresh token */
@@ -43,7 +46,7 @@ class LoginInteractor(private val mPresenter: LoginPresenter, context: Context) 
                         }
                     }
 
-                    mPresenter.presentHome()
+                    mPresenter.presentSearchEngine()
                 } else if (loginResult.code != null) {
 
                     var errorMessage: String

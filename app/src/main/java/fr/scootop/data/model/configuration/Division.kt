@@ -1,15 +1,11 @@
-package fr.scootop.data.model.configuration;
+package fr.scootop.data.model.configuration
 
-
-public class Division {
-	
-    private Long id;
-	
-    private String name;
-	   
-
-    private League league;
-     
-    
-    private Category category;
+class Division {
+    var id: Long? = null
+    var name: String = ""
+    var league: League? = null
+    var category: Category? = null
+    override fun toString(): String {
+        return name
+    }
 }

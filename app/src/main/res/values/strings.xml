@@ -103,6 +103,7 @@
     <string name="hint_birthdate">Date de naissance</string>
     <string name="hint_origin">Origine</string>
     <string name="hint_nationality">Nationalité</string>
+    <string name="hint_tel">Numéro de téléphone</string>
     <string name="hint_email">E-mail</string>
     <string name="hint_password">Mot de passe</string>
 

@@ -27,6 +27,10 @@ public class SearchInteractor
 			return;
 		}
 
+		if (text.length() < 4){
+			return;
+		}
+
 		/** appel de l'API pour recherche les joueurs correspondant au texte */
 		ApiManager.Companion.get().getSearchService()
                             .searchPlayers(text)

@@ -6,4 +6,6 @@ interface LoginView : LoadingView {
     fun displayHomePage()
 
     fun displayError(message: String)
+
+    fun displaySearchEngine()
 }

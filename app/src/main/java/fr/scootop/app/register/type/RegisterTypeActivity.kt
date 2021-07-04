@@ -10,6 +10,7 @@ import fr.scootop.app.register.user.RegisterActivity
 import fr.scootop.data.definition.UserType
 import kotlinx.android.synthetic.main.activity_register_type.*
 
+
 class RegisterTypeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

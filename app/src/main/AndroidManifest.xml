@@ -31,11 +31,7 @@
         <activity android:name=".app.interactions.FollowActivity" />
         <activity android:name=".app.player.details.FichePlayerIActivity">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".app.comparator.ComparatorActivity" /> <!-- [START fcm_default_icon] -->
@@ -60,7 +56,14 @@
         <activity
             android:name=".app.launch.LaunchActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".app.login.LoginActivity"
             android:screenOrientation="portrait"

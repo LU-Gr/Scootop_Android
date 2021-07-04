@@ -8,7 +8,7 @@ import fr.scootop.data.storage.UserStorage
 
 open class RegisterInteractor(private val context: Context) {
 
-    fun handle(loginResult: LoginResult, userEmail: String?) {
+    fun handle(loginResult: LoginResult) {
         TokenStorage.get(context).jwt = loginResult.jwt
         //TokenStorage.get(context).refreshToken = loginResult.refreshToken
         UserStorage.get(context).user = loginResult.user

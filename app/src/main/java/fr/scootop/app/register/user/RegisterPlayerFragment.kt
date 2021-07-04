@@ -10,13 +10,13 @@ import androidx.fragment.app.Fragment
 import com.afollestad.materialdialogs.MaterialDialog
 import com.mukesh.countrypicker.CountryPicker
 import fr.scootop.R
-import fr.scootop.app.common.ext.onChange
 import fr.scootop.data.api.ApiManager
 import fr.scootop.data.definition.Footed
-import fr.scootop.data.model.Category
-import fr.scootop.data.model.Division
-import fr.scootop.data.model.Position
+import fr.scootop.data.model.configuration.Category
+import fr.scootop.data.model.configuration.Poste
 import fr.scootop.data.model.request.RegisterUserPlayer
+import fr.scootop.data.model.tools.Club
+import fr.scootop.data.model.tools.Team
 import kotlinx.android.synthetic.main.fragment_register_player.*
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -25,9 +25,11 @@ class RegisterPlayerFragment : Fragment() {
 
     var player: RegisterUserPlayer.Wrapper = RegisterUserPlayer.Wrapper()
 
-    private var positions: Array<Position> = emptyArray()
+    private var positions: Array<Poste> = emptyArray()
     private var categories: Array<Category> = emptyArray()
-    private var divisions: Array<Division> = emptyArray()
+    private var teams: Array<Team> = emptyArray()
+    private var clubs: Array<Club> = emptyArray()
+    private var clubId: Long? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_register_player, container, false)
@@ -36,15 +38,13 @@ class RegisterPlayerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        clubInput.onChange { player.clubName = it }
-
         heightCmInput.setOnClickListener {
-            context?.let {
+            context?.let { it ->
                 MaterialDialog.Builder(it)
                     .title(R.string.hint_height_cm)
                     .items(IntRange(120, 250).map { it.toString() })
                     .itemsCallbackSingleChoice(-1) { dialog, _, _, text: CharSequence? ->
-                        text.let({
+                        text.let {
                             val intValue = it.toString().toInt()
                             player.heightCm = intValue
 
@@ -52,7 +52,7 @@ class RegisterPlayerFragment : Fragment() {
                             val m = (intValue - cm) / 100
 
                             heightCmInput.setText("%dm%s".format(m, "$cm".padStart(2, '0')))
-                        })
+                        }
                         dialog.dismiss()
                         return@itemsCallbackSingleChoice true
                     }
@@ -103,7 +103,7 @@ class RegisterPlayerFragment : Fragment() {
                 countryInput.setText(name)
                 picker.dismiss()
                 player.countryCode = countryCode.toLowerCase()
-                loadDivisions()
+                loadClubs()
             }
             picker.show(activity?.supportFragmentManager!!, "countryPicker")
         }
@@ -122,27 +122,35 @@ class RegisterPlayerFragment : Fragment() {
             }
         }
 
-        divisionSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        clubSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                player.divisionId = divisions[position].id
+                clubId = clubs[position].id
+                loadTeams()
+            }
+        }
+
+        teamSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                player.teamId = teams[position].id
             }
         }
 
         loadPositions()
         loadCategories()
-        loadDivisions()
+
     }
 
     private fun loadPositions() {
-        ApiManager.get().positionService.getPositions()
+        ApiManager.get().configurationService.getPostes()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ pagination ->
-                pagination.members?.let {
-                    positions = it
+            .subscribe({ postes ->
+                postes?.let { it ->
+                    positions = it.toTypedArray()
                     context?.let {
-                        favoritePositionSpinner.adapter = ArrayAdapter(it, android.R.layout.simple_spinner_item, android.R.id.text1, positions)
+                        favoritePositionSpinner.adapter = ArrayAdapter(it, android.R.layout.simple_spinner_item, android.R.id.text1, this.positions)
                     }
                 }
             }, { throwable ->
@@ -151,14 +159,14 @@ class RegisterPlayerFragment : Fragment() {
     }
 
     private fun loadCategories() {
-        ApiManager.get().categoryService.getCategories()
+        ApiManager.get().configurationService.getCategories()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ pagination ->
-                pagination.members?.let {
-                    categories = it
+            .subscribe({ categories ->
+                categories?.let {
+                    this.categories = it.toTypedArray()
                     context?.let {
-                        categorySpinner.adapter = ArrayAdapter(it, android.R.layout.simple_spinner_item, android.R.id.text1, categories)
+                        categorySpinner.adapter = ArrayAdapter(it, android.R.layout.simple_spinner_item, android.R.id.text1,this.categories)
                     }
                 }
             }, { throwable ->
@@ -166,16 +174,33 @@ class RegisterPlayerFragment : Fragment() {
             })
     }
 
-    private fun loadDivisions() {
-        ApiManager.get().divisionService.getDivisions(player.countryCode)
+    private fun loadTeams() {
+        ApiManager.get().toolsService.getTeams(/*player.countryCode*/)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ pagination ->
-                pagination.members?.let {
-                    divisions = it
+            .subscribe({ teams ->
+                teams?.let {
+                    this.teams = it.toTypedArray()
                     context?.let {
-                        divisionSpinner.adapter = ArrayAdapter(it, android.R.layout.simple_spinner_item, android.R.id.text1, divisions)
-                        player.divisionId = divisions.first().id
+                        teamSpinner.adapter = ArrayAdapter(it, android.R.layout.simple_spinner_item, android.R.id.text1, this.teams)
+                        player.teamId = this.teams.first().id
+                    }
+                }
+            }, { throwable ->
+                throwable.printStackTrace()
+            })
+    }
+
+    private fun loadClubs() {
+        ApiManager.get().toolsService.getClubs(/*player.countryCode*/)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ clubs ->
+                clubs?.let {
+                    this.clubs = it.toTypedArray()
+                    context?.let {
+                        clubSpinner.adapter = ArrayAdapter(it, android.R.layout.simple_spinner_item, android.R.id.text1, this.clubs)
+                        clubId = teams.first().id
                     }
                 }
             }, { throwable ->

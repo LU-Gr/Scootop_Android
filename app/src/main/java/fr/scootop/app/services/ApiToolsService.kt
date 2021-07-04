@@ -3,6 +3,7 @@ package fr.scootop.app.services
 import fr.scootop.data.model.tools.*
 import retrofit2.Call
 import retrofit2.http.*
+import rx.Observable
 
 interface ApiToolsService {
 
@@ -10,7 +11,7 @@ interface ApiToolsService {
 
     @Headers("Content-Type: application/json")
     @GET("/tools/clubs")
-    fun getClubs(): Call<List<Club>>
+    fun getClubs(): Observable<List<Club>>
 
     @Headers("Content-Type: application/json")
     @GET("/tools/club/{id}")
@@ -128,7 +129,7 @@ interface ApiToolsService {
 
     @Headers("Content-Type: application/json")
     @GET("/tools/teams")
-    fun getTeams(): Call<List<Team>>
+    fun getTeams(): Observable<List<Team>>
 
     @Headers("Content-Type: application/json")
     @GET("/tools/team/{id}")

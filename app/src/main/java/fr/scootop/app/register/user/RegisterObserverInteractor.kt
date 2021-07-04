@@ -21,7 +21,7 @@ class RegisterObserverInteractor(private val mPresenter: RegisterObserverPresent
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ loginResult ->
-                handle(loginResult, user.email)
+                handle(loginResult)
                 mPresenter.dismissLoading()
                 mPresenter.presentHome()
             }) { throwable ->

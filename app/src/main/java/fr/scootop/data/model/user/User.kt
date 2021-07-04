@@ -22,5 +22,9 @@ class User {
         }
         return types
     }
+
+    override fun toString(): String {
+        return "User(shortlistItemId=$shortlistItemId, isFollowing=$isFollowing, id=$id, firstName=$firstName, lastName=$lastName, email=$email, birthday=$birthday, password=$password, contact=$contact, userTypes=$userTypes)"
+    }
 }
 

@@ -4,11 +4,13 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import fr.scootop.R
 import fr.scootop.app.home.HomeActivity
 import fr.scootop.app.register.type.RegisterTypeActivity
+import fr.scootop.app.search.SearchActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), LoginView {
@@ -54,5 +56,12 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
     override fun displayError(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        tvLoginError.visibility = View.VISIBLE
+        tvLoginError.text = message
+    }
+
+    override fun displaySearchEngine() {
+        val intent = Intent(this, SearchActivity::class.java)
+        startActivity(intent)
     }
 }

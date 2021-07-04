@@ -11,9 +11,7 @@ class Division : HydraResource() {
     @Expose
     @SerializedName("short_name")
     var shortName: String? = null
-    @Expose
-    @SerializedName("country")
-    var countryIri: String? = null
+
     @Expose
     @SerializedName("sort")
     var sort: Int = 0

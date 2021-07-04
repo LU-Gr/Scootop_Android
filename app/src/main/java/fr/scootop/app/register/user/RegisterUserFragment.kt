@@ -32,6 +32,8 @@ class RegisterUserFragment : Fragment() {
         lastNameInput.onChange { registerUser.lastName = it }
         emailInput.onChange { registerUser.email = it }
         passwordInput.onChange { registerUser.password = it }
+        phoneInput.onChange { registerUser.phoneNumber = it }
+
 
         val adapter = ArrayAdapter.createFromResource(requireContext(), R.array.gender_names, android.R.layout.simple_spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

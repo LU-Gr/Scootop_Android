@@ -76,7 +76,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView, View.OnClickListener
                             }
                         }
                         RegisterStepAdapter.STEP_PLAYER -> {
-                            adapter?.playerFragment?.player?.let {
+                            adapter?.playerFragment?.player?.let { it ->
                                 userPlayer?.merge(it)
                                 userPlayer?.let {
                                     if (it.wrapper.isValid()) {

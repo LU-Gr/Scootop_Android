@@ -3,6 +3,7 @@ package fr.scootop.app.services
 import fr.scootop.data.model.configuration.*
 import retrofit2.Call
 import retrofit2.http.*
+import rx.Observable
 
 interface ApiConfigurationService {
 
@@ -32,7 +33,7 @@ interface ApiConfigurationService {
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/categories")
-    fun getCategories(): Call<List<Category>>
+    fun getCategories(): Observable<List<Category>>
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/category/{id}")
@@ -103,7 +104,7 @@ interface ApiConfigurationService {
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/divisions")
-    fun getDivisions(): Call<List<Division>>
+    fun getDivisions(): Observable<List<Division>>
 
     @Headers("Content-Type: application/json")
     @POST("/configuration/division")
@@ -147,7 +148,7 @@ interface ApiConfigurationService {
 
     @Headers("Content-Type: application/json")
     @GET("/configuration/postes")
-    fun getPostes(): Call<List<Poste>>
+    fun getPostes(): Observable<List<Poste>>
 
     @Headers("Content-Type: application/json")
     @POST("/configuration/poste")

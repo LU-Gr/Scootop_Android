@@ -1,8 +1,7 @@
 package fr.scootop.app.login
 
-import java.lang.ref.WeakReference
-
 import fr.scootop.app.common.vip.LoadingPresenter
+import java.lang.ref.WeakReference
 
 class LoginPresenter(view: LoginView) : LoadingPresenter {
 
@@ -22,5 +21,9 @@ class LoginPresenter(view: LoginView) : LoadingPresenter {
 
     fun presentError(message: String) {
         mView.get()?.displayError(message)
+    }
+
+    fun presentSearchEngine() {
+        mView.get()?.displaySearchEngine()
     }
 }

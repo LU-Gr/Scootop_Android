@@ -67,7 +67,7 @@ class ApiManager private constructor() {
 
         val retrofit = Retrofit.Builder()
             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create(gsonConf))
+            .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BuildConfig.SC_BASE_API)
             .client(httpClient)
             .build()

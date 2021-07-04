@@ -25,7 +25,7 @@ class LaunchActivity : AppCompatActivity() {
             val nextIntent: Intent
 
             val tokenStorage = TokenStorage.get(this@LaunchActivity)
-            nextIntent = if (null != tokenStorage.jwt && null != tokenStorage.refreshToken) {
+            nextIntent = if (null != tokenStorage.jwt/* && null != tokenStorage.refreshToken*/) {
                 /** User already logged in  */
                 //nextIntent = new Intent(LaunchActivity.this, SearchActivity.class);
                 Intent(this@LaunchActivity, HomeActivity::class.java)

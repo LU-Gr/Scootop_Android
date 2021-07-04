@@ -123,71 +123,74 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/boarder"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/InputLabel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/boarder"
-                    android:text="@string/hint_category" />
-
-                <Spinner
-                    android:id="@+id/categorySpinner"
-                    android:layout_width="match_parent"
-                    android:background="@drawable/boarder"
-                    android:layout_height="@dimen/spinner_height" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/boarder"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/InputLabel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/boarder"
-                    android:text="@string/hint_division" />
-
-                <Spinner
-                    android:id="@+id/divisionSpinner"
-                    android:layout_width="match_parent"
-                    android:background="@drawable/boarder"
-                    android:layout_height="@dimen/spinner_height" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/clubInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/clubInput"
-                style="@style/RegisterInput"
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/InputLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/boarder"
-                android:hint="@string/hint_club"
-                android:inputType="text" />
+                android:text="Club" />
+
+            <Spinner
+                android:id="@+id/clubSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spinner_height"
+                android:layout_weight="1"
+                android:background="@drawable/boarder" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/categoryInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/textViewcategory"
+                style="@style/InputLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/boarder"
+                android:text="@string/hint_category" />
+
+            <Spinner
+                android:id="@+id/categorySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spinner_height"
+                android:layout_weight="1"
+                android:background="@drawable/boarder" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/teamInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/textViewteam"
+                style="@style/InputLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/boarder"
+                android:text="Équipe" />
+
+            <Spinner
+                android:id="@+id/teamSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spinner_height"
+                android:layout_weight="1"
+                android:background="@drawable/boarder" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

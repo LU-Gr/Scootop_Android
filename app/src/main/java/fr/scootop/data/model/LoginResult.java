@@ -7,6 +7,16 @@ import fr.scootop.data.model.user.User;
 
 public class LoginResult
 {
+	@Override
+	public String toString() {
+		return "LoginResult{" +
+				"code=" + code +
+				", message='" + message + '\'' +
+				", jwt='" + jwt + '\'' +
+				", user=" + user +
+				'}';
+	}
+
 	// ----- Error case ------
 	@Expose
 	public Integer code;
@@ -15,7 +25,6 @@ public class LoginResult
 
 	// ----- Success case -----
 	@Expose
-	@SerializedName("token")
 	public String jwt;
 
 	@Expose

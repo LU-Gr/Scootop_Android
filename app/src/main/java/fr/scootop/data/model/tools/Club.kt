@@ -1,24 +1,18 @@
-package fr.scootop.data.model.tools;
-import java.util.List;
+package fr.scootop.data.model.tools
 
-import fr.scootop.data.model.user.Contact;
-import fr.scootop.data.model.user.domain.Scoot;
+import fr.scootop.data.model.user.Contact
+import fr.scootop.data.model.user.domain.Scoot
 
+class Club {
+    var id: Long? = null
+    var colorInside: String? = null
+    var colorOutSide: String? = null
+    var name: String = ""
+    var contact: Contact? = null
+    var teams: List<Team>? = null
+    var scoots: List<Scoot>? = null
+    override fun toString(): String {
+        return name
+    }
 
-
-public class Club {
-	
-	private Long id;
-	
-    private String colorInside;
-	
-	private String colorOutSide;
-	
-	private String name;
-	
-	private Contact contact;
-
-	private List<Team> teams;
-	
-	private List<Scoot> scoots;
 }

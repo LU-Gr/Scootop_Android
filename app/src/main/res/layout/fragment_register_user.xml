@@ -124,11 +124,28 @@
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailInputLayout"
+            android:id="@+id/phoneInputLayout"
             android:layout_width="match_parent"
             android:background="@drawable/boarder"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp">
+
+            <EditText
+                android:id="@+id/phoneInput"
+                style="@style/RegisterInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_tel"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/boarder">
 
             <EditText
                 android:id="@+id/emailInput"
@@ -143,9 +160,9 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordInputLayout"
             android:layout_width="match_parent"
-            android:background="@drawable/boarder"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp">
+            android:layout_marginTop="2dp"
+            android:background="@drawable/boarder">
 
             <EditText
                 android:id="@+id/passwordInput"
