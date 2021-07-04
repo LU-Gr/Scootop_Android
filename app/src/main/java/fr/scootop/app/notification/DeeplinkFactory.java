@@ -2,9 +2,6 @@ package fr.scootop.app.notification;
 
 import androidx.annotation.Nullable;
 
-/**
- * Created by ludovicriviere on 13/02/2018.
- */
 public final class DeeplinkFactory
 {
     enum Type

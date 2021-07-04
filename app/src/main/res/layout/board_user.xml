@@ -274,7 +274,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
-                            android:text="RIVIERE Ludovic"
+                            android:text="Brown Jackie"
                             android:layout_marginRight="5dp"
                             android:textSize="9sp"
                             android:textColor="@android:color/background_dark" />
@@ -318,7 +318,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
-                            android:text="RIVIERE Ludovic"
+                            android:text="Brown Jackie"
                             android:layout_marginRight="5dp"
                             android:textSize="9sp"
                             android:textColor="@android:color/background_dark" />
@@ -362,7 +362,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
-                            android:text="RIVIERE Ludovic"
+                            android:text="Brown Jackie"
                             android:layout_marginRight="5dp"
                             android:textSize="9sp"
                             android:textColor="@android:color/background_dark" />

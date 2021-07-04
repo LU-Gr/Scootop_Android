@@ -21,7 +21,8 @@ android {
         multiDexEnabled true
 
         //buildConfigField("String", "SC_BASE_API", "\"http://www.scootop.fr\"")
-        buildConfigField("String", "SC_BASE_API", "\"https://f80d1d59a6d2.eu.ngrok.io\"")
+        //buildConfigField("String", "SC_BASE_API", "\"https://f80d1d59a6d2.eu.ngrok.io\"")
+        buildConfigField("String", "SC_BASE_API", "\"https://api-pa-2021.herokuapp.com\"")
         buildConfigField("String", "YT_BASE_API", "\"https://www.googleapis.com\"")
         buildConfigField("String", "YT_DEV_KEY", "\"AIzaSyA0u3ulUbte4DO0Ax_1cJ-gjFaiJWMSI9w\"")
         buildConfigField("String", "YT_SEARCH_API_KEY", "\"AIzaSyDRC_jZmeiTDcEKZ8HkEHRcROYpFav3PLY\"")

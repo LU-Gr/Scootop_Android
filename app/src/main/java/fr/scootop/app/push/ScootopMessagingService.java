@@ -13,9 +13,6 @@ import java.util.Random;
 import fr.scootop.R;
 import fr.scootop.app.notification.NotificationFactory;
 
-/**
- * Created by ludovicriviere on 13/02/2018.
- */
 public class ScootopMessagingService extends FirebaseMessagingService
 {
     private static final String TAG = "Scootop-Push";
