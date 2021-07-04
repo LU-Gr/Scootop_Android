@@ -1,7 +1,11 @@
 package fr.scootop.data.api
 
+import android.os.Build
 import android.util.Log
-import com.google.gson.GsonBuilder
+import androidx.annotation.RequiresApi
+import com.google.gson.*
+import com.google.gson.stream.JsonReader
+import com.google.gson.stream.JsonWriter
 import fr.scootop.BuildConfig
 import fr.scootop.app.services.*
 import fr.scootop.data.api.service.*
@@ -10,8 +14,13 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.reflect.Type
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.concurrent.TimeUnit
 
+
+@RequiresApi(Build.VERSION_CODES.O)
 class ApiManager private constructor() {
 
     val userService: ApiUserService
@@ -61,13 +70,14 @@ class ApiManager private constructor() {
             .build()
 
         val gsonConf = GsonBuilder()
-            .excludeFieldsWithoutExposeAnnotation()
-            .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+            .registerTypeAdapter(LocalDate::class.java, LocalDateAdapter())
+            //.excludeFieldsWithoutExposeAnnotation()
+            //.setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
             .create()
 
         val retrofit = Retrofit.Builder()
             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gsonConf))
             .baseUrl(BuildConfig.SC_BASE_API)
             .client(httpClient)
             .build()
@@ -127,5 +137,15 @@ class ApiManager private constructor() {
             }
             return instance as ApiManager
         }
+    }
+}
+
+internal class LocalDateAdapter : JsonSerializer<LocalDate?> {
+    override fun serialize(
+        date: LocalDate?,
+        typeOfSrc: Type?,
+        context: JsonSerializationContext?
+    ): JsonElement? {
+        return JsonPrimitive(date?.format(DateTimeFormatter.ISO_LOCAL_DATE)) // "yyyy-mm-dd"
     }
 }

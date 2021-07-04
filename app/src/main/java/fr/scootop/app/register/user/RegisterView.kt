@@ -9,4 +9,6 @@ interface RegisterView {
     fun displayError(message: String)
 
     fun displayHome()
+
+    fun displaySearchEngine()
 }

@@ -17,7 +17,7 @@ interface ApiUserService {
 
     @Headers("Content-Type: application/json")
     @POST("/user/register")
-    fun register(@Body user: RegisterUser): Observable<LoginResult>
+    fun register(@Body user: RegisterUser): Observable<Long>
 
     @Headers("Content-Type: application/json")
     @POST("/user/login")

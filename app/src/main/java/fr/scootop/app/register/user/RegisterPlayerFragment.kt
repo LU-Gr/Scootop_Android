@@ -1,6 +1,7 @@
 package fr.scootop.app.register.user
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,7 @@ class RegisterPlayerFragment : Fragment() {
     private var teams: Array<Team> = emptyArray()
     private var clubs: Array<Club> = emptyArray()
     private var clubId: Long? = null
+    private var countryName: String? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_register_player, container, false)
@@ -102,6 +104,8 @@ class RegisterPlayerFragment : Fragment() {
             picker.setListener { name, countryCode, _, _ ->
                 countryInput.setText(name)
                 picker.dismiss()
+                countryName = name
+                Log.i("Country name",name)
                 player.countryCode = countryCode.toLowerCase()
                 loadClubs()
             }
@@ -119,6 +123,10 @@ class RegisterPlayerFragment : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 player.categoryId = categories[position].id
+                Log.i("nb clubs", clubs.size.toString())
+                if(clubs.isNotEmpty()) {
+                    loadTeams()
+                }
             }
         }
 
@@ -133,7 +141,11 @@ class RegisterPlayerFragment : Fragment() {
         teamSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                player.teamId = teams[position].id
+                Log.i("team is size on", teams.isNotEmpty().toString() + teams.size.toShort())
+                if(teams.isNotEmpty()){
+                    player.teamId = teams[position].id
+                }
+
             }
         }
 
@@ -175,6 +187,16 @@ class RegisterPlayerFragment : Fragment() {
     }
 
     private fun loadTeams() {
+        Log.i("club id", clubId.toString())
+        val t = clubs.first { c -> c.id == clubId }.teams!!
+        Log.i("n t c", t.size.toString())
+        teams = clubs.first { c -> c.id == clubId }.teams!!.filter { t -> t.category!!.id == player.categoryId }.toTypedArray()
+        Log.i("teams size",teams.size.toString())
+        context?.let {
+            teamSpinner.adapter = ArrayAdapter(it, android.R.layout.simple_spinner_item, android.R.id.text1, teams)
+        }
+
+        /*player.teamId = this.teams.first().id
         ApiManager.get().toolsService.getTeams(/*player.countryCode*/)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -188,11 +210,11 @@ class RegisterPlayerFragment : Fragment() {
                 }
             }, { throwable ->
                 throwable.printStackTrace()
-            })
+            })*/
     }
 
     private fun loadClubs() {
-        ApiManager.get().toolsService.getClubs(/*player.countryCode*/)
+        ApiManager.get().toolsService.getClubsByCountry(countryName!!)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ clubs ->
@@ -200,9 +222,10 @@ class RegisterPlayerFragment : Fragment() {
                     this.clubs = it.toTypedArray()
                     context?.let {
                         clubSpinner.adapter = ArrayAdapter(it, android.R.layout.simple_spinner_item, android.R.id.text1, this.clubs)
-                        clubId = teams.first().id
+                        loadTeams()
                     }
                 }
+
             }, { throwable ->
                 throwable.printStackTrace()
             })

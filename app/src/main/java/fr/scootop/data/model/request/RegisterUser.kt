@@ -7,6 +7,10 @@ import com.google.gson.annotations.SerializedName
 class RegisterUser() : Parcelable {
 
     @Expose
+    @SerializedName("id")
+    var id: Long? = null
+
+    @Expose
     @SerializedName("firstName")
     var firstName: String? = null
 

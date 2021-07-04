@@ -1,6 +1,7 @@
 package fr.scootop.data.model.request
 import android.os.Parcel
 import android.os.Parcelable
+import android.util.Log
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import fr.scootop.data.definition.Footed
@@ -9,6 +10,8 @@ class RegisterUserPlayer {
     @SerializedName("player")
     var wrapper: Wrapper = Wrapper()
     class Wrapper() : Parcelable {
+
+
 
         @Expose
         @SerializedName("user")
@@ -46,10 +49,6 @@ class RegisterUserPlayer {
         @SerializedName("proxyTeamDivision")
         var teamId: Long? = null
 
-        @Expose
-        @SerializedName("proxyClubName")
-        var clubName: String? = null
-
         constructor(parcel: Parcel) : this() {
             user = parcel.readParcelable(RegisterUser::class.java.classLoader)
             heightCm = parcel.readInt()
@@ -60,7 +59,6 @@ class RegisterUserPlayer {
             countryCode = parcel.readString()
             categoryId = parcel.readValue(Long::class.java.classLoader) as? Long
             teamId = parcel.readValue(Long::class.java.classLoader) as? Long
-            clubName = parcel.readString()
         }
 
         override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -73,7 +71,6 @@ class RegisterUserPlayer {
             parcel.writeString(countryCode)
             parcel.writeValue(categoryId)
             parcel.writeValue(teamId)
-            parcel.writeString(clubName)
         }
 
         override fun describeContents(): Int {
@@ -90,17 +87,21 @@ class RegisterUserPlayer {
         }
 
         fun isValid(): Boolean {
+            Log.i("register user", this.toString())
             if (heightCm > 0 &&
                 weightKg > 0.0 &&
                 footed != "" &&
                 favoritePositionId != null &&
                 countryCode != null &&
                 categoryId != null &&
-                teamId != null &&
-                clubName != null) {
+                teamId != null) {
                 return true
             }
             return false
+        }
+
+        override fun toString(): String {
+            return "Wrapper(heightCm=$heightCm, weightKg=$weightKg, footed='$footed', favoritePositionId=$favoritePositionId, countryCode=$countryCode, categoryId=$categoryId, teamId=$teamId)"
         }
     }
 
@@ -112,6 +113,5 @@ class RegisterUserPlayer {
         wrapper.countryCode = playerWrapper.countryCode
         wrapper.categoryId = playerWrapper.categoryId
         wrapper.teamId = playerWrapper.teamId
-        wrapper.clubName = playerWrapper.clubName
     }
 }

@@ -1,5 +1,6 @@
 package fr.scootop.app.register.user
 
+import android.util.Log
 import fr.scootop.app.common.vip.LoadingPresenter
 import java.lang.ref.WeakReference
 
@@ -20,6 +21,11 @@ class RegisterObserverPresenter(view: RegisterView) : LoadingPresenter {
     }
 
     fun presentError(message: String) {
+        Log.w("error register",message)
         mView.get()?.displayError(message)
+    }
+
+    fun presentSearchEngine() {
+        mView.get()?.displaySearchEngine()
     }
 }

@@ -1,6 +1,8 @@
 package fr.scootop.app.services
 
 import fr.scootop.app.search.SearchPlayerAdapter
+import fr.scootop.data.model.LoginResult
+import fr.scootop.data.model.request.RegisterUserPlayer
 import fr.scootop.data.model.services.ComparatorParams
 import fr.scootop.data.model.user.domain.*
 import retrofit2.Call
@@ -65,7 +67,7 @@ interface ApiUserDomainService {
 
     @Headers("Content-Type: application/json")
     @POST("/user/domain/player")
-    fun addPlayer(@Body player: Player): Call<Player>
+    fun addPlayer(@Body player: RegisterUserPlayer): Observable<LoginResult>
 
     @Headers("Content-Type: application/json")
     @PUT("/user/domain/player/{id}")

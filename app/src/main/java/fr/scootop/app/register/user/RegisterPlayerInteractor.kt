@@ -12,8 +12,24 @@ class RegisterPlayerInteractor(private val mPresenter: RegisterPlayerPresenter, 
         mPresenter.presentLoading()
 
         ApiManager.get()
-            .registerService
-            .register(player)
+            .userService
+            .register(player.wrapper.user!!)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ id ->
+                //handle(loginResult)
+                player.wrapper.user!!.id = id
+                registerPlayer(player)
+            }) { throwable ->
+                mPresenter.dismissLoading()
+                mPresenter.presentError(throwable.localizedMessage)
+            }
+    }
+
+    fun registerPlayer(player: RegisterUserPlayer){
+        ApiManager.get()
+            .userDomainService
+            .addPlayer(player)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ loginResult ->

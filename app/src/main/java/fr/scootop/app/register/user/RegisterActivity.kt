@@ -9,6 +9,7 @@ import com.afollestad.materialdialogs.MaterialDialog
 import fr.scootop.R
 import fr.scootop.app.common.ExtraKey
 import fr.scootop.app.home.HomeActivity
+import fr.scootop.app.search.SearchActivity
 import fr.scootop.data.definition.UserType
 import fr.scootop.data.model.request.RegisterUserPlayer
 import kotlinx.android.synthetic.main.activity_register.*
@@ -115,5 +116,9 @@ class RegisterActivity : AppCompatActivity(), RegisterView, View.OnClickListener
 
     override fun displayHome() {
         startActivity(Intent(this, HomeActivity::class.java))
+    }
+
+    override fun displaySearchEngine() {
+        startActivity(Intent(this, SearchActivity::class.java))
     }
 }

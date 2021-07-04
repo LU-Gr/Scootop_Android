@@ -14,6 +14,10 @@ interface ApiToolsService {
     fun getClubs(): Observable<List<Club>>
 
     @Headers("Content-Type: application/json")
+    @GET("/tools/clubs/{country}")
+    fun getClubsByCountry(@Path("country") country: String): Observable<List<Club>>
+
+    @Headers("Content-Type: application/json")
     @GET("/tools/club/{id}")
     fun getClubById(@Path("id") id: Long): Call<Club>
 
