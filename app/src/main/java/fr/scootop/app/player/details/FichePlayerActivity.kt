@@ -2,11 +2,11 @@ package fr.scootop.app.player.details
 
 import android.app.ProgressDialog
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import fr.scootop.R
@@ -39,6 +39,8 @@ class FichePlayerActivity : AppCompatActivity(), PlayerDetailsView {
 
         playerItem = intent.getParcelableExtra(ExtraKey.PLAYER_ITEM)
         val playerId = playerItem!!.id
+
+        mInteractor.loadPlayer(playerId)
     }
 
     override fun getContext(): Context {
@@ -50,12 +52,28 @@ class FichePlayerActivity : AppCompatActivity(), PlayerDetailsView {
 
         //Bundle bundle = new Bundle();
         //bundle.putParcelable("player",p);
-        val a = Intent(this, FicheMain::class.java)
-        a.putExtra("Player",playerItem)
-        viewPagerAdapter.addFragment(FicheMain.getInstance(), "Main")
-        viewPagerAdapter.addFragment(EtatCivil.getInstance(), "ECV")
-        viewPagerAdapter.addFragment(Caracteristique.getInstance(), "Car")
-        viewPagerAdapter.addFragment(Video.getInstance(), "Video")
+        var bundlePlayer = bundleOf(
+            "player" to player
+        )
+
+
+
+        val ficheMain = FicheMain()
+        val etatCivil = EtatCivil()
+        val caracteristique = Caracteristique()
+        val video = Video()
+
+        ficheMain.arguments = bundlePlayer
+        etatCivil.arguments = bundlePlayer
+        caracteristique.arguments = bundlePlayer
+        video.arguments = bundlePlayer
+
+
+        //a.putExtra("Player",playerItem)
+        viewPagerAdapter.addFragment(ficheMain, "Main")
+        viewPagerAdapter.addFragment(etatCivil, "ECV")
+        viewPagerAdapter.addFragment(caracteristique, "Car")
+        viewPagerAdapter.addFragment(video, "Video")
         viewPager!!.adapter = viewPagerAdapter
         tabLayout!!.setupWithViewPager(viewPager)
     }
