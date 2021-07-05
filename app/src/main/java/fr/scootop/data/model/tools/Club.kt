@@ -9,6 +9,7 @@ class Club(): Parcelable {
     var id: Long? = null
     var colorInside: String? = null
     var colorOutSide: String? = null
+    var photoUrl: String? = null
     var name: String? = ""
     var contact: Contact? = null
     var teams: List<Team>? = null
@@ -17,6 +18,7 @@ class Club(): Parcelable {
     constructor(parcel: Parcel) : this() {
         id = parcel.readValue(Long::class.java.classLoader) as? Long
         colorInside = parcel.readString()
+        photoUrl = parcel.readString()
         colorOutSide = parcel.readString()
         name = parcel.readString()
         contact = parcel.readParcelable(Contact::class.java.classLoader)
@@ -33,6 +35,7 @@ class Club(): Parcelable {
         parcel.writeString(colorInside)
         parcel.writeString(colorOutSide)
         parcel.writeString(name)
+        parcel.writeString(photoUrl)
         parcel.writeParcelable(contact, flags)
         parcel.writeTypedList(teams)
         parcel.writeTypedList(scoots)

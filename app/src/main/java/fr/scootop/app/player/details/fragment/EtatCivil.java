@@ -35,6 +35,7 @@ public class EtatCivil extends Fragment {
         tvName = view.findViewById(R.id.Name_EC);
         tvFirstName = view.findViewById(R.id.First_Name_EC);
         ImageView ivPicture = view.findViewById(R.id.imageView5);
+        TextView tvDescription = view.findViewById(R.id.description);
 
         Bundle bundle = getArguments();
         Player player = bundle.getParcelable("player");
@@ -42,6 +43,7 @@ public class EtatCivil extends Fragment {
 
         tvName.setText(player.getUser().getLastName());
         tvFirstName.setText(player.getUser().getFirstName());
+        tvDescription.setText(player.getDescription());
 
         Glide.with(ivPicture.getContext())
                 .load(player.getPhotoUrl())

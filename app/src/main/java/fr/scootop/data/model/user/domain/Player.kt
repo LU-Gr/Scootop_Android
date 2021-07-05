@@ -15,6 +15,7 @@ class Player(): Parcelable {
     var taille: Int = 0
     var poids: Int = 0
     var vma: Int = 0
+    var description: String? = null
     var nationalite: String? = null
     var origin: String? = null
     var isSelected: Boolean = false
@@ -37,6 +38,7 @@ class Player(): Parcelable {
         poids = parcel.readInt()
         vma = parcel.readInt()
         nationalite = parcel.readString()
+        description = parcel.readString()
         origin = parcel.readString()
         isSelected = parcel.readByte() != 0.toByte()
         isSubstitute = parcel.readByte() != 0.toByte()
@@ -57,6 +59,7 @@ class Player(): Parcelable {
         parcel.writeInt(rating)
         parcel.writeInt(taille)
         parcel.writeInt(poids)
+        parcel.writeString(description)
         parcel.writeInt(vma)
         parcel.writeString(nationalite)
         parcel.writeString(origin)

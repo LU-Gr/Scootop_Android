@@ -368,9 +368,9 @@
     <string name="Tel_Box_Register">Tel</string>
     <string name="tab_text_3">TAB 3</string>
     <string name="tab_text_4">TAB 4</string>
-    <string name="Report_Content_Text">"Le joueurs est désormais ajouter à shortlist.vous recevrez une notifications pour chaque nouvelles informations concernant ce joueur, nous vous préviendrons également pour chaque rencontre à venir. "</string>
-    <string name="Follow_Content_Text">"Le joueurs est désormais ajouter à shortlist.  vous recevrez une notifications pour chaque nouvelles informations concernant ce joueur,  nous vous préviendrons également pour chaque rencontre à venir. "</string>
-    <string name="Invited_Content_Text">"Le joueurs est désormais ajouter à shortlist.  vous recevrez une notifications pour chaque nouvelles informations concernant ce joueur,  nous vous préviendrons également pour chaque rencontre à venir. "</string>
+    <string name="Report_Content_Text">"Le joueur est désormais ajouté à shortlist.vous recevrez une notifications pour chaque nouvelles informations concernant ce joueur, nous vous préviendrons également pour chaque rencontre à venir. "</string>
+    <string name="Follow_Content_Text">"Le joueur est désormais ajouté à shortlist.  vous recevrez une notifications pour chaque nouvelles informations concernant ce joueur,  nous vous préviendrons également pour chaque rencontre à venir. "</string>
+    <string name="Invited_Content_Text">"Le joueur est désormais ajouté à shortlist.  vous recevrez une notifications pour chaque nouvelles informations concernant ce joueur,  nous vous préviendrons également pour chaque rencontre à venir. "</string>
     <string name="Success_Subscription_Content_Text">FELICITATIONS !! Vous êtes désormais un membre premium, votre compte vous permet d\'optimiser l\'utilisation de votre applications.  Vous pouvez accédez a votre liste de fonctionnalité en cliquant  ici</string>
     <string name="Events_Success_Content_Text">"Le joueurs est désormais ajouter à shortlist.  vous recevrez une notifications pour chaque nouvelles informations concernant ce joueur,  nous vous préviendrons également pour chaque rencontre à venir. "</string>
     <string name="Event_Place_field">Lieu</string>
@@ -398,7 +398,7 @@
     <string name="action_compare_with">Comparer</string>
     <string name="Poste">Millieu central</string>
     <string name="Age">32 ans</string>
-    <string name="Player_Presentation">Moussa à passer la majorité de son enfance à Aulnay Sous Bois. Passé par le Red Star et Esperance Aulnaysienne, il integre le TFC à 14 ans. Un joueur puissant, au service de l\'equipe, des qualités qui lui apporteront rapidement une place en equipe 1er. Moussa debute en pro à 17 ans. Il sera ensuite transferé à newcastle ou il deviendra un joueur cadre. Il evolue aujourd\'hui sous les couleurs de Totthenam Fc.</string>
+    <string name="Player_Presentation">Moussa a passé la majorité de son enfance à Aulnay Sous Bois. Passé par le Red Star et Esperance Aulnaysienne, il intègre le TFC à 14 ans. Un joueur puissant, au service de l\'equipe, des qualités qui lui apporteront rapidement une place en équipe 1er. Moussa débute en pro à 17 ans. Il sera ensuite transferé à newcastle ou il deviendra un joueur cadre. Il evolue aujourd\'hui sous les couleurs de Totthenam Fc.</string>
     <string name="TeamTemplateI">Totthenam FC</string>
     <string name="TeamTemplateII">Liverpool FC</string>
     <string name="server">https://api-pa-2021.herokuapp.com</string>

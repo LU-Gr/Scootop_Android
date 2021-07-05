@@ -110,7 +110,7 @@
         app:layout_constraintEnd_toEndOf="@+id/Name_EC"
         app:layout_constraintHorizontal_bias="0.833"
         app:layout_constraintStart_toStartOf="@+id/Name_EC"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        app:layout_constraintTop_toBottomOf="@+id/imgClub" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -124,7 +124,7 @@
         app:srcCompat="@drawable/moussa_sissoko_full" />
 
     <TextView
-        android:id="@+id/Description"
+        android:id="@+id/followedBy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -134,7 +134,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Contry_EC" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/description"
         android:layout_width="155dp"
         android:layout_height="189dp"
         android:layout_marginTop="20dp"
@@ -142,11 +142,11 @@
 
         android:justificationMode="inter_word"
         android:text="@string/Player_Presentation"
-        app:layout_constraintStart_toStartOf="@+id/Description"
-        app:layout_constraintTop_toBottomOf="@+id/Description" />
+        app:layout_constraintStart_toStartOf="@+id/followedBy"
+        app:layout_constraintTop_toBottomOf="@+id/followedBy" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imgClub"
         android:layout_width="62dp"
         android:layout_height="92dp"
         android:layout_marginTop="15dp"

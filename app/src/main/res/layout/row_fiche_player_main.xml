@@ -14,7 +14,7 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="8dp"
         android:src="@drawable/sissoko_view"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/description"
         app:layout_constraintEnd_toEndOf="@+id/First_Name_EC"
         app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="@+id/First_Name_EC"
@@ -34,15 +34,15 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/Football_field"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/description"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imgClub"
         android:layout_width="54dp"
         android:layout_height="71dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/description"
         app:layout_constraintEnd_toStartOf="@+id/Football_field"
         app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,11 +54,11 @@
         android:id="@+id/Nation_img"
         android:layout_width="49dp"
         android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintBottom_toBottomOf="@+id/imgClub"
         app:layout_constraintEnd_toEndOf="@+id/Name_EC"
         app:layout_constraintHorizontal_bias="0.59"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintStart_toEndOf="@+id/imgClub"
+        app:layout_constraintTop_toTopOf="@+id/imgClub"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/fff_starz" />
 
@@ -71,7 +71,7 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
         android:textSize="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/description"
         app:layout_constraintEnd_toEndOf="@+id/Name_EC"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="@+id/Name_EC"
@@ -90,7 +90,7 @@
         app:srcCompat="@drawable/soccer_field" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/description"
         android:layout_width="149dp"
         android:layout_height="154dp"
 
@@ -100,12 +100,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Football_field"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/imgClub"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.6" />
 
     <TextView
-        android:id="@+id/Description"
+        android:id="@+id/followedBy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -113,7 +113,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/Football_field"
         app:layout_constraintHorizontal_bias="0.173"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/description"
         app:layout_constraintTop_toBottomOf="@+id/Football_field" />
 
     <TextView
@@ -134,11 +134,11 @@
         android:layout_height="wrap_content"
         android:text="Description"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/description"
+        app:layout_constraintEnd_toEndOf="@+id/description"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/imgClub"
         app:layout_constraintVertical_bias="0.692" />
 
     <TextView
@@ -162,11 +162,11 @@
         android:layout_marginTop="12dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintBottom_toBottomOf="@+id/description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/Description"
-        app:layout_constraintTop_toBottomOf="@+id/Description"
+        app:layout_constraintStart_toStartOf="@+id/followedBy"
+        app:layout_constraintTop_toBottomOf="@+id/followedBy"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -176,10 +176,10 @@
         android:text="Interactions"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompat"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/description"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/description"
         app:layout_constraintVertical_bias="1.0" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -204,7 +204,7 @@
                 android:layout_width="85dp"
                 android:layout_height="61dp"
                 android:layout_gravity="center"
-                android:text="50"
+                android:text="0"
                 android:textAlignment="center"
                 android:textColor="@color/blue"
                 android:textSize="50dp"
@@ -234,7 +234,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="61dp"
                 android:layout_gravity="center"
-                android:text="15"
+                android:text="0"
                 android:textColor="@color/colorPrimary"
                 android:textSize="50dp"
                 android:textStyle="bold" />
@@ -262,7 +262,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:text="10"
+                android:text="0"
                 android:textColor="@color/green"
                 android:textSize="50dp"
                 android:textStyle="bold" />
@@ -289,7 +289,7 @@
         android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/description"
         app:layout_constraintVertical_bias="0.844">
 
         <Button
@@ -332,10 +332,10 @@
         android:layout_width="81dp"
         android:layout_height="21dp"
         android:rating="3.4"
-        app:layout_constraintBottom_toTopOf="@+id/imageView7"
+        app:layout_constraintBottom_toTopOf="@+id/imgClub"
         app:layout_constraintEnd_toEndOf="@+id/Nation_img"
         app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/imgClub"
         app:layout_constraintTop_toBottomOf="@+id/avatarImageView" />
 
     <com.mikhaellopez.circularimageview.CircularImageView
