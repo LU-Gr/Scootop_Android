@@ -1,7 +1,11 @@
 package fr.scootop.data.model.user
 
-class UserType {
-    val id: Long? = null
-    val type: String? = null
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class UserType (
+    val id: Long? = null,
+    val type: String? = null,
     val users: List<User>? = null
-}
+): Parcelable

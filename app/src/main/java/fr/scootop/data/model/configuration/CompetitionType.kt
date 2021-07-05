@@ -1,8 +1,10 @@
-package fr.scootop.data.model.configuration;
+package fr.scootop.data.model.configuration
 
-public class CompetitionType {
-	
-	private Long id;
-	
-    private String name;
-}
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class CompetitionType (
+    var id: Long? = null,
+    var name: String? = null
+) : Parcelable

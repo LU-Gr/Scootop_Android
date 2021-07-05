@@ -1,14 +1,13 @@
-package fr.scootop.data.model.tools;
-import java.time.LocalDate;
-import java.util.List;
+package fr.scootop.data.model.tools
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+import java.time.LocalDate
 
-public class Saison {
-    private Integer id;
-	
-    private LocalDate dateDebut;
-	
-    private LocalDate dateFin;
-
-    private List<Match> matchs;
-}
+@Parcelize
+data class Saison (
+    var id: Int? = null,
+    var dateDebut: LocalDate? = null,
+    var dateFin: LocalDate? = null,
+    var matchs: List<Match>? = null
+) : Parcelable

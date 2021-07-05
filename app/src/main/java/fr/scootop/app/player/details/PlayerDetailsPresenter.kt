@@ -14,7 +14,11 @@ class PlayerDetailsPresenter(view: PlayerDetailsView) {
             mView.get()?.displayPlayer(it)
 
             mView.get()?.getContext()?.let {
-                if (UserStorage.get(it)?.user?.userTypesToStringList()!!.contains(UserType.Player.value)) {
+                var types = mutableListOf<String>()
+                for(type in UserStorage.get(it)?.user?.userTypes!!){
+                    types.add(type.type!!)
+                }
+                if (types!!.contains(UserType.Player.value)) {
                     mView.get()?.hideInviteAction()
                 }
             }

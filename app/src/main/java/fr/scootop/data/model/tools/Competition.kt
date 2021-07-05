@@ -1,22 +1,18 @@
-package fr.scootop.data.model.tools;
+package fr.scootop.data.model.tools
 
-import fr.scootop.data.model.configuration.CompetitionType;
+import android.os.Parcelable
+import fr.scootop.data.model.configuration.CompetitionType
+import kotlinx.android.parcel.Parcelize
 
-public class Competition {
-	
-	private Long id;	
-	
-	private String name;
-	
-	private int playerMax;
-	
-	private int playerMin;
-	private int nbTitulaire;
-	
-	private int nbRemplacant;
-	private int nbSubstition;
-	
-	private int dureeMiTemps;
-	
-	private CompetitionType competitionType;
-}
+@Parcelize
+data class Competition (
+    var id: Long? = null,
+    var name: String? = null,
+    var playerMax: Int = 0,
+    var playerMin: Int = 0,
+    var nbTitulaire: Int = 0,
+    var nbRemplacant: Int = 0,
+    var nbSubstition: Int = 0,
+    var dureeMiTemps: Int = 0,
+    var competitionType: CompetitionType? = null
+): Parcelable

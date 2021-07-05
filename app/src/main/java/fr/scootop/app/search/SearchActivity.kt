@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import butterknife.ButterKnife
 import fr.scootop.R
 import fr.scootop.app.common.ExtraKey
-import fr.scootop.app.player.details.FichePlayerIActivity
+import fr.scootop.app.player.details.FichePlayerActivity
 import fr.scootop.data.model.user.domain.PlayerSearchResult
 import kotlinx.android.synthetic.main.activity_search.*
 
@@ -76,7 +76,7 @@ class SearchActivity : AppCompatActivity(), SearchView, AdapterView.OnItemClickL
     override fun onItemClick(parent: AdapterView<*>, view: View, position: Int, id: Long) {
         val playerItem = mAdapter.getPlayerItem(position) ?: return
 
-        val intent = Intent(this, FichePlayerIActivity::class.java)
+        val intent = Intent(this, FichePlayerActivity::class.java)
         intent.putExtra(ExtraKey.PLAYER_ITEM, playerItem)
         startActivity(intent)
     }

@@ -17,7 +17,6 @@ import fr.scootop.app.common.ImageHelper
 import fr.scootop.app.player.details.PlayerDetailsInteractor
 import fr.scootop.app.player.details.PlayerDetailsPresenter
 import fr.scootop.app.player.details.PlayerDetailsView
-import fr.scootop.data.model.Video
 import fr.scootop.data.model.user.domain.Player
 import fr.scootop.data.model.user.domain.PlayerSearchResult
 import kotlinx.android.synthetic.main.old_activity_player_details.*
@@ -140,10 +139,10 @@ class PlayerDetailsActivity : YouTubeBaseActivity(), PlayerDetailsView, YouTubeT
             ytPlayButton.visibility = View.GONE
             noVideoLabel.visibility = View.VISIBLE
         } else {
-            val firstVideo: Video = player.videos!![0]
+            val firstVideo = player.videos!![0]
 
-            mYTVideoId = firstVideo.youtubeId
-            videoTitleLabel.text = firstVideo.comment
+            //mYTVideoId = firstVideo.youtubeId
+            //videoTitleLabel.text = firstVideo.comment
             ytThumbnailView.initialize(BuildConfig.YT_DEV_KEY, this)
 
             ytThumbnailView.visibility = View.VISIBLE
