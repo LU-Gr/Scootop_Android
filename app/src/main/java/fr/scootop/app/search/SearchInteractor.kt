@@ -14,9 +14,6 @@ class SearchInteractor(private val mPresenter: SearchPresenter) {
             mPresenter.presentPlayers(null)
             return
         }
-        if (text.length < 4) {
-            return
-        }
         sp.name = text
         /** appel de l'API pour recherche les joueurs correspondant au texte  */
         get().userDomainService

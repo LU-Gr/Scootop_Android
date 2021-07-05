@@ -2,6 +2,7 @@ package fr.scootop.app.player.details
 
 import android.content.Context
 import fr.scootop.data.api.ApiManager
+import fr.scootop.data.model.ShortlistItem
 import fr.scootop.data.model.services.interaction.Invite
 import fr.scootop.data.model.user.domain.Player
 import fr.scootop.data.storage.UserStorage
@@ -69,7 +70,7 @@ class PlayerDetailsInteractor(
     }
 
     fun addToShortlist() {
-        /*mPlayer?.user?.id?.let {
+        mPlayer?.user?.id?.let {
             mPresenter.presentLoading()
 
             val shortlistItem = ShortlistItem()
@@ -89,11 +90,11 @@ class PlayerDetailsInteractor(
                 }
         } ?: run {
             mPresenter.presentError("Impossible d'effectuer cette action.")
-        }*/
+        }
     }
 
     fun removeToShortlist() {
-        /*mPlayer?.user?.shortlistItemId?.let {
+        mPlayer?.user?.shortlistItemId?.let {
             mPresenter.presentLoading()
 
             ApiManager.get().shortlistItemService.deleteShortlistItem(it)
@@ -110,7 +111,7 @@ class PlayerDetailsInteractor(
                 }
         } ?: run {
             mPresenter.presentError("Impossible d'effectuer cette action.")
-        }*/
+        }
     }
 
     fun invite() {

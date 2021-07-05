@@ -29,7 +29,7 @@
         <activity android:name=".app.interactions.reportActivity" />
         <activity android:name=".app.interactions.AlertActivity" />
         <activity android:name=".app.interactions.FollowActivity" />
-        <activity android:name=".app.player.details.FichePlayerIActivity">
+        <activity android:name=".app.player.details.FichePlayerActivity">
 
 
 
