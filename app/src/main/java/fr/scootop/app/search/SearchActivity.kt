@@ -10,8 +10,11 @@ import androidx.appcompat.app.AppCompatActivity
 import butterknife.ButterKnife
 import fr.scootop.R
 import fr.scootop.app.common.ExtraKey
+import fr.scootop.app.login.LoginActivity
 import fr.scootop.app.player.details.FichePlayerActivity
 import fr.scootop.data.model.user.domain.PlayerSearchResult
+import fr.scootop.data.storage.TokenStorage
+import fr.scootop.data.storage.UserStorage
 import kotlinx.android.synthetic.main.activity_search.*
 
 class SearchActivity : AppCompatActivity(), SearchView, AdapterView.OnItemClickListener {
@@ -30,6 +33,15 @@ class SearchActivity : AppCompatActivity(), SearchView, AdapterView.OnItemClickL
         ButterKnife.bind(this)
 
         searchBackButton.setOnClickListener { finish() }
+
+        logoutButton3.setOnClickListener {
+            // best way is to show confirm dialog
+            UserStorage.get(this).clear()
+            TokenStorage.get(this).clear()
+
+            startActivity(Intent(this, LoginActivity::class.java))
+            this.finish()
+        }
 
         searchListView.adapter = mAdapter
         searchListView.onItemClickListener = this

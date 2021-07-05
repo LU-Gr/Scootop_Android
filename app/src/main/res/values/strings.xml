@@ -29,7 +29,7 @@
     <string name="action_create_post">Poster ma participation</string>
 
     <string name="dialog_loading_title">Chargement</string>
-    <string name="dialog_loading_message">Veuillez patientez un instant</string>
+    <string name="dialog_loading_message">Veuillez patienter un instant</string>
 
     <string name="dialog_follow_player_title">Suivre ce joueur ?</string>
     <string name="dialog_follow_player_description">En suivant ce joueur, vous receverez une alerte à chacune de ses rencontres.</string>
