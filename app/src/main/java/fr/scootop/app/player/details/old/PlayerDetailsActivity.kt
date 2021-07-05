@@ -17,9 +17,9 @@ import fr.scootop.app.common.ImageHelper
 import fr.scootop.app.player.details.PlayerDetailsInteractor
 import fr.scootop.app.player.details.PlayerDetailsPresenter
 import fr.scootop.app.player.details.PlayerDetailsView
-import fr.scootop.data.model.PlayerSearchItem
 import fr.scootop.data.model.Video
 import fr.scootop.data.model.user.domain.Player
+import fr.scootop.data.model.user.domain.PlayerSearchResult
 import kotlinx.android.synthetic.main.old_activity_player_details.*
 
 
@@ -86,15 +86,15 @@ class PlayerDetailsActivity : YouTubeBaseActivity(), PlayerDetailsView, YouTubeT
         }
 
         if (intent?.getParcelableExtra<Parcelable>(ExtraKey.PLAYER_ITEM) != null) {
-            val playerItem = intent.getParcelableExtra<PlayerSearchItem>(ExtraKey.PLAYER_ITEM)
+            val playerItem = intent.getParcelableExtra<PlayerSearchResult>(ExtraKey.PLAYER_ITEM)
 
             /** on affiche déjà quelques informations (celles que nous avons)  */
-            nameLabel.text = playerItem!!.name
-            positionLabel.text = playerItem!!.positionName
-            teamNameLabel.text = playerItem.teamName
+            nameLabel.text = playerItem!!.firstName + " " + playerItem!!.lastName
+            //positionLabel.text = playerItem!!.positionName
+            //teamNameLabel.text = playerItem.teamName
 
             /** récupération des données détaillées du joueur  */
-            mInteractor.loadPlayer(playerItem.playerId)
+            //mInteractor.loadPlayer(playerItem.playerId)
         } else if (intent?.getIntExtra(ExtraKey.PLAYER_ID, 0) != 0) {
             val playerId = intent.getLongExtra(ExtraKey.PLAYER_ID, 0)
             mInteractor.loadPlayer(playerId)

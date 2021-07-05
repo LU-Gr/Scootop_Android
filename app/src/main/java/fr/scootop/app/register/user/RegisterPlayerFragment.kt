@@ -24,7 +24,7 @@ import rx.schedulers.Schedulers
 
 class RegisterPlayerFragment : Fragment() {
 
-    var player: RegisterUserPlayer.Wrapper = RegisterUserPlayer.Wrapper()
+    var player: RegisterUserPlayer = RegisterUserPlayer()
 
     private var positions: Array<Poste> = emptyArray()
     private var categories: Array<Category> = emptyArray()
@@ -70,7 +70,7 @@ class RegisterPlayerFragment : Fragment() {
                     .items(IntRange(30, 150).map { it.toString() })
                     .itemsCallbackSingleChoice(-1) { dialog, _, _, text: CharSequence? ->
                         text.let {
-                            player.weightKg = it.toString().toDouble()
+                            player.weightKg = it.toString().toInt()
                             weightKgInput.setText("%d kg".format(it.toString().toInt()))
                         }
                         dialog.dismiss()

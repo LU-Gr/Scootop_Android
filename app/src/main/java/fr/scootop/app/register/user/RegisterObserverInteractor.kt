@@ -23,9 +23,10 @@ class RegisterObserverInteractor(private val mPresenter: RegisterObserverPresent
             .register(user)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ id ->
-                //handle(id)
-                login(user.email!!, user.password!!)
+            .subscribe({ loginResult ->
+                handle(loginResult)
+                //login(user.email!!, user.password!!)
+                mPresenter.presentSearchEngine()
             }) { throwable ->
                 mPresenter.dismissLoading()
                 mPresenter.presentError(throwable.localizedMessage)

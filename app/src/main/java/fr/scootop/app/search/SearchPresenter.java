@@ -5,7 +5,7 @@ import androidx.annotation.Nullable;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import fr.scootop.data.model.PlayerSearchItem;
+import fr.scootop.data.model.user.domain.PlayerSearchResult;
 
 public class SearchPresenter
 {
@@ -16,7 +16,7 @@ public class SearchPresenter
 		mView = new WeakReference<>(view);
 	}
 
-	public void presentPlayers(@Nullable List<PlayerSearchItem> players)
+	public void presentPlayers(@Nullable List<PlayerSearchResult> players)
 	{
 		if (null != players && !players.isEmpty()) {
 			mView.get().displayPlayers(players);

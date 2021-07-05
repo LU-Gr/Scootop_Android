@@ -1,6 +1,5 @@
 package fr.scootop.app.services
 
-import fr.scootop.app.search.SearchPlayerAdapter
 import fr.scootop.data.model.LoginResult
 import fr.scootop.data.model.request.RegisterUserPlayer
 import fr.scootop.data.model.services.ComparatorParams
@@ -102,18 +101,18 @@ interface ApiUserDomainService {
     // FICHE PLAYER
 
     @Headers("Content-Type: application/json")
-    @GET("/user/domain/player/fiche")
+    @POST("/user/domain/player/fiche")
     fun getPlayerResume(@Body comparatorParams: ComparatorParams): Call<FicheJoueur>
 
     @Headers("Content-Type: application/json")
-    @GET("/user/domain/player/comparator")
+    @POST("/user/domain/player/comparator")
     fun compareTwoPlayers(@Body comparatorParams: ComparatorParams): Call<FicheJoueur>
 
     // PLAYER SEARCH
 
     @Headers("Content-Type: application/json")
-    @GET("/user/domain/players/search")
-    fun searchPlayer(@Body searchPlayer: SearchPlayerAdapter): Call<PlayerSearchList>
+    @POST("/user/domain/players/search")
+    fun searchPlayer(@Body searchPlayer: SearchPlayer): Observable<List<PlayerSearchResult>>
 
 
     // MATCHSHEET SCOOT

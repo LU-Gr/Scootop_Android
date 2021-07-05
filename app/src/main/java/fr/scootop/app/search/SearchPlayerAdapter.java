@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.scootop.R;
-import fr.scootop.data.model.PlayerSearchItem;
+import fr.scootop.data.model.user.domain.PlayerSearchResult;
 
 public class SearchPlayerAdapter extends BaseAdapter
 {
-	private List<PlayerSearchItem> mPlayers;
+	private List<PlayerSearchResult> mPlayers;
 	private LayoutInflater mInflater;
 
 	public SearchPlayerAdapter(Context context)
@@ -25,12 +25,12 @@ public class SearchPlayerAdapter extends BaseAdapter
 		mInflater = LayoutInflater.from(context);
 	}
 
-	public void addPlayers(List<PlayerSearchItem> list)
+	public void addPlayers(List<PlayerSearchResult> list)
 	{
 		this.addPlayers(list, 0);
 	}
 
-	public void addPlayers(List<PlayerSearchItem> list, int page)
+	public void addPlayers(List<PlayerSearchResult> list, int page)
 	{
 		if (page <= 0) {
 			mPlayers.clear();
@@ -40,7 +40,7 @@ public class SearchPlayerAdapter extends BaseAdapter
 	}
 
 	@Nullable
-	public PlayerSearchItem getPlayerItem(int position)
+	public PlayerSearchResult getPlayerItem(int position)
 	{
 		if (mPlayers.size() > position) {
 			return mPlayers.get(position);

@@ -42,7 +42,7 @@ class RegisterUser() : Parcelable {
     var originCountry: String? = null
 
     @Expose
-    @SerializedName("phoneNumber")
+    @SerializedName("contactTel")
     var phoneNumber: String? = null
 
     constructor(parcel: Parcel) : this() {
@@ -95,5 +95,9 @@ class RegisterUser() : Parcelable {
             return true
         }
         return false
+    }
+
+    override fun toString(): String {
+        return "RegisterUser(id=$id, firstName=$firstName, lastName=$lastName, email=$email, password=$password, birthDate=$birthDate, gender=$gender, nationalityCountry=$nationalityCountry, originCountry=$originCountry, phoneNumber=$phoneNumber)"
     }
 }

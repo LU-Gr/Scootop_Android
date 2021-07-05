@@ -10,8 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import butterknife.ButterKnife
 import fr.scootop.R
 import fr.scootop.app.common.ExtraKey
-import fr.scootop.app.player.details.old.PlayerDetailsActivity
-import fr.scootop.data.model.PlayerSearchItem
+import fr.scootop.app.player.details.FichePlayerIActivity
+import fr.scootop.data.model.user.domain.PlayerSearchResult
 import kotlinx.android.synthetic.main.activity_search.*
 
 class SearchActivity : AppCompatActivity(), SearchView, AdapterView.OnItemClickListener {
@@ -55,7 +55,7 @@ class SearchActivity : AppCompatActivity(), SearchView, AdapterView.OnItemClickL
         searchSearchView.requestFocusFromTouch()
     }
 
-    override fun displayPlayers(players: List<PlayerSearchItem>) {
+    override fun displayPlayers(players: List<PlayerSearchResult>) {
         mAdapter.addPlayers(players)
 
         searchListView.visibility = View.VISIBLE
@@ -76,7 +76,7 @@ class SearchActivity : AppCompatActivity(), SearchView, AdapterView.OnItemClickL
     override fun onItemClick(parent: AdapterView<*>, view: View, position: Int, id: Long) {
         val playerItem = mAdapter.getPlayerItem(position) ?: return
 
-        val intent = Intent(this, PlayerDetailsActivity::class.java)
+        val intent = Intent(this, FichePlayerIActivity::class.java)
         intent.putExtra(ExtraKey.PLAYER_ITEM, playerItem)
         startActivity(intent)
     }

@@ -7,13 +7,12 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.mikhaellopez.circularimageview.CircularImageView;
-import com.mukesh.countrypicker.Country;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.scootop.R;
 import fr.scootop.app.common.ImageHelper;
-import fr.scootop.data.model.PlayerSearchItem;
+import fr.scootop.data.model.user.domain.PlayerSearchResult;
 
 public class SearchPlayerItemViewHolder
 {
@@ -31,14 +30,14 @@ public class SearchPlayerItemViewHolder
         ButterKnife.bind(this, view);
     }
 
-    public void setPlayerItem(PlayerSearchItem item)
+    public void setPlayerItem(PlayerSearchResult item)
     {
-        mNameTextView.setText(item.name);
+        mNameTextView.setText(item.getFirstName() + " " + item.getLastName());
 
-        if (!TextUtils.isEmpty(item.image)) {
+        if (!TextUtils.isEmpty(item.getPhotoUrl())) {
             /** charge l'avatar en ligne */
             Glide.with(mAvatarView.getContext())
-                 .load(ImageHelper.INSTANCE.getUserAvatarUrl(item.image))
+                 .load(ImageHelper.INSTANCE.getUserAvatarUrl(item.getPhotoUrl()))
                  .fitCenter()
                  .placeholder(R.mipmap.ic_default_avatar)
                  .into(mAvatarView);
@@ -50,12 +49,12 @@ public class SearchPlayerItemViewHolder
         /** reset l'image du pays */
         mCountryImageView.setImageDrawable(null);
 
-        if (!TextUtils.isEmpty(item.nationalityIsoCode)) {
-            Country country = Country.getCountryByISO(item.nationalityIsoCode);
-            if (null != country) {
-                /** affiche l'image du pays seulement si le pays est défini et trouvé */
-                mCountryImageView.setImageResource(country.getFlag());
-            }
-        }
+        //if (!TextUtils.isEmpty(item.nationalityIsoCode)) {
+        //    Country country = Country.getCountryByISO(item.nationalityIsoCode);
+        //    if (null != country) {
+        //        /** affiche l'image du pays seulement si le pays est défini et trouvé **/
+        //        mCountryImageView.setImageResource(country.getFlag());
+        //    }
+        //}
     }
 }

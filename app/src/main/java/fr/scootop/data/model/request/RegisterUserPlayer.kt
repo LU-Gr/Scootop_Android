@@ -5,28 +5,21 @@ import android.util.Log
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import fr.scootop.data.definition.Footed
-class RegisterUserPlayer {
-    @Expose
-    @SerializedName("player")
-    var wrapper: Wrapper = Wrapper()
-    class Wrapper() : Parcelable {
-
-
-
+class RegisterUserPlayer() : Parcelable {
         @Expose
         @SerializedName("user")
         var user: RegisterUser? = null
 
         @Expose
-        @SerializedName("heightCm")
+        @SerializedName("taille")
         var heightCm: Int = 0
 
         @Expose
-        @SerializedName("weightKg")
-        var weightKg: Double = 0.0
+        @SerializedName("poids")
+        var weightKg: Int = 0
 
         @Expose
-        @SerializedName("footed")
+        @SerializedName("strongFoot")
         var footed: String = Footed.Right.value
 
         @Expose
@@ -52,7 +45,7 @@ class RegisterUserPlayer {
         constructor(parcel: Parcel) : this() {
             user = parcel.readParcelable(RegisterUser::class.java.classLoader)
             heightCm = parcel.readInt()
-            weightKg = parcel.readDouble()
+            weightKg = parcel.readInt()
             footed = parcel.readString().toString()
             favoritePositionId = parcel.readValue(Long::class.java.classLoader) as? Long
             secondaryPositionId = parcel.readValue(Long::class.java.classLoader) as? Long
@@ -64,7 +57,7 @@ class RegisterUserPlayer {
         override fun writeToParcel(parcel: Parcel, flags: Int) {
             parcel.writeParcelable(user, flags)
             parcel.writeInt(heightCm)
-            parcel.writeDouble(weightKg)
+            parcel.writeInt(weightKg)
             parcel.writeString(footed)
             parcel.writeValue(favoritePositionId)
             parcel.writeValue(secondaryPositionId)
@@ -77,11 +70,11 @@ class RegisterUserPlayer {
             return 0
         }
 
-        companion object CREATOR : Parcelable.Creator<Wrapper> {
-            override fun createFromParcel(parcel: Parcel): Wrapper {
-                return Wrapper(parcel)
+        companion object CREATOR : Parcelable.Creator<RegisterUserPlayer> {
+            override fun createFromParcel(parcel: Parcel): RegisterUserPlayer {
+                return RegisterUserPlayer(parcel)
             }
-            override fun newArray(size: Int): Array<Wrapper?> {
+            override fun newArray(size: Int): Array<RegisterUserPlayer?> {
                 return arrayOfNulls(size)
             }
         }
@@ -103,15 +96,14 @@ class RegisterUserPlayer {
         override fun toString(): String {
             return "Wrapper(heightCm=$heightCm, weightKg=$weightKg, footed='$footed', favoritePositionId=$favoritePositionId, countryCode=$countryCode, categoryId=$categoryId, teamId=$teamId)"
         }
-    }
 
-    fun merge(playerWrapper: RegisterUserPlayer.Wrapper) {
-        wrapper.heightCm = playerWrapper.heightCm
-        wrapper.weightKg = playerWrapper.weightKg
-        wrapper.footed = playerWrapper.footed
-        wrapper.favoritePositionId = playerWrapper.favoritePositionId
-        wrapper.countryCode = playerWrapper.countryCode
-        wrapper.categoryId = playerWrapper.categoryId
-        wrapper.teamId = playerWrapper.teamId
-    }
+        fun merge(playerWrapper: RegisterUserPlayer) {
+            heightCm = playerWrapper.heightCm
+            weightKg = playerWrapper.weightKg
+            footed = playerWrapper.footed
+            favoritePositionId = playerWrapper.favoritePositionId
+            countryCode = playerWrapper.countryCode
+            categoryId = playerWrapper.categoryId
+            teamId = playerWrapper.teamId
+        }
 }

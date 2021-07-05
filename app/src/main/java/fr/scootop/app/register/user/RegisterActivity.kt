@@ -69,7 +69,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView, View.OnClickListener
                         RegisterStepAdapter.STEP_USER -> {
                             adapter?.userFragment?.registerUser?.let {
                                 if (it.isValid()) {
-                                    userPlayer?.wrapper?.user = it
+                                    userPlayer?.user = it
                                     registerViewPager.currentItem = RegisterStepAdapter.STEP_PLAYER
                                 } else {
                                     displayError(getString(R.string.toast_form_incomplete))
@@ -80,7 +80,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView, View.OnClickListener
                             adapter?.playerFragment?.player?.let { it ->
                                 userPlayer?.merge(it)
                                 userPlayer?.let {
-                                    if (it.wrapper.isValid()) {
+                                    if (it.isValid()) {
                                         playerInteractor?.register(it)
                                     } else {
                                         displayError(getString(R.string.toast_form_incomplete))
