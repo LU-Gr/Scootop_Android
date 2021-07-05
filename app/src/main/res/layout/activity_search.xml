@@ -65,11 +65,25 @@
 
     </RelativeLayout>
 
-    <ListView
-        android:id="@+id/searchListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="410dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/searchPlaceholderLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_toolbar">
+
+        <ListView
+            android:id="@+id/searchListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="@+id/searchPlaceholderLayout"
+            app:layout_constraintEnd_toEndOf="@+id/search_toolbar"
+            app:layout_constraintStart_toStartOf="@+id/searchPlaceholderLayout"
+            app:layout_constraintTop_toBottomOf="@+id/search_toolbar" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
